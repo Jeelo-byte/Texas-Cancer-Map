@@ -28,29 +28,29 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
         intensity = county.pollutionLevel / 100;
         break;
       case "mortality":
-        intensity = county.cancerMortality / 50;
+        intensity = county.cancerMortality / 200;
         break;
     }
     
     const opacity = Math.min(intensity, 1);
     if (overlay === "healthcare") {
-      return `fill-green-400 hover:fill-green-500`;
+      return `fill-green-400 hover:fill-green-500 fill-opacity-${Math.round(opacity * 80)}`;
     } else {
-      return `fill-red-400 hover:fill-red-500`;
+      return `fill-red-400 hover:fill-red-500 fill-opacity-${Math.round(opacity * 80)}`;
     }
   };
 
   const getSiteIcon = (type: string) => {
     switch (type) {
       case "power_plant":
-        return <Zap className="w-4 h-4" />;
+        return <Zap className="w-3 h-3" />;
       case "landfill":
-        return <Trash2 className="w-4 h-4" />;
+        return <Trash2 className="w-3 h-3" />;
       case "chemical_plant":
       case "industrial":
-        return <Factory className="w-4 h-4" />;
+        return <Factory className="w-3 h-3" />;
       default:
-        return <MapPin className="w-4 h-4" />;
+        return <MapPin className="w-3 h-3" />;
     }
   };
 
@@ -67,54 +67,108 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
     }
   };
 
+  // Convert real coordinates to SVG coordinates (simplified projection)
+  const coordsToSVG = (lat: number, lng: number) => {
+    // Texas bounds: roughly 25.8°N to 36.5°N, -106.6°W to -93.5°W
+    const minLat = 25.8, maxLat = 36.5;
+    const minLng = -106.6, maxLng = -93.5;
+    
+    const x = ((lng - minLng) / (maxLng - minLng)) * 600 + 50;
+    const y = ((maxLat - lat) / (maxLat - minLat)) * 400 + 50;
+    
+    return { x, y };
+  };
+
   return (
     <div className="w-full h-full relative bg-blue-50">
-      {/* Simplified Texas outline with county representations */}
       <div className="absolute inset-4 bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="w-full h-full relative">
-          {/* Grid-based county representation */}
-          <div className="grid grid-cols-8 gap-1 p-4 h-full">
-            {mockCounties.map((county) => (
-              <div
-                key={county.id}
-                className={`
-                  relative rounded cursor-pointer transition-all duration-300 border-2
-                  ${selectedCounty?.id === county.id 
-                    ? "border-blue-500 scale-105 z-10" 
-                    : "border-transparent"
-                  }
-                  ${getOverlayColor(county, activeOverlay)}
-                  ${hoveredCounty === county.id ? "scale-105 z-10" : ""}
-                `}
-                onClick={() => onCountyClick(county)}
-                onMouseEnter={() => setHoveredCounty(county.id)}
-                onMouseLeave={() => setHoveredCounty(null)}
-                title={county.name}
-              >
-                {/* County name label */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xs font-medium text-slate-700 text-center px-1">
+          {/* SVG Texas Map */}
+          <svg viewBox="0 0 700 500" className="w-full h-full">
+            {/* Simplified Texas outline */}
+            <path
+              d="M 100 300 L 120 280 L 140 250 L 180 220 L 220 200 L 280 180 L 350 170 L 420 175 L 480 180 L 520 190 L 550 210 L 580 240 L 600 280 L 590 320 L 570 360 L 540 390 L 500 410 L 450 420 L 400 425 L 350 430 L 300 435 L 250 440 L 200 430 L 150 420 L 120 400 L 100 380 L 90 350 L 95 320 Z"
+              fill="#f8fafc"
+              stroke="#e2e8f0"
+              strokeWidth="2"
+            />
+            
+            {/* Counties as circles positioned on the map */}
+            {mockCounties.map((county) => {
+              const svgCoords = coordsToSVG(county.coordinates[1], county.coordinates[0]);
+              const isSelected = selectedCounty?.id === county.id;
+              const isHovered = hoveredCounty === county.id;
+              
+              return (
+                <g key={county.id}>
+                  {/* County circle */}
+                  <circle
+                    cx={svgCoords.x}
+                    cy={svgCoords.y}
+                    r={isSelected ? "16" : isHovered ? "14" : "12"}
+                    className={`
+                      cursor-pointer transition-all duration-300 stroke-2
+                      ${isSelected ? "stroke-blue-500" : "stroke-slate-400"}
+                      ${getOverlayColor(county, activeOverlay)}
+                    `}
+                    onClick={() => onCountyClick(county)}
+                    onMouseEnter={() => setHoveredCounty(county.id)}
+                    onMouseLeave={() => setHoveredCounty(null)}
+                  />
+                  
+                  {/* County name label */}
+                  <text
+                    x={svgCoords.x}
+                    y={svgCoords.y + 25}
+                    textAnchor="middle"
+                    className="text-xs font-medium fill-slate-700 pointer-events-none"
+                  >
                     {county.name.replace(" County", "")}
-                  </span>
-                </div>
+                  </text>
+                  
+                  {/* Cancer sites indicators */}
+                  {county.sites.map((site, index) => (
+                    <g key={site.id}>
+                      <circle
+                        cx={svgCoords.x + (index * 8) - 8}
+                        cy={svgCoords.y - 18}
+                        r="4"
+                        className={`
+                          ${site.riskLevel === "high" ? "fill-red-500" :
+                            site.riskLevel === "medium" ? "fill-yellow-500" :
+                            "fill-green-500"}
+                        `}
+                      />
+                    </g>
+                  ))}
+                  
+                  {/* Site count badge */}
+                  {county.sites.length > 0 && (
+                    <circle
+                      cx={svgCoords.x + 12}
+                      cy={svgCoords.y - 12}
+                      r="8"
+                      className="fill-red-500"
+                    />
+                  )}
+                  {county.sites.length > 0 && (
+                    <text
+                      x={svgCoords.x + 12}
+                      y={svgCoords.y - 8}
+                      textAnchor="middle"
+                      className="text-xs font-bold fill-white pointer-events-none"
+                    >
+                      {county.sites.length}
+                    </text>
+                  )}
+                </g>
+              );
+            })}
+          </svg>
 
-                {/* Cancer sites indicators */}
-                {county.sites.length > 0 && (
-                  <div className="absolute -top-1 -right-1">
-                    <div className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-xs text-white font-bold">
-                        {county.sites.length}
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Cancer sites overlay when county is selected */}
-          {selectedCounty && (
-            <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-4 max-w-xs">
+          {/* Cancer sites detail panel when county is selected */}
+          {selectedCounty && selectedCounty.sites.length > 0 && (
+            <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-4 max-w-xs z-10">
               <h3 className="font-semibold text-slate-900 mb-2">
                 {selectedCounty.name} - Environmental Sites
               </h3>
@@ -146,7 +200,7 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
 
           {/* Hover tooltip */}
           {hoveredCounty && (
-            <div className="absolute bottom-4 left-4 bg-black bg-opacity-90 text-white p-3 rounded-lg">
+            <div className="absolute bottom-4 left-4 bg-black bg-opacity-90 text-white p-3 rounded-lg z-10">
               {mockCounties.find(c => c.id === hoveredCounty)?.name}
               <br />
               <span className="text-xs opacity-75">Click to explore</span>
@@ -157,7 +211,7 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
 
       {/* Legend */}
       {activeOverlay && (
-        <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-4">
+        <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-4 z-10">
           <h4 className="font-semibold text-slate-900 mb-2 capitalize">
             {activeOverlay === "healthcare" ? "Healthcare Access" : activeOverlay} Levels
           </h4>
