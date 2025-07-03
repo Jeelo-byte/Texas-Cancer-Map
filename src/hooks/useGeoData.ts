@@ -7,8 +7,8 @@ export const useGeoData = () => {
   const [viewBox, setViewBox] = useState<string>("0 0 1000 800");
 
   useEffect(() => {
-    // Load the GeoJSON data
-    fetch('/src/data/Texas_County_Boundaries.geojson')
+    // Load the GeoJSON data from public directory
+    fetch('/Texas_County_Boundaries.geojson')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
