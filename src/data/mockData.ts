@@ -1,4 +1,3 @@
-
 import { County } from "@/pages/Index";
 
 export const mockCounties: County[] = [
@@ -176,7 +175,7 @@ export const mockCounties: County[] = [
     cancerMortality: 134.8,
     povertyRate: 7.8,
     healthcareAccess: 87.3,
-    pillutionLevel: 35,
+    pollutionLevel: 35,
     deathRate: 134.8,
     coordinates: [-97.6648, 30.6099],
     sites: []
