@@ -31,38 +31,47 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
   const [hoveredCounty, setHoveredCounty] = useState<string | null>(null);
   const [geoData, setGeoData] = useState<GeoJSONData | null>(null);
   const [viewBox, setViewBox] = useState<string>("0 0 1000 800");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     // Load the GeoJSON data
     fetch('/src/data/Texas_County_Boundaries.geojson')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data: GeoJSONData) => {
+        console.log('GeoJSON data loaded:', data);
         setGeoData(data);
         
         // Calculate bounding box for the map
         let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
         
         data.features.forEach(feature => {
-          if (feature.geometry.type === 'Polygon') {
-            const coords = feature.geometry.coordinates as number[][][];
-            coords[0].forEach((coord: number[]) => {
-              const [lng, lat] = coord;
-              minX = Math.min(minX, lng);
-              maxX = Math.max(maxX, lng);
-              minY = Math.min(minY, lat);
-              maxY = Math.max(maxY, lat);
-            });
-          } else if (feature.geometry.type === 'MultiPolygon') {
-            const coords = feature.geometry.coordinates as number[][][][];
-            coords.forEach(polygon => {
-              polygon[0].forEach((coord: number[]) => {
+          if (feature.geometry && feature.geometry.coordinates) {
+            if (feature.geometry.type === 'Polygon') {
+              const coords = feature.geometry.coordinates as number[][][];
+              coords[0].forEach((coord: number[]) => {
                 const [lng, lat] = coord;
                 minX = Math.min(minX, lng);
                 maxX = Math.max(maxX, lng);
                 minY = Math.min(minY, lat);
                 maxY = Math.max(maxY, lat);
               });
-            });
+            } else if (feature.geometry.type === 'MultiPolygon') {
+              const coords = feature.geometry.coordinates as number[][][][];
+              coords.forEach(polygon => {
+                polygon[0].forEach((coord: number[]) => {
+                  const [lng, lat] = coord;
+                  minX = Math.min(minX, lng);
+                  maxX = Math.max(maxX, lng);
+                  minY = Math.min(minY, lat);
+                  maxY = Math.max(maxY, lat);
+                });
+              });
+            }
           }
         });
         
@@ -79,6 +88,11 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
   }, []);
 
   const getCountyData = (countyName: string): County | null => {
+    if (!countyName) {
+      console.warn('County name is undefined or empty');
+      return null;
+    }
+    
     return mockCounties.find(county => 
       county.name.toLowerCase().includes(countyName.toLowerCase()) ||
       countyName.toLowerCase().includes(county.name.toLowerCase().replace(" county", ""))
@@ -86,7 +100,11 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
   };
 
   const getOverlayColor = (county: County | null, overlay: DataOverlay) => {
-    if (!overlay || !county) return "fill-slate-200 hover:fill-slate-300";
+    if (!overlay || !county) {
+      return isDarkMode 
+        ? "fill-slate-700 hover:fill-slate-600" 
+        : "fill-slate-200 hover:fill-slate-300";
+    }
     
     let intensity = 0;
     switch (overlay) {
@@ -192,19 +210,31 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
 
   if (!geoData) {
     return (
-      <div className="w-full h-full flex items-center justify-center bg-slate-100">
-        <div className="text-slate-600">Loading Texas counties map...</div>
+      <div className={`w-full h-full flex items-center justify-center ${isDarkMode ? 'bg-slate-900' : 'bg-slate-100'}`}>
+        <div className={`${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>Loading Texas counties map...</div>
       </div>
     );
   }
 
   return (
-    <div className="w-full h-full relative bg-blue-50">
-      <div className="absolute inset-4 bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className={`w-full h-full relative ${isDarkMode ? 'bg-slate-900' : 'bg-blue-50'}`}>
+      {/* Dark mode toggle */}
+      <button
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        className={`absolute top-4 right-4 z-30 p-2 rounded-lg ${
+          isDarkMode ? 'bg-slate-800 text-white' : 'bg-white text-slate-900'
+        } shadow-lg hover:shadow-xl transition-all`}
+      >
+        {isDarkMode ? '☀️' : '🌙'}
+      </button>
+
+      <div className={`absolute inset-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-lg shadow-lg overflow-hidden`}>
         <div className="w-full h-full relative">
           <svg viewBox={viewBox} className="w-full h-full">
             {geoData.features.map((feature) => {
-              const countyName = feature.properties.NAME;
+              const countyName = feature.properties?.NAME;
+              if (!countyName) return null;
+              
               const countyData = getCountyData(countyName);
               const isSelected = selectedCounty?.name.includes(countyName) || countyName.includes(selectedCounty?.name.replace(" County", "") || "");
               const isHovered = hoveredCounty === countyName;
@@ -219,8 +249,8 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
                     d={pathData}
                     className={`
                       cursor-pointer transition-all duration-300 stroke-2
-                      ${isSelected ? "stroke-blue-500" : "stroke-slate-400"}
-                      ${isHovered ? "stroke-slate-600" : ""}
+                      ${isSelected ? "stroke-blue-500" : isDarkMode ? "stroke-slate-500" : "stroke-slate-400"}
+                      ${isHovered ? (isDarkMode ? "stroke-slate-300" : "stroke-slate-600") : ""}
                       ${getOverlayColor(countyData, activeOverlay)}
                     `}
                     onClick={() => countyData && onCountyClick(countyData)}
@@ -259,24 +289,24 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
 
           {/* Cancer sites detail panel when county is selected */}
           {selectedCounty && selectedCounty.sites.length > 0 && (
-            <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-4 max-w-xs z-10">
-              <h3 className="font-semibold text-slate-900 mb-2">
+            <div className={`absolute top-4 right-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-lg shadow-lg p-4 max-w-xs z-10`}>
+              <h3 className={`font-semibold ${isDarkMode ? 'text-slate-100' : 'text-slate-900'} mb-2`}>
                 {selectedCounty.name} - Environmental Sites
               </h3>
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {selectedCounty.sites.map((site) => (
                   <div 
                     key={site.id}
-                    className="flex items-start space-x-2 p-2 bg-slate-50 rounded"
+                    className={`flex items-start space-x-2 p-2 ${isDarkMode ? 'bg-slate-700' : 'bg-slate-50'} rounded`}
                   >
                     <div className={`p-1 rounded ${getRiskColor(site.riskLevel)}`}>
                       {getSiteIcon(site.type)}
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-slate-900">
+                      <p className={`text-sm font-medium ${isDarkMode ? 'text-slate-100' : 'text-slate-900'}`}>
                         {site.name}
                       </p>
-                      <p className="text-xs text-slate-600">
+                      <p className={`text-xs ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
                         {site.description}
                       </p>
                       <span className={`inline-block mt-1 px-2 py-1 text-xs rounded-full ${getRiskColor(site.riskLevel)}`}>
@@ -291,7 +321,7 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
 
           {/* Hover tooltip */}
           {hoveredCounty && (
-            <div className="absolute bottom-4 left-4 bg-black bg-opacity-90 text-white p-3 rounded-lg z-10">
+            <div className={`absolute bottom-4 left-4 ${isDarkMode ? 'bg-slate-800' : 'bg-black bg-opacity-90'} ${isDarkMode ? 'text-slate-100' : 'text-white'} p-3 rounded-lg z-10`}>
               {hoveredCounty}
               <br />
               <span className="text-xs opacity-75">Click to explore</span>
@@ -302,17 +332,17 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
 
       {/* Legend */}
       {activeOverlay && (
-        <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-4 z-10">
-          <h4 className="font-semibold text-slate-900 mb-2 capitalize">
+        <div className={`absolute bottom-4 right-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-lg shadow-lg p-4 z-10`}>
+          <h4 className={`font-semibold ${isDarkMode ? 'text-slate-100' : 'text-slate-900'} mb-2 capitalize`}>
             {activeOverlay === "healthcare" ? "Healthcare Access" : activeOverlay} Levels
           </h4>
           <div className="flex items-center space-x-2">
-            <span className="text-xs text-slate-600">Low</span>
+            <span className={`text-xs ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>Low</span>
             <div className={`w-8 h-3 rounded ${
               activeOverlay === "healthcare" ? "bg-gradient-to-r from-red-200 to-green-400" 
               : "bg-gradient-to-r from-red-200 to-red-600"
             }`}></div>
-            <span className="text-xs text-slate-600">High</span>
+            <span className={`text-xs ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>High</span>
           </div>
         </div>
       )}
