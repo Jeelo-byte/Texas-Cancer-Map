@@ -18,7 +18,7 @@ interface GeoJSONFeature {
   };
   geometry: {
     type: string;
-    coordinates: number[][][];
+    coordinates: number[][][] | number[][][][];
   };
 }
 
@@ -43,17 +43,25 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
         let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
         
         data.features.forEach(feature => {
-          if (feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon') {
-            const coords = feature.geometry.type === 'Polygon' 
-              ? feature.geometry.coordinates[0] 
-              : feature.geometry.coordinates.flat(2);
-            
-            coords.forEach((coord: number[]) => {
+          if (feature.geometry.type === 'Polygon') {
+            const coords = feature.geometry.coordinates as number[][][];
+            coords[0].forEach((coord: number[]) => {
               const [lng, lat] = coord;
               minX = Math.min(minX, lng);
               maxX = Math.max(maxX, lng);
               minY = Math.min(minY, lat);
               maxY = Math.max(maxY, lat);
+            });
+          } else if (feature.geometry.type === 'MultiPolygon') {
+            const coords = feature.geometry.coordinates as number[][][][];
+            coords.forEach(polygon => {
+              polygon[0].forEach((coord: number[]) => {
+                const [lng, lat] = coord;
+                minX = Math.min(minX, lng);
+                maxX = Math.max(maxX, lng);
+                minY = Math.min(minY, lat);
+                maxY = Math.max(maxY, lat);
+              });
             });
           }
         });
@@ -139,9 +147,11 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
     let pathData = '';
     
     if (feature.geometry.type === 'Polygon') {
-      pathData = coordsToPath(feature.geometry.coordinates[0]);
+      const coords = feature.geometry.coordinates as number[][][];
+      pathData = coordsToPath(coords[0]);
     } else if (feature.geometry.type === 'MultiPolygon') {
-      pathData = feature.geometry.coordinates
+      const coords = feature.geometry.coordinates as number[][][][];
+      pathData = coords
         .map(polygon => coordsToPath(polygon[0]))
         .join(' ');
     }
@@ -165,9 +175,11 @@ export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: Texas
     
     let coords: number[][];
     if (feature.geometry.type === 'Polygon') {
-      coords = feature.geometry.coordinates[0];
+      const polygonCoords = feature.geometry.coordinates as number[][][];
+      coords = polygonCoords[0];
     } else if (feature.geometry.type === 'MultiPolygon') {
-      coords = feature.geometry.coordinates[0][0];
+      const multiPolygonCoords = feature.geometry.coordinates as number[][][][];
+      coords = multiPolygonCoords[0][0];
     } else {
       return [0, 0];
     }
