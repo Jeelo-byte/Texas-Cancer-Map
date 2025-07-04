@@ -40,3 +40,7 @@
 .read-the-docs {
   color: #888;
 }
+
+.leaflet-container svg {
+  pointer-events: auto !important;
+}

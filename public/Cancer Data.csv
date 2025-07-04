@@ -1,0 +1,952 @@
+Health Service Area,HSA_Code,"Age-Adjusted Incidence Rate([rate note]) - cases per 100,000",Lower 95% Confidence Interval,Upper 95% Confidence Interval,CI*Rank([rank note]),Lower CI (CI*Rank),Upper CI (CI*Rank),Average Annual Count,Recent Trend,Recent 5-Year Trend ([trend note]) in Incidence Rates,Lower 95% Confidence Interval,Upper 95% Confidence Interval
+US (SEER+NPCR)(1),0,481.1,480.6,481.5,N/A , N/A , N/A,888315,stable,-0.7,-1,0
+"Montgomery, KY - Bath, KY(7)",131,640.6,594,690,N/A , N/A , N/A,149,stable,0.2,-0.3,0.8
+"Wheatland, MT - Meagher, MT(6)",778,635.4,515.8,779.5,N/A , N/A , N/A,23,stable,-0.8,-4,2.4
+"Washington, OH(6)",34,627.6,593.5,663.4,N/A , N/A , N/A,273,rising,2.7,0.7,6.8
+"Coahoma, MS - Tallahatchie, MS(6)",422,625,577.7,675.3,N/A , N/A , N/A,140,rising,1.7,0.6,2.9
+"Dunklin, MO(6)",945,622.5,569.3,679.6,N/A , N/A , N/A,106,rising,4.6,0.7,11.9
+"Jasper, GA(7)",220,622.2,548.7,703.4,N/A , N/A , N/A,57,stable,0.2,-0.7,1.4
+"Marion, IL - Washington, IL(7)",358,621.5,583.8,661.3,N/A , N/A , N/A,216,stable,-0.4,-0.9,0.2
+"Barren, KY - Hart, KY(7)",53,619.8,588.3,652.6,N/A , N/A , N/A,318,stable,0.4,-0.3,1
+"Angelina, TX - Walker, TX(7)",449,618.6,599.7,638,N/A , N/A , N/A,872,rising,3.3,1.1,6.6
+"McDowell, NC(6)",261,617,577.6,658.7,N/A , N/A , N/A,196,stable,0.5,-0.2,1.3
+"Claiborne, LA(7)",523,613.5,545.4,688.5,N/A , N/A , N/A,63,stable,-0.5,-1.9,0.9
+"Lawrence, OH(6)",980,612.5,576.5,650.4,N/A , N/A , N/A,230,stable,0.3,-0.8,1.4
+"Taylor, KY - Adair, KY(7)",82,611.2,579.2,644.6,N/A , N/A , N/A,296,stable,0,-0.6,0.5
+"Morgan, IL - Greene, IL(7)",319,609.5,572,649,N/A , N/A , N/A,208,stable,0.4,-0.3,1.1
+"Clay, IA - Dickinson, IA(7)",625,607.8,568.8,649,N/A , N/A , N/A,199,stable,0,-0.4,0.5
+"Macon (Decatur), IL - Shelby, IL(7)",305,606.5,584.8,628.8,N/A , N/A , N/A,636,stable,0.6,-0.9,3.1
+"St. Landry, LA - Evangeline, LA(7)",463,605.5,578.2,633.8,N/A , N/A , N/A,398,stable,-0.1,-0.7,0.5
+"Craighead, AR - Greene, AR(6)",571,599.3,579.8,619.3,N/A , N/A , N/A,744,stable,-1,-5.8,3.1
+"Arkansas, AR - Monroe, AR(6)",527,599.2,545.6,657.2,N/A , N/A , N/A,99,stable,-0.3,-1.7,1.1
+"Clinton, IA(7)",921,597.2,558,638.6,N/A , N/A , N/A,186,stable,4.2,-0.1,8.8
+"Clinton, KY - Cumberland, KY(7)",104,594.1,527.4,667.7,N/A , N/A , N/A,63,stable,0,-1.3,1.4
+"Sangamon (Springfield), IL - Christian, IL(7)",318,592.8,577.4,608.6,N/A , N/A , N/A,1197,stable,-0.4,-0.8,0
+"Jefferson Davis, MS - Lawrence, MS(6)",504,592.4,536.9,652.5,N/A , N/A , N/A,92,stable,2.1,-0.3,6.3
+"Powell, MT(6)",788,592.4,504.2,693.7,N/A , N/A , N/A,34,stable,0.7,-1.2,2.8
+"Spalding (Griffin), GA - Butts, GA(7)",204,592.2,562.5,623,N/A , N/A , N/A,320,stable,-0.7,-2.6,0
+"Harrison, KY - Robertson, KY(7)",119,591.5,532.7,655.4,N/A , N/A , N/A,80,stable,-0.5,-1.4,0.5
+"Petersburg City, VA - Prince George, VA(6)",77,591.4,567.2,616.4,N/A , N/A , N/A,485,stable,-0.6,-1.4,0.4
+"Hardin, KY - Meade, KY(7)",89,590.8,570.4,611.9,N/A , N/A , N/A,680,stable,-0.3,-0.6,0.1
+"Lafayette (Lafayette), LA - Iberia, LA(7)",424,590.8,576.9,604.8,N/A , N/A , N/A,1504,stable,0.1,-0.7,1.2
+"Lee, MS - Monroe, MS(6)",418,589.5,568.2,611.4,N/A , N/A , N/A,613,stable,0.7,-0.6,3.5
+"Boyd, KY - Greenup, KY(7)",46,588.8,566,612.3,N/A , N/A , N/A,539,stable,0.1,-0.5,2.1
+"Pike, KY(7)",13,587.5,552.3,624.5,N/A , N/A , N/A,228,falling,-0.6,-1.1,-0.1
+"Mason, KY - Fleming, KY(7)",116,587.2,544.4,632.7,N/A , N/A , N/A,152,stable,-0.6,-1.5,0.3
+"Macoupin, IL - Montgomery, IL(7)",334,586.1,555.8,617.8,N/A , N/A , N/A,299,stable,-0.3,-0.9,0.3
+"Floyd, KY - Johnson, KY(7)",11,586,553.4,620.2,N/A , N/A , N/A,267,stable,-0.6,-1.2,0
+"Calloway, KY(7)",115,585.7,539.6,634.9,N/A , N/A , N/A,126,stable,-0.3,-1.3,0.7
+"Newton (Covington), GA(7)",827,585.7,555.3,617.2,N/A , N/A , N/A,308,stable,-0.5,-1.3,0.4
+"Elbert, GA - Wilkes, GA(7)",253,585.3,536.6,637.6,N/A , N/A , N/A,116,stable,-0.6,-7.6,1.4
+"Williamson, IL - Jackson, IL(7)",331,583.7,563.3,604.7,N/A , N/A , N/A,653,stable,1.9,-0.4,4
+"Logan, WV - Mingo, WV(6)",856,583.4,547.9,620.7,N/A , N/A , N/A,227,stable,-0.4,-1.5,0.7
+"Laurel, KY - Whitley, KY(7)",51,583.1,559.8,607.1,N/A , N/A , N/A,506,falling,-1.6,-8.6,-0.2
+"Mississippi, AR(6)",614,582.7,536.3,632,N/A , N/A , N/A,128,stable,0.4,-0.6,1.4
+"Boyle, KY - Lincoln, KY(7)",27,581.9,555.9,608.9,N/A , N/A , N/A,405,stable,-0.5,-0.9,0
+"Marshall, IA - Tama, IA(7)",679,581.3,546.1,618.2,N/A , N/A , N/A,216,stable,-0.3,-0.6,0.1
+"Clay, MN - Becker, MN(6)",547,580.7,555,607.2,N/A , N/A , N/A,406,stable,0,-0.7,0.8
+"Emmet, IA(7)",626,580.7,499.4,672.7,N/A , N/A , N/A,39,stable,-0.2,-0.9,0.5
+"Big Stone, MN - Traverse, MN(6)",590,580.2,499.9,671.8,N/A , N/A , N/A,41,stable,-0.2,-3,2.7
+"Jackson, CO(6)",771,579.6,383.9,857.4,N/A , N/A , N/A,7,*,*,*,*
+"Madison, KY - Rockcastle, KY(7)",62,579.5,554.3,605.5,N/A , N/A , N/A,431,stable,-0.7,-1.4,0
+"Page, IA - Fremont, IA(7)",644,578.2,531.7,628.1,N/A , N/A , N/A,122,stable,0,-4,0.6
+"Yazoo, MS(6)",533,578.1,520.6,640.2,N/A , N/A , N/A,81,stable,-0.6,-1.4,0.3
+"McCurtain, OK(6)",983,577.9,529.5,629.8,N/A , N/A , N/A,111,stable,-0.6,-2.2,1
+"Okmulgee, OK - Okfuskee, OK(6)",529,577.9,539.6,618.3,N/A , N/A , N/A,177,stable,-0.3,-1.3,0.7
+"Cherokee, GA - Douglas, GA(7)",826,575.8,562.9,588.9,N/A , N/A , N/A,1731,stable,-0.2,-0.6,0.3
+"McCracken, KY - Graves, KY(7)",855,575.8,556.2,595.9,N/A , N/A , N/A,702,stable,-0.4,-1,0.2
+"Jefferson (Louisville), KY - Bullitt, KY(7)",272,575.5,566.7,584.4,N/A , N/A , N/A,3538,falling,-0.8,-1,-0.5
+"Richland, IL - Clay, IL(7)",351,575.3,537.2,615.7,N/A , N/A , N/A,179,stable,-0.7,-1.6,0.2
+"Titus, TX - Morris, TX(7)",465,575.3,541.6,610.6,N/A , N/A , N/A,232,stable,0.3,-0.5,1.1
+"Jackson, OH - Gallia, OH(6)",283,574.8,545.6,605.3,N/A , N/A , N/A,313,stable,0.5,-0.3,1.3
+"Montgomery, IA - Adams, IA(7)",647,574.4,506.7,649.4,N/A , N/A , N/A,58,stable,0.1,-0.5,0.7
+"Dougherty (Albany), GA - Lee, GA(7)",144,574,552.6,596,N/A , N/A , N/A,587,falling,-0.7,-1.2,-0.3
+"Warren, GA - Glascock, GA(7)",152,573.7,495.1,662.9,N/A , N/A , N/A,41,stable,0.6,-0.3,1.7
+"Jefferson (Pine Bluff), AR - Drew, AR(6)",473,573.6,549.5,598.6,N/A , N/A , N/A,454,falling,-2.7,-5.2,-0.7
+"Caswell, NC(6)",132,573.5,521,630.3,N/A , N/A , N/A,97,stable,1.9,-0.6,6.2
+"Tangipahoa, LA - St. Helena, LA(7)",423,573.2,548.6,598.7,N/A , N/A , N/A,445,falling,-0.7,-1.1,-0.2
+"Daviess (Owensboro), KY - Ohio, KY(7)",913,573.2,550.2,596.9,N/A , N/A , N/A,498,stable,-0.3,-0.9,0.3
+"Upson, GA - Lamar, GA(7)",269,573.2,538.7,609.4,N/A , N/A , N/A,224,stable,0,-0.5,0.6
+"East Baton Rouge (Baton Rouge), LA - Livingston, LA(7)",419,572.6,562.1,583.2,N/A , N/A , N/A,2467,falling,-0.7,-1.1,-0.2
+"Pulaski, KY - Wayne, KY(7)",37,572.5,546.1,599.9,N/A , N/A , N/A,380,falling,-0.7,-1.1,-0.2
+"St. Mary, LA(7)",528,572.3,533.8,613,N/A , N/A , N/A,177,stable,-0.6,-1.2,0.1
+"Fulton, NY - Montgomery (Amsterdam), NY(7)",76,572.2,546.2,599.2,N/A , N/A , N/A,393,stable,-0.4,-0.9,0.1
+"Ontario (Geneva), NY - Wayne, NY(7)",21,571.9,555.8,588.5,N/A , N/A , N/A,1034,stable,-0.4,-0.8,0
+"Carroll, GA - Haralson, GA(7)",896,571.8,547.1,597.3,N/A , N/A , N/A,435,stable,0,-0.5,0.6
+"Cabell (Huntington), WV - Wayne, WV(6)",867,571.5,550.2,593.5,N/A , N/A , N/A,575,stable,-0.3,-0.9,0.3
+"Black Hawk (Waterloo), IA - Bremer, IA(7)",557,571,552.8,589.8,N/A , N/A , N/A,782,stable,-0.2,-0.4,0.3
+"Pike, MS - Marion, MS(6)",477,570.9,542.5,600.3,N/A , N/A , N/A,328,stable,-0.6,-1.4,0.2
+"Bolivar, MS - Leflore, MS(6)",487,570.6,539.9,602.6,N/A , N/A , N/A,282,falling,-1,-2.1,-0.1
+"Monmouth, NJ - Ocean (Brick Township), NJ(7)",108,570.2,562.8,577.7,N/A , N/A , N/A,4767,stable,0.5,-1.1,2.5
+"Gaston (Gastonia), NC - Cleveland, NC(6)",218,570.2,557.5,583.1,N/A , N/A , N/A,1660,stable,1,-0.2,3.1
+"Pontotoc, MS - Union, MS(6)",482,570,538.5,603,N/A , N/A , N/A,259,stable,0.3,-0.6,1.2
+"Erie (Buffalo), NY - Monroe, NY(7)",54,569.9,563.9,575.9,N/A , N/A , N/A,7449,stable,0,-0.8,1.2
+"Penobscot (Bangor), ME - Hancock, ME(6)",17,569.1,553,585.5,N/A , N/A , N/A,1053,stable,-1.1,-2.6,0.3
+"Pennington, MN - Marshall, MN(6)",604,568.8,523.8,616.9,N/A , N/A , N/A,127,stable,0.3,-0.6,1.2
+"Camden (Camden), NJ - Burlington, NJ(7)",23,568.7,561,576.5,N/A , N/A , N/A,4442,falling,-0.9,-1.2,-0.5
+"Floyd, IA - Chickasaw, IA(7)",634,568.3,521,619.1,N/A , N/A , N/A,115,stable,0.2,-0.3,0.8
+"St. Tammany (Slidell), LA - Washington, LA(7)",500,568.1,552.4,584.1,N/A , N/A , N/A,1077,falling,-0.6,-1.1,-0.1
+"Lee, IA(7)",982,567.1,522.8,614.4,N/A , N/A , N/A,133,stable,-0.4,-1,0.2
+"Brunswick, VA - Greensville, VA(6)",130,566.9,522.7,614,N/A , N/A , N/A,129,stable,-0.6,-1.8,0.6
+"Crow Wing, MN - Cass, MN(6)",612,566.8,546.9,587.4,N/A , N/A , N/A,694,stable,1.9,-0.1,5.6
+"Calhoun (Anniston), AL - Cleburne, AL(6)",177,566.5,542.1,591.8,N/A , N/A , N/A,440,rising,2.7,0.6,6.5
+"Bourbon (Paris), KY - Nicholas, KY(7)",102,565.9,516.6,619,N/A , N/A , N/A,103,stable,-0.1,-1,0.8
+"Rapides (Alexandria), LA - Avoyelles, LA(7)",450,565.9,547.8,584.4,N/A , N/A , N/A,783,stable,-0.5,-0.9,0
+"Hall, GA - Habersham, GA(7)",157,565.6,552,579.4,N/A , N/A , N/A,1399,stable,-0.3,-0.7,0.1
+"Atlantic (Atlantic City), NJ - Cape May, NJ(7)",64,564.6,551,578.4,N/A , N/A , N/A,1439,falling,-1.1,-1.4,-0.8
+"Vermilion, IL - Edgar, IL(7)",333,564.6,537.6,592.6,N/A , N/A , N/A,352,stable,-0.4,-0.9,0.1
+"Madison, LA(7)",431,564.2,478.1,661.8,N/A , N/A , N/A,33,stable,0.5,-1.2,2.3
+"Peoria (Peoria), IL - Tazewell, IL(7)",277,564.1,550.2,578.3,N/A , N/A , N/A,1314,falling,-0.8,-1.3,-0.4
+"Wilkinson, MS(6)",525,563.2,475.8,662.8,N/A , N/A , N/A,32,stable,-0.8,-3.7,2.1
+"Adams, IL - Pike, IL(7)",353,562.9,534.2,592.9,N/A , N/A , N/A,306,stable,1.7,-5.4,7.5
+"Forrest, MS - Lamar, MS(6)",409,562.7,541.1,585,N/A , N/A , N/A,538,stable,-0.2,-0.8,0.5
+"Wayne, NC - Lenoir, NC(6)",238,562.6,545,580.6,N/A , N/A , N/A,828,stable,-0.1,-0.8,0.5
+"Lewis, KY(7)",337,562.5,491.5,641.7,N/A , N/A , N/A,49,stable,0.4,-0.7,1.7
+"Jefferson (Steubenville), OH - Harrison, OH(6)",360,562.1,533.6,592,N/A , N/A , N/A,322,stable,2.6,-5.2,9.5
+"Henry, TN - Carroll, TN(6)",882,561.1,532.3,591.1,N/A , N/A , N/A,312,stable,-0.9,-2.9,0.1
+"Marion (Ocala), FL - Citrus, FL(6)",233,560.8,550.3,571.4,N/A , N/A , N/A,2688,falling,-0.8,-1.1,-0.5
+"Woodbury (Sioux City), IA - Plymouth, IA(7)",560,560.6,540,581.7,N/A , N/A , N/A,597,stable,-0.2,-1.2,0.9
+"Chautauqua, NY(7)",106,560.2,537.3,583.8,N/A , N/A , N/A,494,stable,-2.4,-4.4,0.4
+"Carroll, KY - Trimble, KY(7)",914,560.1,500.1,625.7,N/A , N/A , N/A,68,stable,-0.1,-1.1,1
+"Kent, MD(6)",124,559.7,504.2,620.5,N/A , N/A , N/A,87,stable,-0.1,-1.7,1.5
+"Wicomico, MD - Worcester, MD(6)",852,559.5,539.9,579.7,N/A , N/A , N/A,662,stable,-0.2,-1.4,2.3
+"Cumberland, NJ(7)",127,559.2,536.5,582.7,N/A , N/A , N/A,477,stable,-0.4,-0.9,0.1
+"Scioto, OH - Ross, OH(6)",916,558.8,538.8,579.4,N/A , N/A , N/A,626,stable,0,-0.6,0.5
+"Onondaga (Syracuse), NY - Oswego, NY(7)",56,558.5,547.9,569.1,N/A , N/A , N/A,2309,stable,-0.1,-0.8,1.1
+"Racine (Racine), WI - Kenosha, WI(6)",382,558.2,543.5,573.3,N/A , N/A , N/A,1180,stable,0.1,-0.3,0.5
+"Pearl River, MS(6)",936,558,522.6,595.2,N/A , N/A , N/A,203,stable,-0.9,-1.9,0.1
+"Isanti (Cambridge), MN - Mille Lacs, MN(6)",603,557.2,528.4,587.3,N/A , N/A , N/A,301,rising,3.6,0.4,9.2
+"Claiborne, TN(6)",878,557.2,511.4,606.2,N/A , N/A , N/A,120,falling,-7.5,-14.5,-0.9
+"Albany (Albany), NY - Rensselaer, NY(7)",10,556.9,544.2,569.9,N/A , N/A , N/A,1557,falling,-1.2,-3.5,-0.7
+"Baldwin, GA(7)",828,556.9,516.4,599.9,N/A , N/A , N/A,149,stable,-0.3,-1.2,0.6
+"Luzerne (Wilkes-Barre), PA - Columbia, PA(6)",78,556.1,543.3,569.1,N/A , N/A , N/A,1530,falling,-0.4,-0.7,-0.1
+"Pottawattamie (Council Bluffs), IA - Harrison, IA(7)",596,555.5,534.3,577.3,N/A , N/A , N/A,556,stable,-0.2,-0.6,0.2
+"Alamance, NC(6)",267,555.1,533.7,577.1,N/A , N/A , N/A,536,stable,1.2,-0.7,4.4
+"Washington, MS - Sharkey, MS(6)",488,554.7,514.8,597,N/A , N/A , N/A,160,stable,-0.9,-3.4,0.2
+"Polk, MN(6)",584,554.6,507.9,604.7,N/A , N/A , N/A,111,stable,0,-1.3,1.3
+"Mitchell, IA(7)",665,553.9,475.4,642.6,N/A , N/A , N/A,40,stable,1.1,-0.1,5.7
+"Kenton (Covington), KY - Campbell, KY(7)",2,553.8,540,567.9,N/A , N/A , N/A,1342,falling,-0.8,-1.1,-0.4
+"Appanoose, IA - Davis, IA(7)",649,553.8,500.3,612,N/A , N/A , N/A,85,stable,-0.2,-0.8,0.5
+"Schuylkill, PA - Northumberland, PA(6)",8,553.8,540,567.9,N/A , N/A , N/A,1288,stable,-0.3,-0.9,0.2
+"Calcasieu (Lake Charles), LA - Vernon, LA(7)",470,553.7,538,569.8,N/A , N/A , N/A,1000,falling,-0.9,-1.2,-0.5
+"Oneida (Utica), NY - Madison, NY(7)",59,553.4,539.7,567.5,N/A , N/A , N/A,1317,falling,-0.6,-1,-0.3
+"Bedford, TN(6)",260,553.3,512.6,596.4,N/A , N/A , N/A,148,stable,0.6,-0.6,1.9
+"Terrebonne (Houma), LA - Lafourche, LA(7)",467,553.2,534.7,572.3,N/A , N/A , N/A,719,stable,-1.6,-5,0
+"Onslow, NC - Craven, NC(6)",242,552.7,538.1,567.6,N/A , N/A , N/A,1169,falling,-0.9,-1.4,-0.4
+"Ouachita (Monroe), LA - Morehouse, LA(7)",443,552.3,534.5,570.6,N/A , N/A , N/A,775,falling,-0.6,-1.2,-0.1
+"Wichita (Wichita Falls), TX - Montague, TX(7)",420,552.3,532.7,572.4,N/A , N/A , N/A,635,rising,2,0.7,4.9
+"Sioux, IA(7)",672,552.2,505.5,602.1,N/A , N/A , N/A,108,falling,-0.8,-1.4,-0.2
+"Washington, GA - Jefferson, GA(7)",250,552.1,506.5,600.9,N/A , N/A , N/A,119,stable,-0.3,-0.8,0.3
+"Bibb (Macon), GA - Houston, GA(7)",193,551.9,538.5,565.5,N/A , N/A , N/A,1387,falling,-0.7,-1,-0.3
+"Duval (Jacksonville), FL - Clay, FL(6)",158,551.6,543.5,559.7,N/A , N/A , N/A,3913,falling,-1.2,-2.8,-0.8
+"Cape Girardeau, MO - Butler, MO(6)",944,551,535.2,567.2,N/A , N/A , N/A,965,stable,0,-0.5,0.5
+"Jones, MS - Wayne, MS(6)",455,550.6,525.9,576.4,N/A , N/A , N/A,397,stable,0.1,-0.6,0.8
+"Minnehaha (Sioux Falls), SD - Lincoln, SD(6)",939,550.2,533.3,567.5,N/A , N/A , N/A,889,falling,-0.8,-1.2,-0.3
+"Guthrie, IA - Greene, IA(7)",617,549.9,494.9,610.1,N/A , N/A , N/A,80,stable,0.2,-0.3,0.7
+"Howard, IA(7)",552,549.8,471.3,638.8,N/A , N/A , N/A,38,stable,0.2,-1,1.4
+"Union, IL - Alexander, IL(7)",563,549.5,504.6,597.8,N/A , N/A , N/A,119,stable,-0.2,-1.2,0.8
+"Webster, IA - Humboldt, IA(7)",585,548.5,513.7,585.2,N/A , N/A , N/A,200,falling,-0.6,-1,-0.2
+"Letcher, KY(7)",123,548.4,493,608.8,N/A , N/A , N/A,80,stable,-0.7,-1.7,0.2
+"Lewis and Clark, MT - Jefferson, MT(6)",721,547.4,520,576.1,N/A , N/A , N/A,336,stable,1.1,-1.2,5
+"Lyon, IA(7)",544,547.4,473.4,630.3,N/A , N/A , N/A,41,stable,-0.3,-0.9,0.4
+"Caddo (Shreveport), LA - Bossier, LA(7)",416,547.2,534.9,559.8,N/A , N/A , N/A,1579,falling,-2.5,-5.2,-0.2
+"St. Johns (St. Augustine), FL - Putnam, FL(6)",251,547,533.4,560.9,N/A , N/A , N/A,1314,falling,-0.8,-1.2,-0.3
+"Harrison (Biloxi), MS - Hancock, MS(6)",456,546.9,530.1,564.1,N/A , N/A , N/A,866,stable,-0.5,-1.2,0.2
+"Madison (Alton), IL - Jersey, IL(7)",299,546.5,531.1,562.1,N/A , N/A , N/A,1028,falling,-0.7,-1.2,-0.2
+"Franklin, KY - Anderson, KY(7)",114,546.2,517,576.7,N/A , N/A , N/A,283,falling,-1,-1.4,-0.6
+"St. Lawrence, NY - Jefferson, NY(7)",80,545.5,528.3,563.2,N/A , N/A , N/A,803,falling,-1.1,-1.6,-0.5
+"Grenada, MS - Montgomery, MS(6)",502,545.3,505.7,587.5,N/A , N/A , N/A,152,stable,-8.6,-15.6,0
+"Phillips, AR(6)",537,545.1,480.8,616.1,N/A , N/A , N/A,57,stable,1.2,0,2.5
+"Milwaukee (Milwaukee), WI - Waukesha, WI(6)",280,545.1,537.9,552.2,N/A , N/A , N/A,4799,stable,0.8,-0.2,2.2
+"Fulton, KY(7)",181,544.9,448.2,657.9,N/A , N/A , N/A,24,stable,-0.4,-2.1,1.3
+"Strafford (Rochester), NH(6)",879,544.9,520.1,570.5,N/A , N/A , N/A,395,stable,-0.9,-1.7,0
+"Highland, OH - Clinton, OH(6)",372,544.6,516,574.3,N/A , N/A , N/A,291,stable,-0.1,-1,0.8
+"Brevard (Palm Bay), FL - Indian River, FL(6)",237,544.1,535.5,552.9,N/A , N/A , N/A,3421,falling,-0.7,-1.1,-0.3
+"Effingham, IL - Fayette, IL(7)",363,544,509.3,580.4,N/A , N/A , N/A,194,falling,-1,-1.7,-0.3
+"Moore, NC - Richmond, NC(6)",205,543.9,526.4,562,N/A , N/A , N/A,762,stable,-0.7,-1.4,0
+"Clallam, WA - Jefferson, WA(7)",785,543.6,522,566,N/A , N/A , N/A,586,stable,-0.3,-0.7,0.1
+"Suffolk, NY - Nassau, NY(7)",83,543.6,538.6,548.6,N/A , N/A , N/A,9612,falling,-1.1,-1.9,-0.8
+"Cerro Gordo, IA - Kossuth, IA(7)",556,543.3,518.2,569.5,N/A , N/A , N/A,385,stable,0.2,-0.1,0.5
+"Lowndes, GA - Brooks, GA(7)",180,543.1,521.2,565.7,N/A , N/A , N/A,493,stable,-0.5,-1.1,0
+"Morgan, GA - Greene, GA(7)",164,542.9,503.6,584.9,N/A , N/A , N/A,162,stable,-0.4,-0.9,0.3
+"Wapello, IA - Mahaska, IA(7)",589,542.7,516.9,569.7,N/A , N/A , N/A,357,falling,-0.3,-0.6,-0.1
+"Jefferson, IL - Wayne, IL(7)",335,542.7,508.7,578.5,N/A , N/A , N/A,200,falling,-0.7,-1.4,-0.1
+"Hinds (Jackson), MS - Rankin, MS(6)",411,542.6,530.8,554.6,N/A , N/A , N/A,1738,stable,0,-0.6,0.9
+"Colquitt, GA(7)",254,542.2,501,586,N/A , N/A , N/A,136,falling,-1.2,-2.2,-0.1
+"Marinette, WI - Florence, WI(6)",912,541.7,507.7,577.8,N/A , N/A , N/A,215,stable,-0.1,-0.8,0.6
+"Nemaha, NE(6)",687,541.5,448.1,650.1,N/A , N/A , N/A,26,stable,0.4,-2,2.9
+"Smith (Tyler), TX - Henderson, TX(7)",441,541.3,528.7,554.3,N/A , N/A , N/A,1466,stable,0.7,-1.5,2.8
+"Otter Tail, MN - Grant, MN(6)",582,541.1,511.9,571.7,N/A , N/A , N/A,289,stable,-0.4,-1.1,0.2
+"Gregg (Longview), TX - Rusk, TX(7)",454,540.9,523.3,559,N/A , N/A , N/A,752,stable,-2.1,-4.3,0.4
+"Mason, WV(6)",904,540.8,492.5,593.1,N/A , N/A , N/A,101,stable,-0.6,-1.6,0.4
+"Saratoga, NY - Schenectady (Schenectady), NY(7)",88,540.6,529.3,552.1,N/A , N/A , N/A,1858,falling,-0.8,-1.2,-0.3
+"Brown, MN - Renville, MN(6)",602,540.6,507.4,575.6,N/A , N/A , N/A,214,stable,0.1,-0.6,0.9
+"Roosevelt, MT - Valley, MT(6)",779,540.3,477.7,609.1,N/A , N/A , N/A,59,stable,-0.4,-1.7,0.9
+"Thomas, GA - Mitchell, GA(7)",178,540.3,512.6,569.1,N/A , N/A , N/A,305,stable,2.7,-1.6,5.4
+"Harford, MD - Cecil, MD(6)",875,539.6,525.2,554.4,N/A , N/A , N/A,1155,falling,-3.2,-5.5,-0.6
+"Alachua (Gainesville), FL - Columbia, FL(6)",159,539.4,527.8,551.3,N/A , N/A , N/A,1727,falling,-1.4,-3,-1
+"Madison, MO(6)",663,539.3,470.8,615.9,N/A , N/A , N/A,47,stable,-0.8,-2.6,1.2
+"Ramsey, ND - Benson, ND(6)",655,539.1,482.5,600.9,N/A , N/A , N/A,72,stable,-0.7,-2.3,0.9
+"Lowndes, MS - Clay, MS(6)",934,539,509.4,570,N/A , N/A , N/A,268,falling,-2,-4.3,-1
+"Lehigh (Allentown), PA - Northampton, PA(6)",84,538.8,530.1,547.6,N/A , N/A , N/A,3108,falling,-0.8,-1.1,-0.4
+"Fayette (Lexington-Fayette), KY - Jessamine, KY(7)",18,538.7,526.9,550.7,N/A , N/A , N/A,1701,falling,-1,-1.3,-0.7
+"La Salle, IL - Livingston, IL(7)",336,538.3,519.7,557.5,N/A , N/A , N/A,674,falling,-1.4,-5.1,-0.7
+"Robeson, NC - Columbus, NC(6)",207,538,520.3,556.1,N/A , N/A , N/A,757,falling,-0.8,-1.3,-0.4
+"Gilmer, GA - Fannin, GA(7)",173,537.9,507.4,570.1,N/A , N/A , N/A,274,stable,0.6,-0.1,1.3
+"Brookings, SD - Kingsbury, SD(6)",610,537.9,491.8,587.1,N/A , N/A , N/A,107,stable,-0.3,-1.2,0.6
+"Scott (Davenport), IA - Muscatine, IA(7)",641,537.5,519,556.4,N/A , N/A , N/A,687,stable,-0.4,-0.7,0
+"Wood (Parkersburg), WV - Jackson, WV(6)",863,537.4,517.5,558,N/A , N/A , N/A,594,stable,0.7,-0.6,2.8
+"Rabun, GA(7)",268,537.4,481.8,599,N/A , N/A , N/A,79,stable,0.8,-0.2,1.9
+"Clark (Springfield), OH - Champaign, OH(6)",346,537.2,517.7,557.3,N/A , N/A , N/A,609,stable,-1.9,-4.7,0.3
+"Des Moines, IA - Henry, IA(7)",917,537.1,504.6,571.4,N/A , N/A , N/A,216,falling,-0.8,-3.7,-0.3
+"Christian (Hopkinsville), KY - Hopkins, KY(7)",45,537.1,517.8,556.9,N/A , N/A , N/A,621,falling,-1,-1.4,-0.7
+"Richmond (South Augusta), GA - Columbia, GA(7)",830,536.9,522.6,551.5,N/A , N/A , N/A,1175,stable,-1.9,-4.9,0.7
+"Guilford (Greensboro), NC - Davidson, NC(6)",186,536.9,528,546,N/A , N/A , N/A,2916,falling,-1,-3,-0.6
+"Mercer, NJ(7)",126,536.8,522.5,551.4,N/A , N/A , N/A,1124,falling,-1,-1.5,-0.6
+"Hillsborough (Tampa), FL - Pinellas, FL(6)",227,536.8,532.2,541.3,N/A , N/A , N/A,11178,falling,-0.8,-1,-0.5
+"Licking (Newark), OH - Knox, OH(6)",388,536.7,519.3,554.6,N/A , N/A , N/A,771,stable,-0.5,-2.4,0.8
+"Lamar, TX - Red River, TX(7)",931,536.7,506.1,568.8,N/A , N/A , N/A,244,falling,-1.1,-1.7,-0.5
+"Catawba (Hickory), NC - Burke, NC(6)",229,536.6,522.4,551.1,N/A , N/A , N/A,1164,stable,-0.3,-0.8,0.2
+"Lawrence, TN - Wayne, TN(6)",232,536.1,505.2,568.6,N/A , N/A , N/A,237,stable,0,-0.9,0.8
+"Henry, GA - Forsyth, GA(7)",825,535.7,525.3,546.3,N/A , N/A , N/A,2181,falling,-0.7,-1,-0.4
+"Grayson (Sherman), TX - Fannin, TX(7)",930,535.5,515.4,556.2,N/A , N/A , N/A,568,falling,-0.7,-1.2,-0.3
+"Beltrami, MN - Clearwater, MN(6)",597,535.4,498.9,574,N/A , N/A , N/A,171,stable,-0.6,-1.5,0.4
+"Butler, AL(6)",259,535.4,475.4,601.3,N/A , N/A , N/A,63,stable,0,-1.7,1.6
+"Beadle, SD - Hand, SD(6)",600,535.3,485,589.7,N/A , N/A , N/A,91,stable,0.5,-14.5,9.6
+"Stephens, GA - Hart, GA(7)",216,535.2,505.9,565.9,N/A , N/A , N/A,270,stable,-0.3,-0.8,0.2
+"St. Louis (Duluth), MN - Itasca, MN(6)",289,535.2,521.7,549,N/A , N/A , N/A,1310,stable,-0.4,-0.8,0.1
+"Ouachita, AR - Dallas, AR(6)",496,535.2,488.1,585.9,N/A , N/A , N/A,105,stable,-0.8,-2.6,1
+"Cattaraugus, NY - Allegany, NY(7)",35,534.7,511.9,558.4,N/A , N/A , N/A,453,falling,-0.6,-1,-0.2
+"Cabarrus (Concord), NC - Rowan, NC(6)",235,533.7,520.2,547.5,N/A , N/A , N/A,1274,falling,-1.2,-1.9,-0.6
+"Tift, GA - Ben Hill, GA(7)",189,533.2,501.9,566,N/A , N/A , N/A,229,falling,-0.8,-1.4,-0.1
+"Pipestone, MN - Rock, MN(6)",984,533,476.4,595,N/A , N/A , N/A,68,stable,-0.6,-1.7,0.5
+"Allegany (Cumberland), MD - Garrett, MD(6)",1,533,508.3,558.6,N/A , N/A , N/A,371,stable,-0.2,-1,0.7
+"Linn (Cedar Rapids), IA - Johnson, IA(7)",545,532.5,520,545.2,N/A , N/A , N/A,1463,rising,1.3,0.3,3.1
+"Cumberland (Fayetteville), NC - Sampson, NC(6)",262,532.3,516.9,548.1,N/A , N/A , N/A,965,stable,-0.3,-0.7,0.2
+"Crawford, IL - Lawrence, IL(7)",310,531.8,488.8,577.8,N/A , N/A , N/A,118,stable,-0.3,-1.5,0.9
+"New Hanover (Wilmington), NC - Brunswick, NC(6)",168,531.6,519.4,544.1,N/A , N/A , N/A,1608,stable,0.2,-0.2,0.6
+"Wayne, GA - Appling, GA(7)",230,531.5,493.5,571.7,N/A , N/A , N/A,155,stable,-0.8,-1.4,0
+"Marion, SC - Dillon, SC(6)",199,531.4,496.2,568.7,N/A , N/A , N/A,186,stable,-0.9,-1.8,0.1
+"Choctaw, OK(6)",438,531.1,465.8,603.8,N/A , N/A , N/A,52,stable,0.6,-3.6,5.5
+"Yellowstone (Billings), MT - Big Horn, MT(6)",691,530.9,512.8,549.5,N/A , N/A , N/A,698,falling,-5.9,-9.1,-2.6
+"Iredell (Statesville), NC - Alexander, NC(6)",192,530.8,512.8,549.3,N/A , N/A , N/A,709,stable,0.1,-1.2,2.1
+"Belmont, OH - Monroe, OH(6)",24,530.7,503.3,559.3,N/A , N/A , N/A,304,rising,3.1,0.6,8.1
+"Rock (Janesville), WI - Green, WI(6)",326,530.7,512.8,549.1,N/A , N/A , N/A,711,stable,-0.4,-0.9,0.2
+"St. Clair (Belleville), IL - Clinton, IL(7)",325,530.7,516.4,545.3,N/A , N/A , N/A,1125,falling,-1,-1.4,-0.7
+"Kanawha (Charleston), WV - Putnam, WV(6)",7,530.6,516.1,545.5,N/A , N/A , N/A,1100,falling,-1,-1.5,-0.5
+"Floyd, GA - Bartow, GA(7)",154,530.6,515.3,546.2,N/A , N/A , N/A,980,falling,-1,-1.4,-0.5
+"Fairfield (Lancaster), OH - Athens, OH(6)",368,530.1,513.2,547.4,N/A , N/A , N/A,796,stable,-0.3,-0.9,0.2
+"Sumter, GA - Crisp, GA(7)",197,530,501.6,559.7,N/A , N/A , N/A,278,stable,-0.4,-1.1,0.2
+"Grant, ND(6)",670,530,387,720.2,N/A , N/A , N/A,12,stable,-0.1,-4.7,4.4
+"Maury, TN - Giles, TN(6)",208,529.7,509.6,550.4,N/A , N/A , N/A,572,stable,-0.3,-0.9,0.4
+"Escambia (Pensacola), FL - Okaloosa, FL(6)",892,529.6,520,539.4,N/A , N/A , N/A,2486,stable,-0.4,-0.9,0.1
+"Winn, LA(7)",530,529.4,463.2,603,N/A , N/A , N/A,49,stable,-1.4,-3.2,0.2
+"Lincoln, LA - Union, LA(7)",439,529.1,502,557.4,N/A , N/A , N/A,302,stable,-0.6,-1.1,0
+"Tompkins, NY - Cortland, NY(7)",105,529.1,506.1,552.9,N/A , N/A , N/A,428,stable,2.9,-0.1,7.3
+"Columbiana, OH(6)",380,528.9,504.4,554.5,N/A , N/A , N/A,379,stable,1.2,-1.1,5.2
+"Broome (Binghamton), NY - Tioga, NY(7)",19,528.6,512.4,545.3,N/A , N/A , N/A,867,stable,1.5,-0.5,5
+"Nash, NC - Halifax, NC(6)",214,528.5,510.7,546.8,N/A , N/A , N/A,729,falling,-0.8,-1.2,-0.4
+"Harrison (Marshall), TX - Cass, TX(7)",485,528.3,503.8,553.8,N/A , N/A , N/A,377,stable,2,-0.5,6.1
+"Bell (Killeen), TX - Coryell, TX(7)",452,528.2,514.1,542.5,N/A , N/A , N/A,1135,falling,-0.8,-1.3,-0.3
+"Muscogee (Columbus), GA - Harris, GA(7)",893,528,510.7,545.8,N/A , N/A , N/A,754,falling,-0.7,-1.2,-0.2
+"Lycoming (Williamsport), PA - Clinton, PA(6)",44,528,507.3,549.3,N/A , N/A , N/A,526,stable,-0.5,-1.2,0.1
+"Greene, TN - Cocke, TN(6)",252,527.6,503.6,552.6,N/A , N/A , N/A,398,stable,0.2,-0.5,0.8
+"Morgan (Decatur), AL - Lawrence, AL(6)",185,527.6,506.5,549.3,N/A , N/A , N/A,505,falling,-1.2,-1.9,-0.4
+"Ramsey (St. Paul), MN - Dakota, MN(6)",286,527.5,519.7,535.5,N/A , N/A , N/A,3670,rising,1,0.2,2.2
+"Columbia, NY - Greene, NY(7)",881,527.2,504.9,550.4,N/A , N/A , N/A,465,falling,-1,-1.6,-0.3
+"Marion, MO - Pike, MO(6)",920,526.8,495.6,559.6,N/A , N/A , N/A,225,stable,-0.4,-1,0.2
+"Juneau, WI - Adams, WI(6)",391,526.7,494,561.5,N/A , N/A , N/A,217,stable,-0.6,-1.4,0.2
+"Berks, PA(6)",139,526.4,513.6,539.5,N/A , N/A , N/A,1356,falling,-0.6,-1,-0.3
+"Harlan, KY - Bell, KY(7)",96,526.2,490.7,563.8,N/A , N/A , N/A,177,stable,-0.4,-1.3,0.5
+"Audrain, MO - Montgomery, MO(6)",666,526.1,488.2,566.4,N/A , N/A , N/A,156,falling,-9.8,-14.2,-7.5
+"Wayne (Detroit), MI - Oakland, MI(6)",274,526,521.6,530.4,N/A , N/A , N/A,11883,falling,-1.7,-2,-1.4
+"Jasper (Joplin), MO - Newton, MO(6)",938,525.6,507.3,544.4,N/A , N/A , N/A,655,stable,0.3,-0.5,1.2
+"Cheshire, NH(6)",90,525.1,496.3,555.3,N/A , N/A , N/A,276,stable,-0.2,-1.2,0.8
+"Steuben, NY - Chemung (Elmira), NY(7)",65,525,507.2,543.4,N/A , N/A , N/A,706,falling,-0.8,-1.2,-0.4
+"Forsyth (Winston-Salem), NC - Surry, NC(6)",149,524.9,513.7,536.1,N/A , N/A , N/A,1802,stable,0.8,-0.2,2
+"Yancey, NC - Avery, NC(6)",240,524.6,492.4,558.7,N/A , N/A , N/A,213,stable,3.2,0,7
+"Crittenden (West Memphis), AR - St. Francis, AR(6)",499,524.1,496.8,552.6,N/A , N/A , N/A,293,rising,2.5,1.3,4.7
+"Sussex, DE - Kent, DE(6)",3,524,512,536.4,N/A , N/A , N/A,1624,falling,-1.9,-2.4,-1.5
+"Whatcom, WA(7)",815,523.9,506.2,542.2,N/A , N/A , N/A,702,rising,1.9,0.3,4.8
+"Mecklenburg (Charlotte), NC - Union, NC(6)",167,523.9,515.3,532.5,N/A , N/A , N/A,3177,falling,-0.7,-1.2,-0.4
+"Harrison, WV - Upshur, WV(6)",92,523.7,502.7,545.5,N/A , N/A , N/A,496,stable,-0.5,-1.1,0.2
+"Glynn, GA - Camden, GA(7)",890,523.7,504.3,543.6,N/A , N/A , N/A,590,stable,0.6,-0.9,3.6
+"Wabash, IL(7)",273,523.5,452.5,603.6,N/A , N/A , N/A,43,stable,-1.1,-2.3,0.1
+"Winneshiek, IA(7)",395,523.5,469.5,582.7,N/A , N/A , N/A,77,stable,-0.2,-0.9,0.6
+"Lucas (Toledo), OH - Wood, OH(6)",903,523,512.4,533.9,N/A , N/A , N/A,1973,stable,-0.8,-4.5,0.5
+"Clarke (Athens), GA - Barrow, GA(7)",829,522.8,507.4,538.6,N/A , N/A , N/A,940,falling,-0.8,-1,-0.5
+"Madison (Jackson), TN - Gibson, TN(6)",188,522.7,506.6,539.2,N/A , N/A , N/A,849,falling,-5.6,-9.2,-3.7
+"Whitfield, GA - Murray, GA(7)",145,522.6,499.3,546.8,N/A , N/A , N/A,400,stable,2,-0.8,6.8
+"Dubuque (Dubuque), IA - Jackson, IA(7)",909,522.6,498.7,547.5,N/A , N/A , N/A,383,stable,-0.3,-2.1,1.5
+"OBrien, IA - Osceola, IA(7)",652,522.3,468.8,580.8,N/A , N/A , N/A,76,stable,-0.6,-1.2,0
+"Olmsted (Rochester), MN - Winona, MN(6)",941,522.1,508,536.5,N/A , N/A , N/A,1092,falling,-3.6,-5.3,-2.2
+"Alcorn, MS - Tishomingo, MS(6)",498,521.7,487.3,558,N/A , N/A , N/A,181,stable,-0.6,-1.9,0.7
+"Hamilton (Chattanooga), TN - Marion, TN(6)",885,521.7,508.6,534.9,N/A , N/A , N/A,1297,falling,-1.4,-2.8,-0.9
+"Lincoln, MS - Copiah, MS(6)",511,521.7,488.3,556.8,N/A , N/A , N/A,197,falling,-1.5,-2.8,-0.3
+"Richland (Mansfield), OH - Ashland, OH(6)",369,521.6,502.6,541.1,N/A , N/A , N/A,602,rising,1.1,0.2,3.8
+"Sumner (Hendersonville), TN - Wilson, TN(6)",231,521.2,507.5,535.3,N/A , N/A , N/A,1178,falling,-1,-1.5,-0.6
+"Saline, IL - Gallatin, IL(7)",384,521,481.8,563,N/A , N/A , N/A,141,stable,-0.8,-1.6,0
+"Crawford, PA(6)",117,520.8,493.9,548.9,N/A , N/A , N/A,311,falling,-0.9,-1.5,-0.3
+"Warren, KY - Logan, KY(7)",29,520.8,502.2,539.8,N/A , N/A , N/A,633,falling,-0.9,-1.5,-0.3
+"Anderson (Oak Ridge), TN - Roane, TN(6)",226,520.7,504.3,537.6,N/A , N/A , N/A,815,falling,-1.5,-2.7,-0.9
+"Pierce, WA(7)",794,520.7,511.1,530.4,N/A , N/A , N/A,2411,stable,-0.4,-0.9,0.6
+"Douglas (Omaha), NE - Sarpy, NE(6)",542,520.6,511,530.4,N/A , N/A , N/A,2378,falling,-2.3,-3.9,-1.2
+"Clinton, NY - Franklin, NY(7)",81,520.6,501.4,540.4,N/A , N/A , N/A,596,falling,-1.1,-1.6,-0.6
+"Ware, GA - Pierce, GA(7)",174,520.4,489.3,553.2,N/A , N/A , N/A,220,falling,-0.9,-1.5,-0.3
+"Oglala Lakota, SD - Bennett, SD(6)",957,520.2,436.6,614.3,N/A , N/A , N/A,31,stable,-1.1,-2.6,0.6
+"Walworth, WI - Jefferson, WI(6)",387,520,501.3,539.3,N/A , N/A , N/A,632,stable,-0.6,-1.2,0.1
+"Knox (Knoxville), TN - Blount, TN(6)",147,519.9,511.2,528.8,N/A , N/A , N/A,2885,falling,-1.3,-2.2,-0.7
+"Polk (Des Moines), IA - Dallas, IA(7)",546,519.7,509.3,530.1,N/A , N/A , N/A,2053,falling,-0.4,-0.6,-0.2
+"Will (Joliet), IL - Grundy, IL(7)",303,519.6,509,530.4,N/A , N/A , N/A,1990,falling,-1.3,-2.1,-0.9
+"Polk (Lakeland), FL - Highlands, FL(6)",202,519.5,511.1,528,N/A , N/A , N/A,3082,falling,-1.3,-1.6,-0.9
+"Davison, SD - Charles Mix, SD(6)",615,519.1,483.6,556.5,N/A , N/A , N/A,171,stable,-1,-2.2,0.1
+"Oneida, WI - Vilas, WI(6)",905,519,494.1,545.2,N/A , N/A , N/A,378,falling,-2.3,-9.1,-0.7
+"Orleans (New Orleans), LA - Jefferson, LA(7)",403,518.7,510.1,527.5,N/A , N/A , N/A,2974,falling,-0.8,-1.1,-0.6
+"Lucas, IA - Wayne, IA(7)",645,518.6,458.2,585.5,N/A , N/A , N/A,58,falling,-0.7,-1.3,-0.1
+"Burleigh (Bismarck), ND - Morton, ND(6)",543,518.4,498,539.5,N/A , N/A , N/A,514,stable,-0.2,-0.7,0.3
+"Cuyahoga (Cleveland), OH - Lake, OH(6)",288,518.4,512,524.8,N/A , N/A , N/A,5468,stable,0.1,-0.7,1.5
+"Adams, MS - Jefferson, MS(6)",929,517.7,480.4,557.3,N/A , N/A , N/A,155,stable,-1.5,-8.8,1
+"Hamblen (Morristown), TN - Jefferson, TN(6)",217,517.6,496.9,539,N/A , N/A , N/A,510,stable,-0.8,-4.9,0.1
+"Shawano, WI - Langlade, WI(6)",379,517.3,487.8,548.3,N/A , N/A , N/A,253,stable,-0.7,-1.4,0
+"York, ME(6)",98,517.3,500.3,534.7,N/A , N/A , N/A,765,falling,-1.3,-1.9,-0.8
+"Kankakee (Kankakee), IL - Iroquois, IL(7)",343,517.2,495.1,539.9,N/A , N/A , N/A,441,falling,-1.1,-1.6,-0.6
+"Custer, NE - Valley, NE(6)",594,517,464.1,574.9,N/A , N/A , N/A,78,stable,-0.7,-1.9,0.6
+"Cambria, PA - Blair (Altoona), PA(6)",57,516.9,504.5,529.6,N/A , N/A , N/A,1420,falling,-1.1,-1.4,-0.8
+"Massac, IL - Johnson, IL(7)",12,516.8,472.3,564.7,N/A , N/A , N/A,103,stable,-0.7,-1.8,0.3
+"Lorain (Lorain), OH - Erie, OH(6)",366,516.7,505.4,528.2,N/A , N/A , N/A,1705,stable,0,-0.6,1.3
+"Flathead, MT - Lincoln, MT(6)",728,516.4,494.7,539,N/A , N/A , N/A,474,stable,-0.6,-1.2,0
+"Morris (Parsippany-Troy Hills Township), NJ - Sussex, NJ(7)",87,516.1,506,526.4,N/A , N/A , N/A,2109,falling,-1.2,-1.7,-0.6
+"Cobb (Marietta), GA(7)",190,516,505,527.1,N/A , N/A , N/A,1879,falling,-0.8,-1,-0.4
+"Fillmore, NE - Thayer, NE(6)",658,515.9,445.1,596.1,N/A , N/A , N/A,43,stable,-0.4,-1.8,1
+"Bay (Bay City), MI - Iosco, MI(6)",342,515.5,497.5,534,N/A , N/A , N/A,695,stable,0.7,-1.1,4.4
+"Howell, MO - Oregon, MO(6)",946,515.4,482.1,550.6,N/A , N/A , N/A,192,stable,-0.4,-1.8,1
+"Tulsa (Tulsa), OK - Rogers, OK(6)",414,515.4,506.2,524.7,N/A , N/A , N/A,2543,falling,-0.8,-1.4,-0.1
+"Hancock (Weirton), WV - Brooke, WV(6)",924,515.2,482.6,549.8,N/A , N/A , N/A,204,rising,3.1,0.2,4.8
+"DeSoto, MS - Marshall, MS(6)",146,514.9,498.6,531.7,N/A , N/A , N/A,814,stable,-3.5,-7.7,0.2
+"Randolph, WV - Barbour, WV(6)",50,514.9,484.4,547.1,N/A , N/A , N/A,232,stable,0.7,-0.4,3.8
+"Orange (Chapel Hill), NC - Harnett, NC(6)",203,514.8,501.5,528.4,N/A , N/A , N/A,1202,falling,-0.7,-1.1,-0.3
+"Durham (Durham), NC - Granville, NC(6)",170,514.4,501.7,527.4,N/A , N/A , N/A,1327,stable,0.3,-1.2,3.3
+"Platte, NE - Boone, NE(6)",651,514.3,475.6,555.4,N/A , N/A , N/A,140,falling,-1,-2,-0.1
+"Erie (Erie), PA - Warren, PA(6)",880,514.2,499.8,529,N/A , N/A , N/A,1042,falling,-0.9,-1.4,-0.5
+"Montgomery (Montgomery), AL - Autauga, AL(6)",171,514.2,500.3,528.4,N/A , N/A , N/A,1104,stable,0,-0.3,0.4
+"Brown (Green Bay), WI - Oconto, WI(6)",278,514.2,500.3,528.3,N/A , N/A , N/A,1134,falling,-0.7,-1,-0.5
+"Hunterdon, NJ - Warren (Phillipsburg), NJ(7)",93,514,497.7,530.8,N/A , N/A , N/A,827,falling,-0.9,-1.4,-0.5
+"Fulton (Atlanta), GA - DeKalb, GA(7)",153,514,508.2,519.8,N/A , N/A , N/A,6873,falling,-0.7,-0.9,-0.2
+"Lincoln, NE - Keith, NE(6)",593,513.9,479.4,550.4,N/A , N/A , N/A,178,stable,0,-0.7,0.6
+"Howard, TX - Glasscock, TX(7)",518,513.1,467.2,562.1,N/A , N/A , N/A,100,falling,-1.2,-2.3,-0.2
+"Garland, AR - Hot Spring, AR(6)",448,513,494.6,531.9,N/A , N/A , N/A,633,stable,0.3,-0.7,2.9
+"Coweta, GA - Troup (La Grange), GA(7)",894,512.7,495.1,530.9,N/A , N/A , N/A,696,falling,-1.1,-3.3,-0.4
+"Clayton, IA - Delaware, IA(7)",350,512.6,472.6,555.5,N/A , N/A , N/A,135,stable,-0.1,-0.5,0.4
+"Montgomery (Dayton), OH - Greene, OH(6)",295,512.6,503.3,522,N/A , N/A , N/A,2469,stable,0.6,-0.3,2.9
+"Greenville (Greenville), SC - Anderson, SC(6)",182,512.6,503.8,521.4,N/A , N/A , N/A,2810,falling,-1.3,-1.5,-1
+"Atchison, MO - Holt, MO(6)",678,512.5,438.9,596.7,N/A , N/A , N/A,39,stable,3.7,-10.3,19
+"Queen Annes, MD - Talbot, MD(6)",107,512.3,493,532.3,N/A , N/A , N/A,572,stable,-0.6,-1.5,0.3
+"Kandiyohi, MN - Chippewa, MN(6)",592,512.3,485.5,540.4,N/A , N/A , N/A,295,stable,-0.2,-0.8,0.3
+"Sarasota (Sarasota), FL - Charlotte, FL(6)",213,512.2,503.6,521,N/A , N/A , N/A,3569,stable,-0.1,-0.9,0.7
+"Thurston (Olympia), WA - Grays Harbor, WA(7)",758,511.9,499.7,524.4,N/A , N/A , N/A,1431,falling,-0.7,-0.9,-0.5
+"Baltimore, MD - Baltimore City, MD(6)",16,511.8,506.4,517.2,N/A , N/A , N/A,7403,stable,-0.6,-0.8,0
+"Cass (Fargo), ND - Richland, ND(6)",940,511.8,493.2,530.8,N/A , N/A , N/A,611,falling,-1.3,-2,-0.6
+"Rockingham, NH(6)",874,511.7,497.4,526.3,N/A , N/A , N/A,1074,falling,-1.7,-2.1,-1.2
+"Coffee, TN - Franklin, TN(6)",239,511.6,488.5,535.6,N/A , N/A , N/A,394,falling,-0.8,-3.6,-0.2
+"New London, CT(7)",20,511.6,496.1,527.4,N/A , N/A , N/A,894,stable,1.1,-0.1,3.9
+"Pittsburg, OK - Pushmataha, OK(6)",466,511.5,481.4,543.2,N/A , N/A , N/A,228,stable,1.9,-0.9,8.1
+"Muskingum, OH - Guernsey, OH(6)",377,511.3,494.7,528.4,N/A , N/A , N/A,786,stable,0.8,-0.4,4.3
+"St. Clair (Port Huron), MI - Sanilac, MI(6)",297,511,493.5,528.9,N/A , N/A , N/A,712,stable,0.8,-1,4.5
+"Carroll, IA - Sac, IA(7)",633,510.9,473,551.3,N/A , N/A , N/A,147,stable,-0.4,-0.8,0.1
+"Galveston, TX(7)",532,510.7,495.7,526,N/A , N/A , N/A,970,stable,2.1,-0.4,6.5
+"Grand Traverse, MI - Manistee, MI(6)",271,510.2,493.5,527.3,N/A , N/A , N/A,800,stable,0.1,-3.9,4.1
+"Ohio (Wheeling), WV - Marshall, WV(6)",860,510.1,485.4,535.9,N/A , N/A , N/A,353,falling,-1.3,-2.1,-0.6
+"Whiteside, IL - Carroll, IL(7)",361,510.1,482,539.4,N/A , N/A , N/A,266,stable,-0.5,-1.3,0.2
+"Dyer, TN - Lauderdale, TN(6)",248,509.9,478.6,542.7,N/A , N/A , N/A,212,stable,0.7,-0.3,1.6
+"Goodhue, MN(6)",370,509.8,474.6,547.3,N/A , N/A , N/A,167,stable,-0.4,-1.9,1.1
+"Butte (Chico), CA - Tehama, CA(7)",697,509.6,495,524.6,N/A , N/A , N/A,978,falling,-1,-1.3,-0.6
+"Lyon, MN - Lincoln, MN(6)",609,509.6,464,558.6,N/A , N/A , N/A,97,stable,-0.7,-1.7,0.2
+"Monongalia, WV - Marion, WV(6)",31,509.4,491.1,528.3,N/A , N/A , N/A,620,stable,-1.2,-2.9,0.2
+"Washington, PA - Fayette, PA(6)",100,508.9,496.2,521.8,N/A , N/A , N/A,1328,falling,-1.1,-1.4,-0.7
+"Weakley, TN - Obion, TN(6)",897,508.9,477.3,542.1,N/A , N/A , N/A,207,falling,-6.8,-11.9,-3.9
+"Chatham (Savannah), GA - Liberty, GA(7)",143,508.8,496.1,521.6,N/A , N/A , N/A,1311,stable,-0.5,-1,0
+"Jefferson (Beaumont), TX - Orange, TX(7)",413,508.6,496.3,521.1,N/A , N/A , N/A,1373,stable,1.1,-0.4,3.7
+"Jackson (Pascagoula), MS - George, MS(6)",471,508.6,488.1,529.7,N/A , N/A , N/A,503,stable,0.6,-0.8,3.3
+"Putnam, GA - Hancock, GA(7)",201,508.5,467.6,552.6,N/A , N/A , N/A,128,stable,-0.3,-1,0.4
+"Santa Cruz, CA(7)",802,508.4,492.1,525.2,N/A , N/A , N/A,813,rising,3.7,1.7,7.3
+"Raleigh, WV - Fayette, WV(6)",60,508.4,488.4,529,N/A , N/A , N/A,538,stable,-0.3,-1.1,0.5
+"Elk, PA(6)",125,508.3,466.5,553.3,N/A , N/A , N/A,122,falling,-2.5,-5.6,-1.3
+"Carter, OK - Marshall, OK(6)",474,508.1,480.5,537,N/A , N/A , N/A,267,stable,-0.3,-0.6,0.1
+"Marion, OH - Crawford, OH(6)",354,507.8,490.8,525.4,N/A , N/A , N/A,712,stable,-0.5,-1.1,0.2
+"Yankton, SD - Clay, SD(6)",947,507.8,472.8,544.8,N/A , N/A , N/A,166,rising,2.2,0.2,6.9
+"Lauderdale, MS - Neshoba, MS(6)",926,507.4,486,529.5,N/A , N/A , N/A,449,stable,-0.3,-1.7,3
+"Rutherford (Murfreesboro), TN - Warren, TN(6)",211,507.3,492.5,522.4,N/A , N/A , N/A,986,stable,-0.6,-4.2,0.4
+"Cedar, NE - Knox, NE(6)",578,507.2,450,570.5,N/A , N/A , N/A,64,stable,3.9,-2,14.6
+"Pitt, NC - Beaufort, NC(6)",195,507.2,490.3,524.6,N/A , N/A , N/A,738,stable,0.6,-0.3,2.2
+"Payne, OK - Pawnee, OK(6)",472,507,479.9,535.3,N/A , N/A , N/A,273,stable,-0.7,-1.6,0.2
+"Hamilton (Cincinnati), OH - Butler, OH(6)",901,506.6,500.1,513.3,N/A , N/A , N/A,4872,stable,0.7,-0.9,2.4
+"Buncombe (Asheville), NC - Henderson, NC(6)",225,506.6,495.9,517.5,N/A , N/A , N/A,1824,falling,-0.7,-1.1,-0.3
+"Kootenai, ID - Bonner, ID(7)",734,506.4,490.9,522.3,N/A , N/A , N/A,889,falling,-1,-1.3,-0.6
+"Martin, MN(6)",958,506.3,454.4,563.1,N/A , N/A , N/A,78,stable,-0.9,-2.5,0.9
+"Crawford, IA(7)",681,506.2,445.7,573.1,N/A , N/A , N/A,53,stable,-0.4,-1.1,0.5
+"Coos, NH(6)",138,506.2,467,548.4,N/A , N/A , N/A,139,stable,-1,-2.1,0.1
+"Hartford (Hartford), CT - Tolland, CT(7)",4,506,498.3,513.8,N/A , N/A , N/A,3470,stable,0.1,-0.3,0.8
+"Alleghany Cnty & Clifton Forge Cty, VA - Covington City, VA(6)",30,505.9,460.6,555.1,N/A , N/A , N/A,101,stable,0.1,-1.6,1.8
+"Berkshire (Pittsfield), MA(7)",112,505.7,485.1,527.1,N/A , N/A , N/A,499,rising,1.7,0.2,3.9
+"Lubbock (Lubbock), TX - Hockley, TX(7)",406,505.2,490.3,520.4,N/A , N/A , N/A,915,falling,-0.9,-1.5,-0.3
+"Franklin (Columbus), OH - Delaware, OH(6)",281,505.1,497.8,512.5,N/A , N/A , N/A,3966,falling,-0.8,-1.3,-0.4
+"Sullivan (Kingsport), TN - Hawkins, TN(6)",151,505,488.5,522,N/A , N/A , N/A,765,falling,-1,-1.8,-0.5
+"Palo Pinto, TX - Jack, TX(7)",479,504.9,464.4,548.1,N/A , N/A , N/A,124,falling,-1.2,-2.2,-0.3
+"Shelby (Memphis), TN - Tipton, TN(6)",887,504.8,495.7,513.9,N/A , N/A , N/A,2621,falling,-1.2,-1.7,-0.7
+"Champaign (Champaign), IL - Coles, IL(7)",279,504.6,488.3,521.4,N/A , N/A , N/A,762,falling,-1.2,-1.8,-0.6
+"Jackson, WI(6)",399,504.6,453.7,560.2,N/A , N/A , N/A,77,stable,-1.3,-3.2,0.7
+"Pettis, MO - Saline, MO(6)",656,504.6,481.1,529,N/A , N/A , N/A,380,stable,0,-1.1,2.3
+"Spartanburg (Spartanburg), SC - Cherokee, SC(6)",898,504.5,491.3,518,N/A , N/A , N/A,1188,falling,-4.6,-6.5,-1.9
+"York (Rock Hill), SC - Chester, SC(6)",244,504.4,488.5,520.7,N/A , N/A , N/A,838,falling,-1.5,-2.2,-0.8
+"McLennan (Waco), TX - Hill, TX(7)",462,504.4,490.3,518.7,N/A , N/A , N/A,1030,stable,0.2,-0.4,1.1
+"Bulloch, GA - Emanuel, GA(7)",222,504.3,478.9,530.8,N/A , N/A , N/A,320,stable,1.5,-0.4,5.1
+"Wake (Raleigh), NC - Johnston, NC(6)",198,504.3,496.5,512.1,N/A , N/A , N/A,3523,falling,-2.3,-3.8,-1.3
+"Cumberland, TN - Fentress, TN(6)",223,504.2,481.1,528.3,N/A , N/A , N/A,410,falling,-1.7,-3.2,-1.2
+"Henrico (Richmond), VA - Chesterfield, VA(6)",33,503.9,496.5,511.4,N/A , N/A , N/A,3790,stable,0.4,-0.4,1.7
+"Bristol (New Bedford), MA(7)",68,503.7,492.8,514.8,N/A , N/A , N/A,1726,falling,-1.5,-2.2,-0.9
+"Sheboygan (Sheboygan), WI - Manitowoc, WI(6)",355,503.7,488,519.8,N/A , N/A , N/A,843,stable,2.5,-0.9,4.5
+"Brazoria (Lake Jackson), TX - Wharton, TX(7)",505,503.4,489.7,517.3,N/A , N/A , N/A,1120,stable,1.1,0,3
+"Kennebec, ME - Somerset, ME(6)",38,503.3,486.8,520.3,N/A , N/A , N/A,774,stable,0.7,-1.1,3.1
+"New Haven (New Haven), CT - Litchfield, CT(7)",85,502.9,495.5,510.3,N/A , N/A , N/A,3838,stable,0.2,-0.7,1.8
+"Hillsborough (Manchester), NH - Merrimack, NH(6)",91,502.8,493.1,512.6,N/A , N/A , N/A,2239,falling,-1.3,-1.7,-0.9
+"Custer, MT - Fallon, MT(6)",714,502.7,450.7,559.6,N/A , N/A , N/A,76,stable,0.1,-11.9,7.5
+"Le Flore, OK - Sequoyah, OK(6)",927,502.7,477.5,528.9,N/A , N/A , N/A,316,stable,2.9,-0.2,9.8
+"Anderson, TX - Cherokee, TX(7)",509,502.6,480.9,525,N/A , N/A , N/A,421,falling,-1.7,-4.5,-0.3
+"Mercer, PA(6)",918,502.3,479.7,525.7,N/A , N/A , N/A,401,falling,-1.4,-2,-0.8
+"Codington, SD - Grant, SD(6)",568,502.2,467.9,538.6,N/A , N/A , N/A,169,falling,-1,-1.8,-0.3
+"Roseau, MN - Lake of the Woods, MN(6)",631,502.2,447.4,562.4,N/A , N/A , N/A,68,stable,-0.9,-2.7,0.9
+"Union, AR - Columbia, AR(6)",486,501.8,470.6,534.7,N/A , N/A , N/A,206,stable,-0.7,-1.5,0.2
+"Rolette, ND - Pierce, ND(6)",638,501.7,440.7,568.9,N/A , N/A , N/A,54,stable,-1,-2.4,0.3
+"Douglas, WI(6)",907,501.6,464.4,541.2,N/A , N/A , N/A,149,falling,-3.1,-7,-0.8
+"Rockland, NY(7)",865,501.5,486.7,516.7,N/A , N/A , N/A,898,falling,-1.5,-1.9,-1.1
+"Coffee, GA - Jeff Davis, GA(7)",236,501.3,467.6,536.8,N/A , N/A , N/A,177,stable,0.7,-0.7,4.9
+"Chambers, AL - Randolph, AL(6)",172,501.2,468.7,535.7,N/A , N/A , N/A,193,falling,-1.8,-7.4,-0.5
+"Nobles, MN - Cottonwood, MN(6)",619,501.1,468.4,535.7,N/A , N/A , N/A,186,stable,-0.7,-1.4,0.1
+"Navarro, TX - Freestone, TX(7)",489,501.1,471.2,532.5,N/A , N/A , N/A,221,falling,-1,-1.7,-0.2
+"Comanche (Lawton), OK - Kiowa, OK(6)",493,500.6,477.5,524.7,N/A , N/A , N/A,370,stable,-0.4,-1,0.2
+"Tom Green (San Angelo), TX - Runnels, TX(7)",426,500.6,480.1,521.7,N/A , N/A , N/A,472,stable,-0.5,-1.1,0.1
+"Orange (Orlando), FL - Volusia, FL(6)",142,500.4,495.9,505,N/A , N/A , N/A,9803,falling,-1.2,-1.3,-0.9
+"Summit (Akron), OH - Portage, OH(6)",352,500.4,491.8,509.2,N/A , N/A , N/A,2746,stable,-0.4,-0.7,0.7
+"Nolan, TX - Mitchell, TX(7)",503,500.3,452.9,551.5,N/A , N/A , N/A,84,stable,-0.6,-1.4,0.2
+"Putnam, TN - White, TN(6)",215,500.3,480,521.3,N/A , N/A , N/A,488,falling,-6.4,-8.7,-4.7
+"Hennepin (Minneapolis), MN - Anoka, MN(6)",540,500.1,494.2,506.2,N/A , N/A , N/A,5766,falling,-0.8,-1.2,-0.5
+"Polk, NC(6)",191,500.1,450.8,554.5,N/A , N/A , N/A,90,stable,0.5,-0.9,2
+"Saginaw (Saginaw), MI - Tuscola, MI(6)",322,499.9,485.2,515.1,N/A , N/A , N/A,939,stable,0.2,-1.6,3.6
+"Otsego, NY - Chenango, NY(7)",58,499.9,482.3,518.1,N/A , N/A , N/A,677,falling,-0.7,-1.1,-0.3
+"Rutland, VT(6)",122,499.8,470.1,531.2,N/A , N/A , N/A,238,stable,1.8,-0.6,4.9
+"Lafayette, MS - Calhoun, MS(6)",459,499.4,468.2,532.2,N/A , N/A , N/A,209,stable,-0.8,-2.1,0.6
+"Terry, TX - Yoakum, TX(7)",514,499.3,437.8,567,N/A , N/A , N/A,50,stable,-0.6,-2.4,1.1
+"Allen (Lima), OH - Auglaize, OH(6)",292,499.2,484.2,514.7,N/A , N/A , N/A,889,stable,-0.4,-1,0.2
+"Buchanan (St. Joseph), MO - Nodaway, MO(6)",953,499.1,478.4,520.5,N/A , N/A , N/A,461,stable,-0.1,-0.8,0.7
+"Henderson (Henderson), KY - Union, KY(7)",40,499,465.7,534.3,N/A , N/A , N/A,181,falling,-10,-15.7,-2.5
+"Ward, ND - Bottineau, ND(6)",550,498.8,471.2,527.5,N/A , N/A , N/A,260,falling,-1.4,-2.5,-0.3
+"Beckham, OK - Roger Mills, OK(6)",440,498.6,447.9,553.6,N/A , N/A , N/A,74,stable,-1.5,-3.2,0.2
+"Brown, SD - Spink, SD(6)",572,498.3,468,530.3,N/A , N/A , N/A,215,stable,0.1,-0.7,0.9
+"La Crosse (La Crosse), WI - Monroe, WI(6)",908,498.2,481.4,515.5,N/A , N/A , N/A,708,falling,-1,-1.7,-0.3
+"Fairfield, CT(7)",121,498.1,489.5,506.9,N/A , N/A , N/A,2696,rising,1.7,0.6,3.2
+"Kerr, TX - Gillespie, TX(7)",506,498,475.7,521.2,N/A , N/A , N/A,444,rising,2.9,0.4,7.8
+"Choctaw, AL - Sumter, AL(6)",412,498,448.7,551.6,N/A , N/A , N/A,82,falling,-1.4,-3,-0.4
+"Ada (Boise City), ID - Canyon, ID(7)",716,497.9,488.3,507.7,N/A , N/A , N/A,2155,falling,-1.7,-3.1,-0.7
+"Orange (Newburgh), NY - Sullivan, NY(7)",86,497.8,485.4,510.5,N/A , N/A , N/A,1311,falling,-1.2,-1.5,-0.8
+"Aroostook, ME(6)",136,497.8,470.1,527,N/A , N/A , N/A,271,falling,-1.4,-2.2,-0.7
+"Stephens, OK - Jefferson, OK(6)",497,497.6,462.2,535.2,N/A , N/A , N/A,158,stable,-0.7,-1.3,0
+"Kane (Aurora), IL - DeKalb, IL(7)",373,497.6,487.2,508.2,N/A , N/A , N/A,1865,falling,-0.8,-1.1,-0.4
+"Barron, WI - Rusk, WI(6)",374,497.5,467.9,528.8,N/A , N/A , N/A,233,stable,-0.1,-1,0.9
+"Story, IA - Boone, IA(7)",606,497.4,476.7,518.9,N/A , N/A , N/A,462,falling,-0.5,-0.8,-0.3
+"Scurry, TX(7)",519,496.8,433.1,567.3,N/A , N/A , N/A,46,stable,-0.5,-2,1
+"Sumter, SC - Clarendon, SC(6)",196,496.7,476,518.2,N/A , N/A , N/A,462,falling,-3.4,-8.8,-1.6
+"Winnebago (Oshkosh), WI - Fond du Lac, WI(6)",306,496.5,484.2,509,N/A , N/A , N/A,1317,falling,-0.9,-1.3,-0.5
+"Virginia Beach City, VA - Norfolk City, VA(6)",853,496.3,488.1,504.6,N/A , N/A , N/A,3017,falling,-0.7,-1,-0.3
+"Laramie (Cheyenne), WY(6)",971,496.2,470.4,523.1,N/A , N/A , N/A,294,falling,-1.5,-2.6,-0.3
+"Carbon, UT - Emery, UT(7)",809,496.1,449.5,546.4,N/A , N/A , N/A,90,stable,-0.2,-0.8,0.5
+"Cherokee, NC - Clay, NC(6)",258,495.9,461.2,533.1,N/A , N/A , N/A,185,falling,-1.1,-2.7,-0.2
+"Tarrant (Fort Worth), TX - Johnson, TX(7)",434,495.8,489.8,501.8,N/A , N/A , N/A,5736,stable,-0.2,-1.2,1.5
+"Talladega, AL - Clay, AL(6)",241,495.7,471.5,520.9,N/A , N/A , N/A,343,stable,0.1,-2,3.9
+"Brown, TX - Coleman, TX(7)",468,495.5,464.4,528.4,N/A , N/A , N/A,203,stable,0.9,-1.6,6.4
+"Miami (Piqua), OH - Shelby, OH(6)",376,495.5,475.1,516.4,N/A , N/A , N/A,479,stable,-0.7,-1.9,0.5
+"Hancock, IL(7)",367,495.3,441.1,555,N/A , N/A , N/A,68,falling,-1.3,-2.2,-0.4
+"Grafton, NH - Sullivan, NH(6)",15,495.3,474.8,516.4,N/A , N/A , N/A,488,stable,0.2,-1.1,3.3
+"Lawrence, PA(6)",129,495.2,469.5,522,N/A , N/A , N/A,304,falling,-1.4,-2.4,-0.5
+"Lackawanna (Scranton), PA - Wayne, PA(6)",47,494.8,480,510,N/A , N/A , N/A,908,falling,-1.1,-1.5,-0.6
+"Washington, OK - Nowata, OK(6)",933,494.7,463.5,527.5,N/A , N/A , N/A,198,stable,-0.7,-1.6,0.2
+"Florence (Florence), SC - Darlington, SC(6)",184,494.7,479.8,509.9,N/A , N/A , N/A,910,falling,-4,-8.4,-2.2
+"Stearns (St. Cloud), MN - Benton, MN(6)",588,494.5,479.2,510.3,N/A , N/A , N/A,834,stable,1.1,-0.6,3.7
+"Adams, NE - Clay, NE(6)",564,494.5,458.1,533.3,N/A , N/A , N/A,147,falling,-1.3,-2.3,-0.3
+"Hancock, OH - Seneca, OH(6)",386,494.3,472.1,517.4,N/A , N/A , N/A,399,stable,-0.6,-1.4,0.2
+"Leon, TX - Madison, TX(7)",501,494.3,451.3,540.6,N/A , N/A , N/A,102,stable,-0.3,-1,0.4
+"Leon (Tallahassee), FL - Gadsden, FL(6)",183,494.3,481.4,507.4,N/A , N/A , N/A,1194,stable,-0.1,-0.6,1.2
+"Bryan, OK - Atoka, OK(6)",436,494,461.4,528.4,N/A , N/A , N/A,177,stable,-0.7,-1.4,0.1
+"Hall, NE - Hamilton, NE(6)",555,493.9,466.9,522.1,N/A , N/A , N/A,261,falling,-1.3,-1.9,-0.8
+"Santa Barbara (Santa Barbara), CA - San Luis Obispo, CA(7)",781,493.8,484.3,503.5,N/A , N/A , N/A,2148,rising,2.6,0.6,4.5
+"Laurens, GA - Toombs, GA(7)",206,493.6,472.2,515.8,N/A , N/A , N/A,420,stable,-0.5,-1,0
+"Douglas, MN - Pope, MN(6)",608,493.6,463.4,525.3,N/A , N/A , N/A,219,falling,-1.2,-1.8,-0.6
+"Cole, MO - Callaway, MO(6)",581,493.5,476.9,510.6,N/A , N/A , N/A,706,falling,-3.1,-6.5,-0.6
+"Sebastian (Fort Smith), AR - Crawford, AR(6)",421,493.4,476.8,510.5,N/A , N/A , N/A,705,stable,0.4,-0.4,2.6
+"Taney, MO(6)",676,493.4,461.6,527,N/A , N/A , N/A,195,stable,-0.9,-2.3,0.6
+"Jackson, NC - Macon, NC(6)",209,493.3,469.9,517.6,N/A , N/A , N/A,370,falling,-1.5,-3.1,-0.7
+"Potter (Amarillo), TX - Randall, TX(7)",405,493.2,478.7,508.1,N/A , N/A , N/A,920,falling,-0.9,-1.4,-0.4
+"Davidson (Nashville-Davidson), TN - Williamson, TN(6)",148,493.2,484.8,501.7,N/A , N/A , N/A,2853,stable,-0.6,-1.7,1.3
+"Uvalde, TX(7)",536,493.1,440.5,550.4,N/A , N/A , N/A,66,rising,4.1,1.5,9.9
+"Concordia, LA - Tensas, LA(7)",435,493.1,442.2,548.6,N/A , N/A , N/A,74,falling,-2.4,-6,-0.9
+"Mobile (Mobile), AL - Baldwin, AL(6)",161,492.9,483.3,502.7,N/A , N/A , N/A,2126,stable,0,-0.7,1
+"Pope, AR - Yell, AR(6)",442,492.6,464.5,521.9,N/A , N/A , N/A,242,rising,1.8,0.1,4.9
+"Westchester (Yonkers), NY - Dutchess, NY(7)",41,492.5,486.1,499,N/A , N/A , N/A,4770,falling,-1.2,-1.4,-0.9
+"Montgomery (Clarksville), TN - Stewart, TN(6)",234,492.3,471.6,513.6,N/A , N/A , N/A,474,falling,-4.7,-7.4,-2.5
+"Defiance, OH - Williams, OH(6)",356,492.1,469.8,515.2,N/A , N/A , N/A,392,stable,-0.5,-1.3,0.3
+"Rock Island (Moline), IL - Henry, IL(7)",307,492.1,475.5,509.1,N/A , N/A , N/A,711,falling,-5.8,-12.2,-0.5
+"Laurens, SC - Greenwood, SC(6)",187,491.9,474.1,510.3,N/A , N/A , N/A,618,falling,-3.7,-6.4,-2.2
+"Knox, IL - Warren, IL(7)",324,491.9,463,522.4,N/A , N/A , N/A,231,falling,-1,-1.4,-0.6
+"Grand Forks (Grand Forks), ND - Walsh, ND(6)",949,491.7,464.8,519.8,N/A , N/A , N/A,267,stable,-0.5,-1.2,0.3
+"Silver Bow, MT - Deer Lodge, MT(6)",742,491.4,459.5,525.1,N/A , N/A , N/A,194,stable,-0.5,-5.3,3.2
+"Androscoggin (Lewiston), ME - Oxford, ME(6)",95,491.1,474,508.8,N/A , N/A , N/A,677,stable,0.2,-5.7,4.6
+"Houston (Dothan), AL - Dale, AL(6)",162,490.8,475.7,506.4,N/A , N/A , N/A,845,falling,-1.3,-1.8,-0.7
+"Marathon (Wausau), WI - Wood, WI(6)",282,490.6,476.5,505,N/A , N/A , N/A,986,falling,-1.5,-2.1,-1.1
+"Essex (Newark), NJ - Middlesex, NJ(7)",66,490.2,484.9,495.6,N/A , N/A , N/A,6790,stable,0,-1.4,1.8
+"Pontotoc, OK - Seminole, OK(6)",478,490.2,462.2,519.5,N/A , N/A , N/A,239,falling,-1.6,-2.2,-1
+"St. Louis, MO - St. Louis City, MO(6)",541,490.1,483.9,496.4,N/A , N/A , N/A,5032,falling,-1.3,-1.6,-0.9
+"Blue Earth, MN - Nicollet, MN(6)",573,490.1,467.1,514,N/A , N/A , N/A,359,stable,-0.7,-1.7,0.4
+"Midland (Midland), MI - Isabella, MI(6)",330,489.8,472.5,507.7,N/A , N/A , N/A,649,stable,1.8,-1.8,7.7
+"Mercer, WV - McDowell, WV(6)",866,489.5,462.6,517.6,N/A , N/A , N/A,272,falling,-2.3,-6.6,-1.5
+"Roscommon, MI - Otsego, MI(6)",392,489,460.9,518.7,N/A , N/A , N/A,273,falling,-1.1,-1.8,-0.3
+"Muskogee, OK - Wagoner, OK(6)",445,488.4,471.8,505.5,N/A , N/A , N/A,696,stable,-0.8,-1.5,0
+"Portage, WI(6)",400,488.3,457.9,520.4,N/A , N/A , N/A,208,stable,-1,-1.9,0
+"Linn, MO(6)",673,488.2,420.9,564.3,N/A , N/A , N/A,40,stable,-0.2,-1.7,1.3
+"Otoe, NE - Johnson, NE(6)",660,487.9,437.5,542.9,N/A , N/A , N/A,72,stable,0,-1.7,1.8
+"Taylor (Abilene), TX - Jones, TX(7)",428,487.7,469.9,506.1,N/A , N/A , N/A,584,stable,-0.1,-1.1,1.7
+"Halifax with South Boston City, VA - Mecklenburg, VA(6)",71,487.5,461.5,514.8,N/A , N/A , N/A,293,falling,-6,-9.9,-1.1
+"Freeborn, MN - Faribault, MN(6)",646,487.5,453.1,524,N/A , N/A , N/A,163,falling,-0.8,-1.4,-0.1
+"Bowie (Texarkana), TX(7)",925,487.4,460.8,515.3,N/A , N/A , N/A,263,falling,-1.3,-1.8,-0.7
+"Chittenden (Burlington), VT - Franklin, VT(6)",49,487.4,471.2,504,N/A , N/A , N/A,745,falling,-0.8,-1.3,-0.2
+"King (Seattle), WA - Snohomish, WA(7)",736,487.3,482.7,491.9,N/A , N/A , N/A,9219,stable,-0.4,-1,0.6
+"Davis, UT - Weber (Ogden), UT(7)",744,487,475.6,498.6,N/A , N/A , N/A,1471,rising,1.9,0.8,3.9
+"Osceola, FL(6)",257,486.9,472.4,501.8,N/A , N/A , N/A,898,stable,-0.6,-1.3,0.2
+"Hays (San Marcos), TX - Caldwell, TX(7)",510,486.6,468.4,505.3,N/A , N/A , N/A,609,stable,0.3,-2.9,2.8
+"Boone (Columbia), MO - Randolph, MO(6)",553,486.4,469.5,503.8,N/A , N/A , N/A,661,falling,-1,-1.7,-0.4
+"Dallas, AL - Marengo, AL(6)",175,486,457.2,516.2,N/A , N/A , N/A,236,falling,-2.6,-10.9,-0.9
+"Iron, UT - Beaver, UT(7)",755,485.8,449.7,524.1,N/A , N/A , N/A,145,stable,-0.3,-0.9,0.4
+"Crawford, WI(6)",919,485.8,430.8,546.7,N/A , N/A , N/A,64,stable,5.4,-2.8,12.6
+"Rice, MN(6)",396,485.7,454.5,518.6,N/A , N/A , N/A,189,stable,-0.8,-1.5,0
+"Berkeley, WV - Jefferson, WV(6)",861,485.7,468.5,503.3,N/A , N/A , N/A,661,falling,-0.9,-1.3,-0.5
+"Providence (Providence), RI - Kent, RI(6)",859,485.3,477.2,493.6,N/A , N/A , N/A,2867,falling,-1.7,-2.1,-1.3
+"Scott, TN(6)",263,485.3,432.2,543.5,N/A , N/A , N/A,64,falling,-1.7,-4.7,-0.3
+"Garfield (Enid), OK - Kingfisher, OK(6)",429,485.1,461.5,509.7,N/A , N/A , N/A,330,falling,-1.6,-8.6,-0.8
+"Oktibbeha, MS - Winston, MS(6)",484,485,455.7,515.7,N/A , N/A , N/A,218,stable,-1.1,-8.8,1.5
+"Payette, ID - Washington, ID(7)",729,484.9,448.7,523.6,N/A , N/A , N/A,145,stable,-0.9,-2.1,0.3
+"Grady, OK - Caddo, OK(6)",476,484.8,456.8,514.2,N/A , N/A , N/A,240,stable,-0.1,-0.7,0.5
+"Winnebago (Rockford), IL - Ogle, IL(7)",291,484.6,472.4,497,N/A , N/A , N/A,1280,falling,-0.9,-1.2,-0.6
+"Daggett, UT(7)",799,484.3,287.6,800.8,N/A , N/A , N/A,4,*,*,*,*
+"Lamar, AL(6)",461,484.3,421.8,554.2,N/A , N/A , N/A,47,stable,-0.2,-1.5,1.2
+"Wilkes, NC(6)",256,483.8,455.2,513.9,N/A , N/A , N/A,231,falling,-1.6,-6.2,-0.7
+"Augusta, VA - Staunton City, VA(6)",97,483.7,465.4,502.7,N/A , N/A , N/A,561,falling,-5.8,-8.1,-3.9
+"Independence, AR - Sharp, AR(6)",574,483.7,460.1,508.4,N/A , N/A , N/A,339,falling,-1,-1.9,-0.1
+"Warren, MS - Claiborne, MS(6)",928,483.7,448.2,521.3,N/A , N/A , N/A,154,falling,-1.6,-2.4,-0.8
+"Victoria (Victoria), TX - Calhoun, TX(7)",433,483.6,465.1,502.7,N/A , N/A , N/A,543,falling,-1.3,-1.6,-0.9
+"Pulaski (Little Rock), AR - Faulkner, AR(6)",432,483.4,474,493,N/A , N/A , N/A,2109,falling,-1.4,-1.9,-0.8
+"Stark (Canton), OH - Wayne, OH(6)",347,483.2,473.5,493.1,N/A , N/A , N/A,2020,falling,-0.8,-1.1,-0.4
+"White, AR - Cleburne, AR(6)",457,483,459.6,507.4,N/A , N/A , N/A,337,falling,-1.7,-2.3,-1.1
+"Orangeburg, SC - Bamberg, SC(6)",176,482.5,460.1,505.7,N/A , N/A , N/A,384,falling,-1.8,-2.3,-1.4
+"Cache, UT(7)",966,482.4,454.7,511.3,N/A , N/A , N/A,236,rising,5,2.4,8.6
+"Poweshiek, IA(7)",686,482.2,427.3,542.9,N/A , N/A , N/A,60,stable,-0.4,-1.1,0.4
+"New Castle (Wilmington), DE(6)",75,482.1,471.1,493.4,N/A , N/A , N/A,1541,falling,-2,-3,-1.7
+"Grant, WA - Chelan, WA(6)",747,482.1,466.7,498,N/A , N/A , N/A,784,falling,-1,-1.5,-0.4
+"Bradley, TN - Polk, TN(6)",895,481.6,459,505.1,N/A , N/A , N/A,362,falling,-1.9,-3.3,-1
+"Madison, NE - Wayne, NE(6)",577,481.6,450.9,513.9,N/A , N/A , N/A,196,falling,-1.4,-2.2,-0.5
+"Rowan, KY - Morgan, KY(7)",67,481.5,446.6,518.6,N/A , N/A , N/A,150,falling,-2.6,-4.2,-1.7
+"Manatee, FL(6)",266,481.4,470.3,492.7,N/A , N/A , N/A,1646,stable,-0.5,-1,0
+"Worcester (Worcester), MA - Franklin, MA(7)",101,481,472.5,489.6,N/A , N/A , N/A,2654,falling,-1,-1.3,-0.6
+"Gray, TX - Wheeler, TX(7)",460,480.8,436.9,528.1,N/A , N/A , N/A,90,falling,-2,-2.9,-1.1
+"Mifflin, PA - Huntingdon, PA(6)",110,480.8,459,503.4,N/A , N/A , N/A,389,stable,-0.2,-0.9,0.5
+"Philadelphia (Philadelphia), PA - Montgomery, PA(6)",28,480.7,476.6,484.8,N/A , N/A , N/A,11280,falling,-2.6,-5.1,-1.9
+"McLean (Bloomington), IL - Woodford, IL(7)",338,480.2,462.2,498.7,N/A , N/A , N/A,572,falling,-1.3,-1.9,-0.8
+"Houston, MN(6)",981,480.1,427.5,538,N/A , N/A , N/A,68,stable,-1.5,-13.7,1.7
+"York (York), PA - Adams, PA(6)",868,480.1,469.7,490.7,N/A , N/A , N/A,1716,falling,-1.3,-1.8,-0.9
+"Jackson, AR(6)",521,479.9,420,546.3,N/A , N/A , N/A,49,stable,-1.7,-3.5,0.1
+"Newport News City, VA - Hampton City, VA(6)",5,479.8,468.7,491.1,N/A , N/A , N/A,1498,falling,-1.3,-1.8,-0.9
+"Ashley, AR - Chicot, AR(6)",480,479.7,437.4,525.4,N/A , N/A , N/A,100,stable,-0.2,-1.5,1.1
+"Watauga, NC - Ashe, NC(6)",194,479.6,452.2,508.3,N/A , N/A , N/A,253,falling,-0.8,-1.3,-0.2
+"St. Charles (St. Charles), MO - Lincoln, MO(6)",599,479.5,467.7,491.4,N/A , N/A , N/A,1355,falling,-1.4,-1.9,-0.9
+"Frederick, MD(6)",48,479.1,462.8,495.9,N/A , N/A , N/A,700,stable,-0.2,-1,1.2
+"Baxter, AR - Marion, AR(6)",407,479,451.1,508.5,N/A , N/A , N/A,264,stable,-0.8,-1.9,1.3
+"Stafford, VA - Spotsylvania, VA(6)",135,478.8,464.2,493.7,N/A , N/A , N/A,903,falling,-1.9,-2.6,-1.2
+"Charleston (Charleston), SC - Berkeley, SC(6)",212,478.7,469.6,488,N/A , N/A , N/A,2272,falling,-1.8,-2.1,-1.4
+"Washington, UT - Kane, UT(7)",964,478.7,461.5,496.5,N/A , N/A , N/A,641,stable,0,-0.3,0.3
+"Carroll, VA - Grayson, VA(6)",873,478.6,447.2,511.9,N/A , N/A , N/A,191,stable,-0.7,-2.1,0.7
+"Cumberland (Portland), ME - Knox, ME(6)",9,478.5,466.8,490.5,N/A , N/A , N/A,1362,stable,-0.1,-2,2.8
+"Tioga, PA(6)",128,478.2,442.7,516.1,N/A , N/A , N/A,149,stable,-1.3,-2.8,0.2
+"Clark, MO(6)",922,478,391.5,579.8,N/A , N/A , N/A,23,stable,-0.4,-3.9,3.2
+"Jefferson (Birmingham), AL - Shelby, AL(6)",150,478,470.7,485.5,N/A , N/A , N/A,3447,falling,-1.7,-3.8,-1.3
+"Jackson (Jackson), MI - Lenawee, MI(6)",375,477.9,464.9,491.2,N/A , N/A , N/A,1101,falling,-1.1,-1.6,-0.7
+"Escambia, AL - Conecuh, AL(6)",163,477.7,443.1,514.6,N/A , N/A , N/A,149,falling,-1.4,-2.2,-0.6
+"Shasta (Redding), CA - Trinity, CA(7)",710,477.5,461.2,494.2,N/A , N/A , N/A,710,falling,-1.2,-1.8,-0.7
+"Bergen, NJ - Hudson (Jersey City), NJ(7)",36,477.3,471.6,483.1,N/A , N/A , N/A,5565,stable,0.2,-1,2.1
+"Greenbrier, WV - Monroe, WV(6)",862,476.9,443.4,512.5,N/A , N/A , N/A,168,falling,-1.5,-4.9,-0.8
+"Dauphin (Harrisburg), PA - Cumberland, PA(6)",43,476.9,467.6,486.3,N/A , N/A , N/A,2136,falling,-0.8,-1.1,-0.5
+"Alpena, MI - Presque Isle, MI(6)",371,476.8,449.1,506.1,N/A , N/A , N/A,269,falling,-1.5,-2.7,-0.3
+"Gallatin and Yellowstone National Park, MT - Madison, MT(6)",773,476.5,452.2,501.8,N/A , N/A , N/A,315,stable,-0.3,-0.9,0.5
+"Allegheny (Pittsburgh), PA - Westmoreland, PA(6)",42,476.5,471.2,481.8,N/A , N/A , N/A,6653,falling,-3.2,-5.2,-1.4
+"Washington (Hagerstown), MD(6)",72,476.4,456.6,496.8,N/A , N/A , N/A,457,falling,-1.2,-1.8,-0.6
+"White, IL - Hamilton, IL(7)",383,476.2,428,529,N/A , N/A , N/A,76,falling,-11.5,-23,-1.5
+"Denton (Denton), TX - Wise, TX(7)",495,476.1,466.5,485.9,N/A , N/A , N/A,2116,falling,-1.9,-3.3,-0.9
+"Albemarle, VA - Charlottesville City, VA(6)",99,476.1,463.5,488.9,N/A , N/A , N/A,1159,falling,-1.3,-1.9,-0.6
+"Mahoning (Youngstown), OH - Trumbull, OH(6)",345,476,464.6,487.7,N/A , N/A , N/A,1433,falling,-1.7,-2.1,-1.3
+"Custer, OK - Washita, OK(6)",475,476,434.5,520.5,N/A , N/A , N/A,101,stable,-0.1,-7.7,5.9
+"Decatur, GA - Seminole, GA(7)",228,475.5,439.1,514.3,N/A , N/A , N/A,135,stable,-0.8,-1.6,0.1
+"Dimmit, TX(7)",531,474.8,389.5,573.4,N/A , N/A , N/A,23,rising,15.4,1.9,24.5
+"Travis (Austin), TX - Williamson, TX(7)",425,474.5,468,481.1,N/A , N/A , N/A,4397,stable,-1,-2.7,0.9
+"Lauderdale (Florence), AL - Colbert, AL(6)",219,474.3,457.3,491.8,N/A , N/A , N/A,627,falling,-1.3,-3,-0.7
+"Venango, PA - Clarion, PA(6)",52,474.2,450.7,498.7,N/A , N/A , N/A,337,falling,-1.6,-2.1,-1
+"Brazos (Bryan), TX - Washington, TX(7)",464,474.1,458.3,490.4,N/A , N/A , N/A,716,rising,2,0.2,4.4
+"Bradford, PA - Susquehanna, PA(6)",858,474.1,452.1,497,N/A , N/A , N/A,390,falling,-1.2,-2,-0.5
+"Lemhi, ID(7)",813,472.8,403,554.6,N/A , N/A , N/A,40,stable,-0.3,-1.6,1.1
+"Humboldt, CA(7)",800,472.6,451.1,494.9,N/A , N/A , N/A,396,falling,-1.3,-1.7,-0.8
+"Hardin, TN - McNairy, TN(6)",245,472.5,440.6,506.3,N/A , N/A , N/A,179,falling,-6.4,-13.9,-1
+"Boyd, NE(6)",595,472.2,327.7,676.8,N/A , N/A , N/A,9,falling,-20.9,-37.1,-3.1
+"Dane (Madison), WI - Sauk, WI(6)",301,472,462.5,481.5,N/A , N/A , N/A,2050,falling,-0.8,-1.2,-0.5
+"Washington, VT - Windsor, VT(6)",857,471.6,452.5,491.5,N/A , N/A , N/A,507,falling,-1.2,-1.7,-0.7
+"Ector (Odessa), TX - Reeves, TX(7)",444,471.1,449.2,493.8,N/A , N/A , N/A,381,falling,-1.2,-1.8,-0.6
+"Windham, VT(6)",877,470.5,436.1,507.1,N/A , N/A , N/A,162,falling,-1.5,-2.8,-0.2
+"Caledonia, VT - Orleans, VT(6)",103,470.3,444.8,497.1,N/A , N/A , N/A,280,falling,-1.5,-2.1,-0.9
+"Roanoke City, VA - Roanoke, VA(6)",14,470,460.1,480.1,N/A , N/A , N/A,1826,falling,-1.1,-1.7,-0.4
+"Palm Beach (West Palm Beach), FL - St. Lucie, FL(6)",221,469.8,464.8,474.9,N/A , N/A , N/A,7288,falling,-0.9,-1.2,-0.5
+"Lancaster, PA(6)",140,469.8,459.2,480.5,N/A , N/A , N/A,1588,falling,-1.2,-1.6,-0.8
+"Henry, MO - Bates, MO(6)",607,469.5,436.1,504.9,N/A , N/A , N/A,161,falling,-1.4,-2.3,-0.4
+"Oklahoma (Oklahoma City), OK - Canadian, OK(6)",417,469.3,461,477.7,N/A , N/A , N/A,2607,falling,-1.5,-1.9,-1.1
+"Dallas (Dallas), TX - Collin, TX(7)",453,469.1,464.4,473.7,N/A , N/A , N/A,8686,stable,-0.2,-0.9,0.9
+"Marin, CA(7)",764,469,455,483.5,N/A , N/A , N/A,900,falling,-1.1,-1.5,-0.7
+"Bannock, ID - Bingham, ID(7)",696,468.9,447.5,491.1,N/A , N/A , N/A,385,stable,2.3,-0.5,7.1
+"Cook (Chicago), IL - DuPage, IL(7)",287,468.7,465.5,471.8,N/A , N/A , N/A,17974,stable,-0.6,-1.1,0.4
+"Nez Perce, ID - Idaho, ID(7)",694,468.6,442.8,495.7,N/A , N/A , N/A,270,falling,-1,-1.5,-0.6
+"Kay (Ponca City), OK - Osage, OK(6)",515,468.6,444,494.4,N/A , N/A , N/A,286,falling,-1.5,-2.1,-0.8
+"Red Willow, NE - Hitchcock, NE(6)",955,468.4,407.6,536.6,N/A , N/A , N/A,46,falling,-1.7,-3.2,-0.3
+"Jackson (Medford), OR - Josephine, OR(6)",973,468.2,455.3,481.5,N/A , N/A , N/A,1082,falling,-1.3,-1.9,-0.7
+"Hughes, SD - Stanley, SD(6)",629,467.9,422.8,516.7,N/A , N/A , N/A,86,stable,-0.7,-2.2,0.9
+"Hertford, NC - Bertie, NC(6)",243,467.8,439.1,498.1,N/A , N/A , N/A,215,falling,-1.1,-1.9,-0.3
+"Lee (Auburn), AL - Elmore, AL(6)",179,467.5,452.6,482.8,N/A , N/A , N/A,807,stable,-0.5,-1.1,0.2
+"Lancaster (Lincoln), NE - Gage, NE(6)",561,466.9,453.5,480.7,N/A , N/A , N/A,966,falling,-5.5,-8.3,-3.4
+"York, NE - Polk, NE(6)",611,466.9,415.5,523.5,N/A , N/A , N/A,65,stable,-0.4,-1.7,0.9
+"Pulaski, MO - Phelps, MO(6)",627,466.9,442.6,492.1,N/A , N/A , N/A,290,falling,-1.1,-1.8,-0.5
+"Hill, MT - Blaine, MT(6)",712,466.7,421.7,515.3,N/A , N/A , N/A,85,falling,-1.6,-2.8,-0.5
+"Ashland, WI - Sawyer, WI(6)",357,466.6,439.9,494.8,N/A , N/A , N/A,265,falling,-5.5,-8.4,-1.5
+"Wilbarger, TX - Hardeman, TX(7)",458,466.5,410.6,528.4,N/A , N/A , N/A,54,stable,-1,-2.1,0.1
+"Marion, AL - Fayette, AL(6)",247,466.2,432.6,502,N/A , N/A , N/A,151,stable,-6.7,-15.9,0.9
+"Bonneville, ID - Madison, ID(7)",722,465.9,447.2,485.1,N/A , N/A , N/A,498,stable,-0.4,-1,0.3
+"Pueblo (Pueblo), CO - Las Animas, CO(6)",704,465.8,448.3,483.9,N/A , N/A , N/A,574,falling,-1,-1.5,-0.5
+"Camden, MO(6)",685,465.7,433.8,499.7,N/A , N/A , N/A,194,falling,-1.1,-1.8,-0.4
+"Walker, GA - Catoosa, GA(7)",141,465.3,445.6,485.6,N/A , N/A , N/A,444,stable,-1.3,-2.9,0.3
+"Stephenson, IL - Jo Daviess, IL(7)",302,465.2,437.8,494.2,N/A , N/A , N/A,241,falling,-0.9,-1.6,-0.1
+"Montgomery, VA - Pulaski, VA(6)",70,464.9,446.4,484,N/A , N/A , N/A,505,rising,2,0.3,4.9
+"Outagamie (Appleton), WI - Waupaca, WI(6)",344,464.3,448.3,480.8,N/A , N/A , N/A,678,falling,-1.3,-1.7,-0.9
+"Todd, SD - Tripp, SD(6)",954,464.3,408.3,526,N/A , N/A , N/A,53,stable,-0.7,-1.9,0.5
+"Buffalo, NE - Dawson, NE(6)",570,464,438,491.2,N/A , N/A , N/A,252,stable,-0.8,-1.7,0.1
+"Johnson, AR(6)",522,463.6,415.7,515.7,N/A , N/A , N/A,73,stable,-0.4,-1.9,1.1
+"Cascade (Great Falls), MT - Glacier, MT(6)",692,463.1,441.4,485.7,N/A , N/A , N/A,364,stable,1.1,-0.8,4.6
+"Calhoun (Battle Creek), MI - Barry, MI(6)",381,463.1,445.7,481,N/A , N/A , N/A,580,stable,-4.5,-13.2,3
+"Nacogdoches, TX - Shelby, TX(7)",447,463,439.3,487.7,N/A , N/A , N/A,306,falling,-1.5,-2,-0.9
+"Marion (Salem), OR - Yamhill, OR(6)",705,462.4,451.5,473.6,N/A , N/A , N/A,1415,falling,-1.2,-1.7,-0.6
+"Middlesex, MA - Suffolk (Boston), MA(7)",22,462.3,458.2,466.4,N/A , N/A , N/A,10333,falling,-4.5,-7.1,-2.8
+"Holt, NE - Brown, NE(6)",559,462.2,404.6,526.5,N/A , N/A , N/A,53,stable,-1.1,-2.9,0.6
+"Twin Falls, ID - Jerome, ID(7)",695,462.1,439.9,485.1,N/A , N/A , N/A,339,falling,-1.4,-2.2,-0.6
+"Clark, IL(7)",311,462,401.5,529.4,N/A , N/A , N/A,46,falling,-14.6,-31,-0.6
+"Washington (Johnson City), TN - Carter, TN(6)",169,461.8,445.4,478.6,N/A , N/A , N/A,643,stable,-0.5,-1.2,0
+"Bay (Panama City), FL - Jackson, FL(6)",155,461.7,448.3,475.5,N/A , N/A , N/A,937,stable,-0.4,-1.1,0.3
+"Multnomah (Portland), OR - Washington, OR(6)",689,461.6,455.6,467.7,N/A , N/A , N/A,4772,falling,-0.8,-1.1,-0.5
+"Etowah (Gadsden), AL - Marshall, AL(6)",224,461.3,447.1,475.8,N/A , N/A , N/A,861,falling,-1.7,-3.4,-1.2
+"Ventura, CA(7)",790,461.2,452.5,470.1,N/A , N/A , N/A,2212,stable,0.1,-0.5,1.3
+"Sonoma (Santa Rosa), CA(7)",834,461.2,450.3,472.2,N/A , N/A , N/A,1487,stable,-0.5,-2.2,2
+"Polk, AR(6)",534,460.8,411.5,515.2,N/A , N/A , N/A,69,stable,-4.8,-14.5,3.7
+"Lancaster, SC - Kershaw, SC(6)",249,460.6,441.9,480,N/A , N/A , N/A,487,falling,-6.7,-10.5,-2.4
+"Anchorage (Anchorage), AK - Matanuska-Susitna Borough, AK(6)",820,460.6,448.2,473.2,N/A , N/A , N/A,1259,stable,0.1,-0.7,1.4
+"Fayette, TX - Colorado, TX(7)",490,460.6,428.1,495.2,N/A , N/A , N/A,165,stable,1.8,-2.6,7.7
+"Ingham (Lansing), MI - Eaton, MI(6)",285,460.4,449.2,471.8,N/A , N/A , N/A,1394,falling,-1.4,-2.3,-0.5
+"Lee (Cape Coral), FL - Collier, FL(6)",165,460.2,453.9,466.5,N/A , N/A , N/A,4850,falling,-1.1,-1.6,-0.6
+"Greene (Springfield), MO - Christian, MO(6)",549,460.1,450.9,469.5,N/A , N/A , N/A,1992,stable,0,-1,2.2
+"Tuscaloosa (Tuscaloosa), AL - Pickens, AL(6)",156,459.7,443.1,476.8,N/A , N/A , N/A,628,falling,-2.9,-7.4,-1.9
+District of Columbia(6),61,459.5,448.4,470.9,N/A , N/A , N/A,1371,falling,-2,-2.7,-1.3
+"Grundy, MO - Mercer, MO(6)",683,459.4,397.4,529.2,N/A , N/A , N/A,44,stable,-0.7,-1.9,0.4
+"Boone, AR - Carroll, AR(6)",494,458.4,433.7,484.4,N/A , N/A , N/A,280,falling,-1.3,-2.4,-0.2
+"Essex (Lynn), MA(7)",74,458.1,449.2,467,N/A , N/A , N/A,2184,falling,-6.4,-8.8,-4.4
+"Latah, ID(7)",784,458,415.6,503.7,N/A , N/A , N/A,92,stable,-1.1,-2.3,0.2
+"Maverick, TX - Val Verde, TX(7)",516,457.6,431.3,485,N/A , N/A , N/A,230,stable,-0.3,-1,0.5
+"Washoe (Reno), NV - Carson City, NV(6)",962,457.1,448.1,466.3,N/A , N/A , N/A,2120,stable,0.3,-0.7,2.1
+"Newport, RI(6)",871,457.1,433.3,481.9,N/A , N/A , N/A,297,falling,-1.9,-2.7,-1.2
+"Sutter (Yuba City), CA - Yuba, CA(7)",690,456.8,438.4,475.8,N/A , N/A , N/A,485,falling,-0.8,-1.3,-0.2
+"Horry, SC - Georgetown, SC(6)",246,456.8,445.5,468.4,N/A , N/A , N/A,1463,falling,-1.9,-2.4,-1.2
+"Cleveland (Norman), OK - McClain, OK(6)",430,456.6,443,470.6,N/A , N/A , N/A,891,falling,-1.7,-2.2,-1.2
+"Accomack, VA - Northampton, VA(6)",137,456.4,424.2,490.9,N/A , N/A , N/A,167,falling,-1.2,-2.1,-0.3
+"Missoula, MT - Ravalli, MT(6)",713,456.3,440.4,472.7,N/A , N/A , N/A,686,falling,-1.2,-1.8,-0.5
+"Mc Kean, PA - Potter, PA(6)",864,456.3,427.4,486.7,N/A , N/A , N/A,205,falling,-1.1,-2.1,-0.2
+"Miami-Dade (Miami), FL - Broward, FL(6)",200,456.1,452.5,459.8,N/A , N/A , N/A,12469,falling,-1.1,-1.5,-0.7
+"Woodward, OK - Dewey, OK(6)",469,455.5,413.5,500.8,N/A , N/A , N/A,90,falling,-1.9,-3.5,-0.4
+"Sweetwater, WY(6)",977,455.2,414.9,498.4,N/A , N/A , N/A,108,falling,-9.2,-15.6,-1.2
+"Pemiscot, MO(6)",956,454.9,393.7,523.4,N/A , N/A , N/A,42,stable,-0.1,-2.6,2.2
+"Johnson, TN(6)",899,454.8,404.4,510.6,N/A , N/A , N/A,63,falling,-8.1,-18.3,-0.2
+"Logan, OH(6)",398,454.7,420,491.8,N/A , N/A , N/A,138,falling,-1.5,-2.8,-0.2
+"Henderson, IL(7)",340,454.6,377.8,546.3,N/A , N/A , N/A,27,stable,-0.9,-2.6,0.9
+"Larimer, CO(6)",796,454.3,440.6,468.4,N/A , N/A , N/A,895,stable,-2.4,-6.5,1.1
+"San Diego (San Diego), CA - Imperial, CA(7)",774,454.2,449.7,458.8,N/A , N/A , N/A,8151,falling,-1.3,-1.6,-0.9
+"Pittsylvania (Danville), VA - Danville City, VA(6)",883,453.8,431.3,477.4,N/A , N/A , N/A,331,falling,-1.9,-3.2,-0.7
+"Delaware, OK(6)",932,453.8,419.7,490.3,N/A , N/A , N/A,150,stable,-0.3,-1.4,0.8
+"Bee, TX - Karnes, TX(7)",513,453.8,414.7,495.4,N/A , N/A , N/A,105,stable,0.1,-3.8,5.6
+"Bennington, VT(6)",854,453.5,417.7,491.9,N/A , N/A , N/A,131,falling,-2.5,-3.4,-1.6
+"Wexford, MI - Osceola, MI(6)",317,453.4,429.2,478.7,N/A , N/A , N/A,290,falling,-2.1,-3.5,-0.8
+"Allamakee, IA(7)",290,452.6,395.3,516.8,N/A , N/A , N/A,49,falling,-1.1,-2,-0.1
+"Hampden (Springfield), MA - Hampshire, MA(7)",32,452.6,442.5,462.9,N/A , N/A , N/A,1653,falling,-1.5,-1.8,-1.1
+"Albany, WY - Carbon, WY(6)",975,452.6,415.5,492.1,N/A , N/A , N/A,121,stable,-0.8,-2.3,0.7
+"Scotts Bluff, NE - Box Butte, NE(6)",580,452.3,420.5,486,N/A , N/A , N/A,163,stable,1.1,-2.1,7.1
+"Pasquotank, NC - Dare, NC(6)",264,452.3,429.3,476.3,N/A , N/A , N/A,318,falling,-1.1,-1.9,-0.3
+"Kings (New York), NY - Queens, NY(7)",94,452.2,449.4,455.1,N/A , N/A , N/A,20279,stable,-0.8,-1.4,0.1
+"Fergus, MT - Petroleum, MT(6)",810,451.9,392,519.7,N/A , N/A , N/A,46,falling,-2.6,-4.3,-0.9
+"Centre (State College), PA - Clearfield, PA(6)",26,451.6,437.2,466.4,N/A , N/A , N/A,787,falling,-1.4,-1.9,-0.9
+"Eau Claire (Eau Claire), WI - Chippewa, WI(6)",298,451.2,435.3,467.6,N/A , N/A , N/A,649,stable,-0.3,-0.9,0.4
+"Richardson, NE - Pawnee, NE(6)",628,450.5,386.5,523.8,N/A , N/A , N/A,40,stable,-0.7,-3.5,2.1
+"Livingston, MO - Carroll, MO(6)",657,450.2,401.9,503.1,N/A , N/A , N/A,68,falling,-1.2,-2.4,-0.1
+"Harris (Houston), TX - Fort Bend, TX(7)",408,450,446.3,453.7,N/A , N/A , N/A,12624,falling,-1.6,-2.7,-0.7
+"Collingsworth, TX(7)",524,449.8,313,629.8,N/A , N/A , N/A,7,stable,-0.9,-4.2,1.9
+"Washtenaw, MI - Livingston, MI(6)",831,449.5,438.7,460.6,N/A , N/A , N/A,1413,falling,-2,-2.4,-1.5
+"Dakota, NE - Thurston, NE(6)",942,449.5,404.9,497.7,N/A , N/A , N/A,80,stable,-0.7,-2.1,0.8
+"Mineral, WV - Hardy, WV(6)",851,449.2,418.7,481.7,N/A , N/A , N/A,175,falling,-1.1,-1.8,-0.4
+"Pike, PA(6)",876,449.2,421.4,478.7,N/A , N/A , N/A,217,falling,-1.7,-2.6,-0.7
+"Richland (Columbia), SC - Lexington, SC(6)",160,448.7,439.1,458.5,N/A , N/A , N/A,1800,falling,-1.8,-2.2,-1.3
+"Berrien (Benton Harbor), MI - Van Buren, MI(6)",327,448.4,434.5,462.7,N/A , N/A , N/A,857,falling,-1.9,-2.5,-1.3
+"Klamath, OR - Lake, OR(6)",743,448.1,423,474.4,N/A , N/A , N/A,263,falling,-1.2,-2.1,-0.4
+"Washburn, WI - Burnett, WI(6)",314,447.4,412.7,485,N/A , N/A , N/A,146,stable,-3.5,-13.6,0.1
+"Ketchikan Gateway Borough, AK - Wrangell-Petersburg Cen, AK(6)",817,446.4,401,496,N/A , N/A , N/A,81,stable,-1.6,-3.1,0.1
+"Henry, VA - Patrick, VA(6)",79,443.7,419.7,468.9,N/A , N/A , N/A,277,falling,-1.6,-2.9,-0.3
+"Jackson (Kansas City), MO - Clay, MO(6)",548,443.1,436,450.3,N/A , N/A , N/A,3178,falling,-1.4,-1.9,-1
+"Genesee (Flint), MI - Lapeer, MI(6)",328,442.8,431.9,453.8,N/A , N/A , N/A,1360,falling,-3.3,-6,-2.5
+"Cassia, ID - Minidoka, ID(7)",730,442.4,405.3,482,N/A , N/A , N/A,109,rising,1.4,0.1,3.9
+"Hawaii, HI(7)",823,442.1,426.1,458.7,N/A , N/A , N/A,652,rising,3.4,1.7,6.4
+"Nueces (Corpus Christi), TX - San Patricio, TX(7)",437,440.8,429.9,451.8,N/A , N/A , N/A,1316,falling,-3.4,-5.5,-1.5
+"Franklin, ID - Bear Lake, ID(7)",715,440.4,387.5,498.8,N/A , N/A , N/A,53,stable,0.1,-1.5,1.9
+"Fairbanks North Star Borough, AK - Denali/Yukon-Koyukuk, AK(6)",819,439.9,413,468.1,N/A , N/A , N/A,242,stable,1.1,-0.9,5.8
+"Kent (Grand Rapids), MI - Ionia, MI(6)",309,439.7,430.9,448.6,N/A , N/A , N/A,2043,falling,-1.7,-2.4,-1
+"Blaine, ID - Camas, ID(7)",808,439.5,395,488.2,N/A , N/A , N/A,78,stable,-0.9,-2.3,0.7
+"Kern, CA(7)",807,438.8,429.3,448.5,N/A , N/A , N/A,1749,falling,-1.1,-1.5,-0.7
+"Kalamazoo (Kalamazoo), MI - St. Joseph, MI(6)",348,438.6,424.5,453.2,N/A , N/A , N/A,770,falling,-2,-2.7,-1.3
+"Polk, WI(6)",906,438.4,406.1,472.8,N/A , N/A , N/A,150,stable,-0.4,-1.5,0.9
+"Phelps, NE - Furnas, NE(6)",616,438.2,385.9,496.5,N/A , N/A , N/A,55,falling,-12.4,-23.1,-1.3
+"Bexar (San Antonio), TX - Guadalupe, TX(7)",410,438.2,432.6,443.8,N/A , N/A , N/A,5001,falling,-2,-3.4,-1
+"Weston, WY(6)",804,438.1,358.8,531.9,N/A , N/A , N/A,24,stable,0.6,-1.2,2.6
+"Salt Lake (Salt Lake City), UT - Tooele, UT(7)",708,437.9,430.1,445.8,N/A , N/A , N/A,2613,stable,-0.4,-1.3,1.4
+"Deschutes, OR - Crook, OR(6)",719,437.4,423.3,452,N/A , N/A , N/A,787,falling,-1.5,-2.1,-0.8
+"Miller, AR - Hempstead, AR(6)",404,436.6,415,459.1,N/A , N/A , N/A,324,falling,-1.7,-2.9,-0.4
+"Stark, ND - Dunn, ND(6)",605,436.5,396.4,479.5,N/A , N/A , N/A,93,stable,-0.8,-1.9,0.4
+"Comal, TX(7)",517,436.2,417.3,455.8,N/A , N/A , N/A,438,falling,-4.2,-6.8,-2.2
+"Stanislaus (Modesto), CA - Merced, CA(7)",737,435.4,426.6,444.3,N/A , N/A , N/A,1960,stable,-0.3,-1.4,1.6
+"Chippewa, MI - Emmet, MI(6)",294,435.3,416.8,454.6,N/A , N/A , N/A,459,stable,-1.1,-2.2,0.1
+"Orange, CA(7)",833,435.3,430.8,439.8,N/A , N/A , N/A,7500,falling,-1.3,-1.5,-1
+"Natrona (Casper), WY - Converse, WY(6)",726,435.1,409.6,461.8,N/A , N/A , N/A,239,falling,-1.2,-2.1,-0.3
+"Rockingham, VA - Harrisonburg City, VA(6)",63,435,415.7,455.1,N/A , N/A , N/A,397,falling,-1.1,-2,-0.2
+"Park, WY - Big Horn, WY(6)",749,434.7,401.5,470.2,N/A , N/A , N/A,142,falling,-1.4,-1.9,-0.8
+"Solano (Vallejo), CA - Napa, CA(7)",746,434.5,425.2,444.1,N/A , N/A , N/A,1745,stable,-0.3,-2.3,2.2
+"Sacramento (Sacramento), CA - Placer, CA(7)",709,434.3,429.2,439.6,N/A , N/A , N/A,5637,falling,-1.8,-3.3,-1.4
+"Vernon, MO - Cedar, MO(6)",639,434.2,396.8,474.5,N/A , N/A , N/A,106,falling,-2.2,-3.4,-1.1
+"Sheridan, WY - Johnson, WY(6)",770,433.9,399.2,471.1,N/A , N/A , N/A,129,falling,-1.5,-2.8,-0.3
+"Dona Ana (Las Cruces), NM - Luna, NM(7)",732,433.8,418.6,449.5,N/A , N/A , N/A,647,falling,-0.9,-2.3,-0.5
+"Erath, TX - Comanche, TX(7)",507,433.7,401.3,468.2,N/A , N/A , N/A,140,stable,-0.8,-1.6,0
+"Richland, MT - Dawson, MT(6)",767,432.9,386.3,484,N/A , N/A , N/A,68,falling,-1.4,-2.6,-0.1
+"Madison (Huntsville), AL - Limestone, AL(6)",210,431.4,420.7,442.3,N/A , N/A , N/A,1325,falling,-1.9,-4,-1.3
+"Platte, WY(6)",797,430.9,365.5,507.3,N/A , N/A , N/A,34,stable,4.4,-1.6,13
+"Yakima (Yakima), WA - Kittitas, WA(6)",739,430.8,415.9,446,N/A , N/A , N/A,668,stable,1,-1.4,4.3
+"Dewey, SD - Walworth, SD(6)",648,430,376.1,489.8,N/A , N/A , N/A,50,stable,-0.9,-2.4,0.5
+"Pennington (Rapid City), SD - Meade, SD(6)",558,429.8,411.8,448.4,N/A , N/A , N/A,478,falling,-2,-2.7,-1.4
+"San Joaquin (Stockton), CA - Calaveras, CA(7)",750,429.3,420.5,438.3,N/A , N/A , N/A,1910,falling,-1.8,-3.1,-1.4
+"Montgomery, MD - Prince Georges, MD(6)",869,429.3,423.9,434.7,N/A , N/A , N/A,5176,falling,-1.1,-1.6,-0.6
+"Routt, CO - Moffat, CO(6)",735,429.3,390.2,471.3,N/A , N/A , N/A,103,stable,-1.8,-3.4,0.1
+"Honolulu (Honolulu), HI - Maui, HI(7)",821,429.2,422.3,436.1,N/A , N/A , N/A,3105,stable,-0.4,-0.8,0.4
+"Marquette, MI - Delta, MI(6)",293,428.8,409.5,448.8,N/A , N/A , N/A,413,falling,-1.4,-2,-0.9
+"Jackson, OK - Greer, OK(6)",483,427.9,386.2,473.1,N/A , N/A , N/A,80,stable,-1.1,-2.8,0.6
+"Frederick, VA - Shenandoah, VA(6)",25,427.6,412,443.6,N/A , N/A , N/A,606,stable,-0.8,-1.6,1.2
+"San Bernardino, CA - Riverside (Riverside), CA(7)",768,427.4,423.6,431.4,N/A , N/A , N/A,9700,falling,-1.3,-1.4,-1.1
+"Grand, UT(7)",965,426.6,356.4,507.8,N/A , N/A , N/A,29,stable,-1.1,-2.4,0.5
+"Lipscomb, TX(7)",935,426.6,306.6,581.5,N/A , N/A , N/A,9,falling,-2.5,-4.4,-0.7
+"Wasco, OR - Hood River, OR(6)",748,426.3,395.9,458.6,N/A , N/A , N/A,158,falling,-1.5,-2.5,-0.4
+"Mendocino, CA(7)",811,425.5,402.3,449.8,N/A , N/A , N/A,283,falling,-2.4,-3.4,-1.8
+"Childress, TX - Hall, TX(7)",512,425.2,358.5,501.5,N/A , N/A , N/A,30,falling,-1.3,-2.7,-0.1
+"Mohave, AZ(6)",803,424.9,411.2,439,N/A , N/A , N/A,898,falling,-2.8,-4.6,-2
+"Pima (Tucson), AZ - Cochise, AZ(6)",700,424.8,418.3,431.3,N/A , N/A , N/A,3472,falling,-0.8,-1.3,-0.2
+"Franklin, PA - Fulton, PA(6)",872,424.2,406.9,442.2,N/A , N/A , N/A,477,falling,-8.3,-16.7,-1.3
+"Utah (Provo), UT - Sanpete, UT(7)",703,424.1,412.3,436.1,N/A , N/A , N/A,1047,stable,0.7,-0.7,3
+"Benton (Kennewick), WA - Franklin, WA(6)",702,423.6,408.5,439.2,N/A , N/A , N/A,636,falling,-1.9,-2.4,-1.4
+"Park, MT - Sweet Grass, MT(6)",756,423.2,378,473.2,N/A , N/A , N/A,73,stable,-1,-2.1,0.2
+"Aiken, SC - Edgefield, SC(6)",889,423,407.4,439.1,N/A , N/A , N/A,599,falling,-1.2,-1.8,-0.6
+"Washington (Fayetteville), AR - Benton, AR(6)",446,422.2,410.7,433.9,N/A , N/A , N/A,1075,stable,-0.8,-1.5,0
+"Chaffee, CO - Lake, CO(6)",786,420.5,379.9,464.7,N/A , N/A , N/A,87,stable,-1.2,-2.6,0.2
+"Weld, CO - Morgan, CO(6)",760,420.2,406.4,434.2,N/A , N/A , N/A,762,falling,-1,-1.5,-0.3
+"Cherry, NE(6)",668,418.6,329.9,525.9,N/A , N/A , N/A,17,stable,-1.2,-3.8,1.2
+"El Paso (El Paso), TX - Hudspeth, TX(7)",415,418.3,409,427.8,N/A , N/A , N/A,1600,falling,-1.5,-2,-1.1
+"Coos, OR - Curry, OR(6)",969,418.2,396.3,441.2,N/A , N/A , N/A,331,falling,-2,-2.7,-1.4
+"Russell, AL(6)",166,415.1,381.9,450.4,N/A , N/A , N/A,127,falling,-4.5,-17.3,-2.1
+"Hale, TX - Castro, TX(7)",481,414.9,379.2,453,N/A , N/A , N/A,103,falling,-1.9,-2.9,-0.9
+"Maricopa (Phoenix), AZ - Pinal, AZ(6)",699,414.8,411.5,418.1,N/A , N/A , N/A,12505,falling,-3.3,-5.1,-2
+"Fresno (Fresno), CA - Kings, CA(7)",718,413.9,406.5,421.5,N/A , N/A , N/A,2483,falling,-1.2,-1.6,-0.9
+"Nevada, CA - Sierra, CA(7)",753,413.8,393.6,435,N/A , N/A , N/A,375,falling,-1.8,-2.3,-1.4
+"Walla Walla, WA - Columbia, WA(6)",967,413.6,386,442.7,N/A , N/A , N/A,176,falling,-1.5,-2.3,-0.8
+"Lincoln, OR - Tillamook, OR(6)",783,411.7,388.6,436.2,N/A , N/A , N/A,286,falling,-1.7,-2.2,-1.1
+"Mesa, CO - Garfield, CO(6)",711,410.5,396.9,424.5,N/A , N/A , N/A,745,stable,0.5,-1.5,4.9
+"Boulder, CO - Broomfield, CO(6)",795,410.4,397.8,423.3,N/A , N/A , N/A,866,stable,-0.1,-1.6,2.4
+"San Francisco (San Francisco), CA - San Mateo, CA(7)",757,410,404.1,415.9,N/A , N/A , N/A,3884,falling,-2.1,-3.2,-1.7
+"Cameron (Brownsville), TX - Willacy, TX(7)",520,408.8,396.4,421.5,N/A , N/A , N/A,842,falling,-0.9,-1.3,-0.5
+"Adair, MO - Sullivan, MO(6)",566,408.6,375.8,443.7,N/A , N/A , N/A,121,falling,-1.9,-2.9,-0.8
+"Denver (Denver), CO - Jefferson, CO(6)",688,408.6,403.7,413.5,N/A , N/A , N/A,5919,falling,-2.1,-3.9,-1.6
+"Baca, CO(6)",562,408.2,306.9,537.8,N/A , N/A , N/A,12,stable,-0.6,-3.1,1.6
+"Linn, OR - Benton, OR(6)",727,406.9,391.3,423.1,N/A , N/A , N/A,549,falling,-1.7,-2.3,-1.1
+"Navajo, AZ(6)",740,406.7,384.4,430.1,N/A , N/A , N/A,272,stable,0.3,-0.4,1
+"Webb (Laredo), TX - Zapata, TX(7)",538,406.6,389,424.7,N/A , N/A , N/A,430,stable,2,-0.7,5.6
+"Juneau City and Borough, AK - Sitka City and Borough, AK(6)",818,406.5,371.6,444,N/A , N/A , N/A,116,falling,-1.5,-2.7,-0.2
+"Midland (Midland), TX - Pecos, TX(7)",492,406,385.9,426.8,N/A , N/A , N/A,333,falling,-1.4,-2.1,-0.7
+"Lewis, WA - Pacific, WA(6)",832,405.1,384.7,426.5,N/A , N/A , N/A,329,falling,-1.8,-2.5,-1.1
+"Bernalillo (Albuquerque), NM - Sandoval, NM(7)",693,404.5,396.9,412.3,N/A , N/A , N/A,2281,stable,0,-0.8,1.8
+"Alameda (Oakland), CA - Contra Costa, CA(7)",766,404.1,399.5,408.8,N/A , N/A , N/A,6151,falling,-2.1,-2.4,-1.8
+"Kauai, HI(7)",822,404.1,378.7,430.8,N/A , N/A , N/A,208,falling,-1.1,-2,-0.3
+"Essex, VT(6)",884,403.9,329.5,494.9,N/A , N/A , N/A,23,stable,-1.6,-3.4,0.1
+"Bowman, ND - Hettinger, ND(6)",640,403.8,336,483.3,N/A , N/A , N/A,28,stable,-0.5,-2.6,1.5
+"Santa Clara (San Jose), CA - Monterey, CA(7)",751,403.7,398.7,408.8,N/A , N/A , N/A,5064,stable,-0.4,-1.1,0.7
+"Yuma, AZ - La Paz, AZ(6)",787,403.6,388.6,419,N/A , N/A , N/A,598,stable,-0.3,-1.3,0.7
+"Stutsman, ND - Wells, ND(6)",632,403,363.6,445.8,N/A , N/A , N/A,83,falling,-4,-7.2,-2.8
+"Chase, NE - Dundy, NE(6)",654,403,322.5,499.7,N/A , N/A , N/A,19,falling,-3.1,-7.5,-1.6
+"El Paso (Colorado Springs), CO - Teller, CO(6)",754,402.9,393.5,412.4,N/A , N/A , N/A,1526,falling,-2.8,-7.5,-2
+"Pendleton, WV(6)",870,402.5,327.7,493,N/A , N/A , N/A,23,stable,-0.1,-1.9,1.8
+"Quitman, GA(7)",891,402.4,287.2,566.1,N/A , N/A , N/A,9,falling,-20.7,-34.8,-3.3
+"Curry, NM - Roosevelt, NM(7)",725,401.9,374.5,430.8,N/A , N/A , N/A,166,falling,-1,-1.5,-0.5
+"Otero, CO - Prowers, CO(6)",745,400.8,368,435.9,N/A , N/A , N/A,115,falling,-1.6,-2.6,-0.7
+"Monroe, MI(6)",276,400.7,382.7,419.5,N/A , N/A , N/A,406,falling,-1.6,-2.9,-0.2
+"Otero, NM - Lincoln, NM(7)",769,399.9,376.4,424.6,N/A , N/A , N/A,235,falling,-1,-1.4,-0.7
+"Beaver, OK(6)",535,399.2,312.8,505,N/A , N/A , N/A,15,stable,1.6,-26.8,26.1
+"Hidalgo (Mcallen), TX - Starr, TX(7)",427,399.1,390,408.3,N/A , N/A , N/A,1493,falling,-0.9,-1.4,-0.3
+"Alleghany, NC(6)",73,398.7,342.9,463.3,N/A , N/A , N/A,40,falling,-1.2,-2.3,-0.1
+"Beaufort, SC - Jasper, SC(6)",886,398.4,384.2,413,N/A , N/A , N/A,689,falling,-7.8,-11.3,-5
+"Roberts, SD(6)",952,398,330.4,476.3,N/A , N/A , N/A,27,stable,-0.6,-2.5,1.2
+"Lincoln, TN(6)",900,398,361,438.1,N/A , N/A , N/A,92,falling,-3.4,-5.8,-1.9
+"Dickinson, MI - Menominee, MI(6)",315,397.3,371.4,424.8,N/A , N/A , N/A,201,stable,-0.8,-2.4,0.8
+"Fremont, WY - Washakie, WY(6)",777,397,367.1,428.9,N/A , N/A , N/A,142,falling,-2.3,-6.9,-1.3
+"Umatilla, OR - Morrow, OR(6)",717,392.7,368.9,417.6,N/A , N/A , N/A,213,falling,-1.6,-2.6,-0.5
+"Ottawa (Holland), MI - Allegan, MI(6)",320,392.5,380.8,404.5,N/A , N/A , N/A,912,falling,-1.8,-2.6,-1
+"Lawrence, SD(6)",586,390.9,349.9,435.9,N/A , N/A , N/A,76,falling,-2.3,-3.8,-0.8
+"Clark, WA - Cowlitz, WA(6)",960,390.5,380.9,400.2,N/A , N/A , N/A,1368,falling,-2,-2.5,-1.5
+"Sheridan, MT - Daniels, MT(6)",733,389.9,309.4,488.6,N/A , N/A , N/A,18,falling,-31.7,-45.5,-16.5
+"Gaines, TX - Andrews, TX(7)",937,389.3,344.8,437.7,N/A , N/A , N/A,61,falling,-2,-3.6,-0.5
+"Texas, OK - Cimarron, OK(6)",951,389.1,340.1,443,N/A , N/A , N/A,48,falling,-1.6,-3,-0.2
+"Tulare, CA(7)",789,388.5,376.1,401.2,N/A , N/A , N/A,785,falling,-1.5,-1.8,-1.2
+"Union, OR - Baker, OR(6)",759,387.6,358.6,418.5,N/A , N/A , N/A,151,falling,-2.1,-3.1,-1.2
+"Clark (Las Vegas), NV - Nye, NV(6)",707,387.1,382.1,392.1,N/A , N/A , N/A,4961,falling,-2.5,-3,-2
+Puerto Rico(6),995,386.9,382.9,390.9,N/A , N/A , N/A,7556,stable,-4.3,-13.1,5.4
+"Los Angeles (Los Angeles), CA(7)",723,386.2,383.7,388.7,N/A , N/A , N/A,19546,falling,-1.2,-1.6,-0.6
+"Montrose, CO - Delta, CO(6)",761,386.1,365.9,407.2,N/A , N/A , N/A,306,falling,-1.5,-2.5,-0.4
+"Siskiyou, CA(7)",752,385.8,355.3,418.6,N/A , N/A , N/A,139,stable,3.6,-3.2,8
+"Muskegon (Muskegon), MI - Newaygo, MI(6)",296,385.2,372.2,398.7,N/A , N/A , N/A,715,falling,-6.9,-10.8,-2.6
+"Campbell, WY - Crook, WY(6)",950,384.6,349.5,422.1,N/A , N/A , N/A,109,stable,-1.2,-2.3,0
+"McIntosh, ND - Logan, ND(6)",684,382.3,296.3,490.8,N/A , N/A , N/A,16,falling,-3.5,-9.6,-1.7
+"Teton, WY - Lincoln, WY(6)",775,381,350.9,413.1,N/A , N/A , N/A,131,falling,-2,-2.9,-1
+"Fremont, CO - Custer, CO(6)",812,378.1,351.9,405.9,N/A , N/A , N/A,165,falling,-3.6,-13.5,-1.4
+"St. Croix, WI - Pierce, WI(6)",923,375.1,355,396,N/A , N/A , N/A,288,stable,-0.1,-0.7,0.7
+"La Plata, CO - Montezuma, CO(6)",985,373.7,352.5,395.9,N/A , N/A , N/A,265,rising,5.1,3.7,6.6
+"Chaves, NM - Eddy, NM(7)",772,373.5,352.9,395,N/A , N/A , N/A,258,falling,-2.3,-2.9,-2
+"Williams, ND - McKenzie, ND(6)",579,371.2,335.2,409.9,N/A , N/A , N/A,89,falling,-1.5,-2.7,-0.4
+"Lea, NM(7)",508,371,340.6,403.2,N/A , N/A , N/A,119,falling,-2.6,-3.6,-1.9
+"Klickitat, WA - Skamania, WA(6)",972,370.4,337.5,406,N/A , N/A , N/A,106,falling,-12.7,-20.9,-4
+"Goshen, WY - Niobrara, WY(6)",948,369.2,319.3,425.4,N/A , N/A , N/A,43,stable,-1.6,-3.7,0.5
+"Deaf Smith, TX - Parmer, TX(7)",491,368.7,324.4,417.3,N/A , N/A , N/A,52,falling,-3.5,-13,-1.2
+"Prince William (Dale City), VA - Fauquier, VA(6)",109,367.2,356.4,378.2,N/A , N/A , N/A,1008,falling,-2.3,-3.1,-1.4
+"Del Norte, CA(7)",738,366.5,326.9,409.7,N/A , N/A , N/A,68,falling,-2,-3.5,-0.7
+"Tazewell, VA - Buchanan, VA(6)",39,363.8,339.7,389.4,N/A , N/A , N/A,184,falling,-2,-3.7,-0.4
+"Spokane (Spokane), WA - Stevens, WA(6)",698,362.1,353.4,371.1,N/A , N/A , N/A,1387,falling,-3,-3.6,-2.3
+"Logan, CO - Phillips, CO(6)",763,360.9,323.1,402.2,N/A , N/A , N/A,70,falling,-2.4,-3.5,-1.3
+"Grant, OR(6)",806,355.4,290.8,433.7,N/A , N/A , N/A,26,stable,-1.7,-3.5,0.1
+"Wise, VA - Lee, VA(6)",55,355.1,332.2,379.4,N/A , N/A , N/A,191,falling,-3.3,-5,-1.8
+"Currituck, NC(6)",6,354.3,314.7,397.9,N/A , N/A , N/A,66,falling,-2.1,-3.8,-0.3
+"Cheyenne, NE - Kimball, NE(6)",741,353,304.2,408.5,N/A , N/A , N/A,40,falling,-1.8,-3.4,-0.2
+"Fairfax, VA - Arlington, VA(6)",69,350.1,344.6,355.6,N/A , N/A , N/A,3397,falling,-2,-2.5,-1.4
+"Houghton, MI - Baraga, MI(6)",359,347.3,317.8,379,N/A , N/A , N/A,111,falling,-2.2,-2.8,-1.5
+"Lane (Eugene), OR - Douglas, OR(6)",782,346.7,337.5,356.1,N/A , N/A , N/A,1172,falling,-11.6,-15.6,-6.9
+"Malheur, OR(6)",968,345.8,309.1,385.7,N/A , N/A , N/A,67,falling,-2.7,-4.5,-1
+"Santa Fe (Santa Fe), NM - Rio Arriba, NM(7)",724,345,332.5,357.9,N/A , N/A , N/A,648,stable,0.2,-1.6,4.1
+"Dickey, ND - LaMoure, ND(6)",680,343.8,284.2,414.1,N/A , N/A , N/A,25,falling,-2.8,-5.1,-0.8
+"San Juan, UT(7)",970,340.9,282.9,407.5,N/A , N/A , N/A,26,stable,0.6,-0.6,2.2
+"Elko, NV - Lander, NV(6)",720,340.7,311.5,372,N/A , N/A , N/A,111,falling,-2.1,-3.5,-0.7
+"Gogebic, MI - Ontonagon, MI(6)",284,339.9,302.9,381.6,N/A , N/A , N/A,73,stable,-1.4,-4.1,1.1
+"Grant, NM - Hidalgo, NM(7)",793,339.7,308.7,373.5,N/A , N/A , N/A,108,falling,-1.8,-2.4,-1.2
+"San Juan, NM(7)",986,336.4,316.2,357.6,N/A , N/A , N/A,222,falling,-1,-1.5,-0.5
+"Union, NM(7)",814,335.5,244.4,451.7,N/A , N/A , N/A,10,stable,-0.6,-3,1.8
+"Uinta, WY(6)",792,335.2,288.3,387.9,N/A , N/A , N/A,42,stable,-1.8,-3.8,0.3
+"Lassen, CA - Plumas, CA(7)",780,335.2,308.9,363.2,N/A , N/A , N/A,130,falling,-2.2,-3.6,-1.5
+"Inyo, CA - Mono, CA(7)",816,334.9,302.1,370.8,N/A , N/A , N/A,84,falling,-1.6,-2.7,-0.5
+"McKinley, NM(7)",974,334.9,306.2,365.5,N/A , N/A , N/A,108,stable,-0.4,-1,0.4
+"Asotin, WA - Garfield, WA(6)",961,331.7,294,373.6,N/A , N/A , N/A,64,falling,-3.5,-6.3,-0.8
+"Dawes, NE - Sheridan, NE(6)",623,330.2,280.8,386.7,N/A , N/A , N/A,35,stable,-1.6,-4.2,1
+"Alamosa, CO - Rio Grande, CO(6)",731,324.9,295.7,356.4,N/A , N/A , N/A,101,falling,-2.5,-9,-0.9
+"Brewster, TX - Presidio, TX(7)",526,320.2,278.2,367.5,N/A , N/A , N/A,47,stable,-0.7,-1.8,2.1
+"Apache, AZ(6)",765,319.5,293.2,347.6,N/A , N/A , N/A,116,stable,-0.2,-1.4,1.1
+"Colfax, NM(7)",963,317.9,266,378.2,N/A , N/A , N/A,32,stable,-0.9,-1.8,0
+"Washington, VA - Smyth, VA(6)",888,314,298.7,329.9,N/A , N/A , N/A,345,falling,-4.7,-8.3,-3.6
+"San Miguel, NM - Mora, NM(7)",801,304.7,274.7,337.3,N/A , N/A , N/A,86,falling,-2.3,-10.9,-1.1
+"White Pine, NV(6)",805,288.3,232.4,354.6,N/A , N/A , N/A,19,falling,-3.3,-6.5,-0.4
+"Perkins, SD - Harding, SD(6)",959,273.1,194.4,377.1,N/A , N/A , N/A,9,falling,-3.2,-6.3,-0.5
+"Whitman, WA(6)",976,220.3,190.7,253.1,N/A , N/A , N/A,43,falling,-5.3,-7.3,-3.5
+"Allen (Fort Wayne), IN - Noble, IN(6)",304,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Alpine, CA(7)",701,* ,*, *,* , * , *,3 or fewer,*,*,*,*
+"Atchison, KS(6)",671,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Barber, KS(6)",669,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Bartholomew, IN - Jackson, IN(6)",313,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Barton, KS - Pawnee, KS(6)",583,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Boone, IN(6)",401,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Cherokee, KS(6)",539,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Cheyenne, KS - Rawlins, KS(6)",636,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Clark (Jeffersonville), IN - Scott, IN(6)",365,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Clay, KS(6)",662,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Cloud, KS - Republic, KS(6)",642,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Crawford, KS - Bourbon, KS(6)",630,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Dearborn, IN - Jefferson (Madison), IN(6)",321,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Decatur, KS - Sheridan, KS(6)",613,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Delaware (Muncie), IN - Randolph, IN(6)",323,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Doniphan, KS(6)",591,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Dubois, IN(6)",394,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Elkhart (Elkhart), IN - Kosciusko, IN(6)",349,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Ellis, KS - Rooks, KS(6)",565,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Finney, KS - Scott, KS(6)",575,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Floyd (New Albany), IN - Harrison, IN(6)",339,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Ford, KS - Gray, KS(6)",551,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Fountain, IN - Warren, IN(6)",915,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Franklin, IN(6)",270,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Geary, KS - Dickinson, KS(6)",650,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Grant, IN - Miami, IN(6)",389,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Grant, KS - Stanton, KS(6)",943,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Hamilton, IN - Madison (Anderson), IN(6)",390,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Hancock, IN - Henry (New Castle), IN(6)",362,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Howard (Kokomo), IN - Cass, IN(6)",364,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Huntington, IN - Adams, IN(6)",332,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Johnson (Overland Park), KS - Douglas, KS(6)",624,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Kingman, KS - Harper, KS(6)",661,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Knox, IN - Daviess, IN(6)",910,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"La Porte, IN - Starke, IN(6)",378,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Labette, KS - Neosho, KS(6)",601,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Lake (Gary), IN - Porter, IN(6)",308,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Lawrence, IN - Orange, IN(6)",329,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Lyon, KS - Coffey, KS(6)",567,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Marion (Indianapolis), IN - Johnson, IN(6)",275,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Marshall, KS - Washington, KS(6)",635,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"McPherson, KS(6)",674,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Mitchell, KS - Osborne, KS(6)",622,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Monroe (Bloomington), IN - Greene, IN(6)",341,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Montgomery, IN(6)",402,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Montgomery, KS - Chautauqua, KS(6)",451,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Ness, KS(6)",682,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Perry, IN(6)",316,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Phillips, KS - Norton, KS(6)",637,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Pratt, KS - Kiowa, KS(6)",618,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Reno, KS - Rice, KS(6)",598,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Russell, KS(6)",667,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Saline, KS - Ellsworth, KS(6)",569,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Sedgwick (Wichita), KS - Butler, KS(6)",576,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Seward, KS - Morton, KS(6)",587,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Shawnee (Topeka), KS - Riley, KS(6)",554,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"St. Joseph (South Bend), IN - Marshall, IN(6)",312,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Stevens, KS(6)",664,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Thomas, KS - Sherman, KS(6)",659,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Tippecanoe (Lafayette), IN - Clinton, IN(6)",300,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Vanderburgh (Evansville), IN - Warrick, IN(6)",902,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Vigo (Terre Haute), IN - Clay, IN(6)",911,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Wayne, IN - Fayette, IN(6)",385,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Wichita, KS - Greeley, KS(6)",643,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Wilson, KS(6)",675,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]
+"Wyandotte (Kansas City), KS - Leavenworth, KS(6)",621,[P1 note] ,[P1 note], [P1 note],N/A , N/A , N/A,[P1 note],[P1 note],[P1 note],[P1 note],[P1 note]

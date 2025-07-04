@@ -3,7 +3,7 @@ import { Activity, Map } from "lucide-react";
 
 export const Header = () => {
   return (
-    <header className="bg-white border-b border-slate-200 shadow-sm">
+    <header className="bg-background border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
@@ -11,16 +11,16 @@ export const Header = () => {
               <Activity className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-slate-900">
+              <h1 className="text-xl font-bold text-foreground">
                 Texas Cancer Data Explorer
               </h1>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-muted-foreground">
                 Environmental Health & Cancer Disparities
               </p>
             </div>
           </div>
           
-          <div className="flex items-center space-x-2 text-slate-600">
+          <div className="flex items-center space-x-2 text-muted-foreground">
             <Map className="w-5 h-5" />
             <span className="text-sm font-medium">Interactive County Map</span>
           </div>

@@ -1,4 +1,4 @@
-
+                    
 import { useState, useEffect } from "react";
 import { GeoJSONData } from "@/types/geoTypes";
 
@@ -48,12 +48,11 @@ export const useGeoData = () => {
           }
         });
         
-        // Convert to SVG coordinates (flip Y axis for SVG)
+        // Convert to SVG coordinates (no Y negation in viewBox)
         const width = maxX - minX;
         const height = maxY - minY;
         const padding = width * 0.05; // 5% padding
-        
-        setViewBox(`${minX - padding} ${-maxY - padding} ${width + 2 * padding} ${height + 2 * padding}`);
+        setViewBox(`${minX - padding} ${minY - padding} ${width + 2 * padding} ${height + 2 * padding}`);
       })
       .catch(error => {
         console.error('Error loading GeoJSON:', error);

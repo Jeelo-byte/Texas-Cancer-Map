@@ -55,8 +55,9 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Main dark mode background variable (slate, not full black) */
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 30% 12%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;

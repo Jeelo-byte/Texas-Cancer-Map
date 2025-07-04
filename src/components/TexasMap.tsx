@@ -1,109 +1,158 @@
 
-import { useState } from "react";
-import { County, DataOverlay } from "@/pages/Index";
-import { useGeoData } from "@/hooks/useGeoData";
-import { renderCountyPath, getCountyCentroid } from "@/utils/geoUtils";
-import { getCountyData, getOverlayColor } from "@/utils/mapUtils";
-import { MapOverlay } from "@/components/MapOverlay";
+import { useEffect, useState } from 'react';
+import { MapContainer, GeoJSON, useMap } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 interface TexasMapProps {
-  onCountyClick: (county: County) => void;
-  selectedCounty: County | null;
-  activeOverlay: DataOverlay;
+  activeOverlay: string | null;
+  onCountyClick: (countyName: string) => void;
+  realCounties: any[];
+  darkMode?: boolean;
 }
 
-export const TexasMap = ({ onCountyClick, selectedCounty, activeOverlay }: TexasMapProps) => {
-  const [hoveredCounty, setHoveredCounty] = useState<string | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const { geoData, viewBox } = useGeoData();
+const overlayColors = {
+  poverty: '#f87171',
+  healthcare: '#34d399',
+  pollution: '#60a5fa',
+  mortality: '#a78bfa',
+};
 
-  if (!geoData) {
-    return (
-      <div className={`w-full h-full flex items-center justify-center ${isDarkMode ? 'bg-slate-900' : 'bg-slate-100'}`}>
-        <div className={`${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>Loading Texas counties map...</div>
-      </div>
+function InvalidateMapSizeOnMount() {
+  const map = useMap();
+  useEffect(() => {
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 100);
+  }, [map]);
+  return null;
+}
+
+export const TexasMap = ({ activeOverlay, onCountyClick, realCounties, darkMode }: TexasMapProps) => {
+  const [geoData, setGeoData] = useState<any>(null);
+  const [cancerData, setCancerData] = useState<Record<string, any>>({});
+  const [hoveredCountyId, setHoveredCountyId] = useState<string | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{x: number, y: number} | null>(null);
+
+  useEffect(() => {
+    fetch('/Texas_County_Boundaries.geojson')
+      .then((res) => res.json())
+      .then((data) => setGeoData(data));
+  }, []);
+
+  useEffect(() => {
+    if (!geoData || !realCounties) return;
+    const geoIds = new Set(
+      geoData.features.map((f: any) => f.properties.OBJECTID?.toString())
     );
+    const dataIds = new Set(realCounties.map((c: any) => c.id));
+    const missingInData = Array.from(geoIds).filter((id) => !dataIds.has(id));
+    const missingInGeo = Array.from(dataIds).filter((id) => !geoIds.has(id));
+    console.log('OBJECTIDs in GeoJSON but not in data.json:', missingInData);
+    console.log('OBJECTIDs in data.json but not in GeoJSON:', missingInGeo);
+  }, [geoData, realCounties]);
+
+  // Find the real data for the hovered county by OBJECTID
+  const hoveredCountyData = hoveredCountyId
+    ? realCounties.find((c) => c.id === hoveredCountyId)
+    : null;
+  if (hoveredCountyId) {
+    console.log('Hovered OBJECTID:', hoveredCountyId, 'Data:', hoveredCountyData);
   }
 
+  const onEachFeature = (feature: any, layer: any) => {
+    const objectId = feature.properties.OBJECTID?.toString();
+    const countyName = feature.properties.CNTY_NM;
+    layer.on({
+      mouseover: (e: any) => {
+        setHoveredCountyId(objectId);
+        setTooltipPos({
+          x: e.originalEvent.clientX,
+          y: e.originalEvent.clientY,
+        });
+      },
+      mouseout: (e: any) => {
+        setHoveredCountyId(null);
+        setTooltipPos(null);
+      },
+      click: () => {
+        console.log('Clicked OBJECTID:', objectId);
+        onCountyClick(objectId);
+      },
+    });
+  };
+
+  const getCountyStyle = (feature: any) => {
+    const objectId = feature.properties.OBJECTID?.toString();
+    const isHovered = hoveredCountyId && objectId && hoveredCountyId === objectId;
+    if (isHovered) {
+      return {
+        fillColor: '#2563eb',
+        weight: 3,
+        color: '#2563eb',
+        fillOpacity: 0.5,
+      };
+    }
+    if (!activeOverlay) {
+      return {
+        fillColor: darkMode ? '#334155' : '#2563eb', // slate-700 for dark, blue-600 for light
+        weight: 1,
+        color: darkMode ? '#64748b' : '#fff', // slate-400 for dark, white for light
+        fillOpacity: 0.2,
+      };
+    }
+    // Use overlay color
+    return {
+      fillColor: overlayColors[activeOverlay as keyof typeof overlayColors] || (darkMode ? '#334155' : '#2563eb'),
+      weight: 1,
+      color: darkMode ? '#64748b' : '#fff',
+      fillOpacity: 0.5,
+    };
+  };
+
   return (
-    <div className={`w-full h-full relative ${isDarkMode ? 'bg-slate-900' : 'bg-blue-50'}`}>
-      {/* Dark mode toggle */}
-      <button
-        onClick={() => setIsDarkMode(!isDarkMode)}
-        className={`absolute top-4 right-4 z-30 p-2 rounded-lg ${
-          isDarkMode ? 'bg-slate-800 text-white' : 'bg-white text-slate-900'
-        } shadow-lg hover:shadow-xl transition-all`}
+    <div className="w-full h-full min-h-screen rounded-lg relative bg-background">
+      <MapContainer
+        center={[31.0, -99.0]}
+        zoom={6}
+        minZoom={5}
+        maxBounds={[[25.5, -107.0], [36.7, -93.5]]}
+        maxBoundsViscosity={1.0}
+        scrollWheelZoom={true}
+        zoomControl={false}
+        style={{ height: '100%', width: '100%', background: 'var(--background)' }}
+        className="rounded-lg"
       >
-        {isDarkMode ? '☀️' : '🌙'}
-      </button>
-
-      <div className={`absolute inset-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white'} rounded-lg shadow-lg overflow-hidden`}>
-        <div className="w-full h-full relative">
-          <svg viewBox={viewBox} className="w-full h-full">
-            {geoData.features.map((feature) => {
-              const countyName = feature.properties?.NAME;
-              if (!countyName) return null;
-              
-              const countyData = getCountyData(countyName);
-              const isSelected = selectedCounty?.name.includes(countyName) || countyName.includes(selectedCounty?.name.replace(" County", "") || "");
-              const isHovered = hoveredCounty === countyName;
-              const pathData = renderCountyPath(feature);
-              
-              if (!pathData) return null;
-
-              return (
-                <g key={countyName}>
-                  {/* County polygon */}
-                  <path
-                    d={pathData}
-                    className={`
-                      cursor-pointer transition-all duration-300 stroke-2
-                      ${isSelected ? "stroke-blue-500" : isDarkMode ? "stroke-slate-500" : "stroke-slate-400"}
-                      ${isHovered ? (isDarkMode ? "stroke-slate-300" : "stroke-slate-600") : ""}
-                      ${getOverlayColor(countyData, activeOverlay, isDarkMode)}
-                    `}
-                    onClick={() => countyData && onCountyClick(countyData)}
-                    onMouseEnter={() => setHoveredCounty(countyName)}
-                    onMouseLeave={() => setHoveredCounty(null)}
-                  />
-                  
-                  {/* County sites and indicators */}
-                  {countyData && (
-                    <>
-                      {/* Cancer sites count badge */}
-                      {countyData.sites.length > 0 && (
-                        <>
-                          <circle
-                            cx={getCountyCentroid(feature)[0]}
-                            cy={getCountyCentroid(feature)[1]}
-                            r="12"
-                            className="fill-red-500 opacity-90"
-                          />
-                          <text
-                            x={getCountyCentroid(feature)[0]}
-                            y={getCountyCentroid(feature)[1] + 4}
-                            textAnchor="middle"
-                            className="text-xs font-bold fill-white pointer-events-none"
-                          >
-                            {countyData.sites.length}
-                          </text>
-                        </>
-                      )}
-                    </>
-                  )}
-                </g>
-              );
-            })}
-          </svg>
-
-          <MapOverlay
-            selectedCounty={selectedCounty}
-            activeOverlay={activeOverlay}
-            hoveredCounty={hoveredCounty}
-            isDarkMode={isDarkMode}
+        {geoData && (
+          <GeoJSON
+            data={geoData}
+            style={getCountyStyle}
+            onEachFeature={onEachFeature}
+            interactive={true}
           />
+        )}
+      </MapContainer>
+      {/* Tooltip */}
+      {hoveredCountyId && tooltipPos && (
+        <div
+          className="pointer-events-none fixed z-[10000] bg-background dark:bg-background border border-border dark:border-border rounded shadow px-3 py-2 text-sm text-foreground dark:text-foreground"
+          style={{
+            left: tooltipPos.x + 12,
+            top: tooltipPos.y + 12,
+            minWidth: 120,
+            maxWidth: 220,
+          }}
+        >
+          <div className="font-semibold">{hoveredCountyData ? hoveredCountyData.name + ' County' : 'County'}</div>
+          <div>Incidence Rate: {hoveredCountyData ? hoveredCountyData.cancerIncidence : 'N/A'}</div>
+          {hoveredCountyData && (
+            <>
+              <div>Avg Annual Deaths: {hoveredCountyData.averageAnnualDeaths ?? 'N/A'}</div>
+              <div>Recent Trend: {hoveredCountyData.recentTrend ?? 'N/A'}%/yr</div>
+            </>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 };

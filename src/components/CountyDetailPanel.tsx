@@ -27,7 +27,7 @@ export const CountyDetailPanel = ({ county, isOpen, onClose }: CountyDetailPanel
       {/* Panel */}
       <div className={`
         fixed lg:absolute top-0 right-0 h-full w-full lg:w-96 
-        bg-white shadow-2xl z-40 transform transition-transform duration-300
+        bg-background text-foreground border-l border-border shadow-2xl z-40 transform transition-transform duration-300
         ${isOpen ? "translate-x-0" : "translate-x-full"}
         overflow-y-auto
       `}>
@@ -35,8 +35,8 @@ export const CountyDetailPanel = ({ county, isOpen, onClose }: CountyDetailPanel
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900">{county.name}</h2>
-              <p className="text-slate-600 flex items-center mt-1">
+              <h2 className="text-2xl font-bold text-foreground">{county.name}</h2>
+              <p className="text-muted-foreground flex items-center mt-1">
                 <Users className="w-4 h-4 mr-1" />
                 Population: {formatNumber(county.population)}
               </p>
@@ -57,17 +57,29 @@ export const CountyDetailPanel = ({ county, isOpen, onClose }: CountyDetailPanel
             <CardContent className="space-y-4">
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-600">Incidence Rate</span>
+                  <span className="text-muted-foreground">Incidence Rate</span>
                   <span className="font-medium">{county.cancerIncidence} per 100k</span>
                 </div>
                 <Progress value={(county.cancerIncidence / 500) * 100} className="h-2" />
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-600">Mortality Rate</span>
+                  <span className="text-muted-foreground">Mortality Rate</span>
                   <span className="font-medium">{county.cancerMortality} per 100k</span>
                 </div>
                 <Progress value={(county.cancerMortality / 200) * 100} className="h-2" />
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-muted-foreground">Avg Annual Deaths</span>
+                  <span className="font-medium">{county.averageAnnualDeaths}</span>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-muted-foreground">Recent Trend</span>
+                  <span className="font-medium">{county.recentTrend}%/yr</span>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -80,21 +92,21 @@ export const CountyDetailPanel = ({ county, isOpen, onClose }: CountyDetailPanel
             <CardContent className="space-y-4">
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-600">Poverty Rate</span>
+                  <span className="text-muted-foreground">Poverty Rate</span>
                   <span className="font-medium">{county.povertyRate}%</span>
                 </div>
                 <Progress value={county.povertyRate} className="h-2" />
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-600">Healthcare Access</span>
+                  <span className="text-muted-foreground">Healthcare Access</span>
                   <span className="font-medium">{county.healthcareAccess}%</span>
                 </div>
                 <Progress value={county.healthcareAccess} className="h-2" />
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-600">Pollution Level</span>
+                  <span className="text-muted-foreground">Pollution Level</span>
                   <span className="font-medium">{county.pollutionLevel}/100</span>
                 </div>
                 <Progress value={county.pollutionLevel} className="h-2" />
@@ -113,20 +125,20 @@ export const CountyDetailPanel = ({ county, isOpen, onClose }: CountyDetailPanel
             <CardContent>
               <div className="space-y-3">
                 {county.sites.map((site) => (
-                  <div key={site.id} className="border rounded-lg p-3">
+                  <div key={site.id} className="border border-border rounded-lg p-3 bg-card text-card-foreground">
                     <div className="flex items-start justify-between mb-2">
-                      <h4 className="font-medium text-slate-900">{site.name}</h4>
+                      <h4 className="font-medium text-foreground">{site.name}</h4>
                       <span className={`
                         px-2 py-1 text-xs rounded-full
-                        ${site.riskLevel === "high" ? "bg-red-100 text-red-800" :
-                          site.riskLevel === "medium" ? "bg-yellow-100 text-yellow-800" :
-                          "bg-green-100 text-green-800"}
+                        ${site.riskLevel === "high" ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200" :
+                          site.riskLevel === "medium" ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200" :
+                          "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"}
                       `}>
                         {site.riskLevel.toUpperCase()}
                       </span>
                     </div>
-                    <p className="text-sm text-slate-600 mb-2">{site.description}</p>
-                    <div className="flex items-center text-xs text-slate-500">
+                    <p className="text-sm text-muted-foreground mb-2">{site.description}</p>
+                    <div className="flex items-center text-xs text-muted-foreground">
                       <MapPin className="w-3 h-3 mr-1" />
                       {site.type.replace("_", " ").toUpperCase()}
                     </div>

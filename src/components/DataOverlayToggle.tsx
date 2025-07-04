@@ -42,10 +42,10 @@ export const DataOverlayToggle = ({ activeOverlay, onOverlayChange }: DataOverla
   ];
 
   return (
-    <Card className="p-4 bg-white/95 backdrop-blur-sm">
+    <Card className="p-4 bg-background text-foreground backdrop-blur-sm">
       <div className="mb-3">
-        <h3 className="font-semibold text-slate-900 text-sm">Data Overlays</h3>
-        <p className="text-xs text-slate-600">Toggle different data visualizations</p>
+        <h3 className="font-semibold text-foreground text-sm">Data Overlays</h3>
+        <p className="text-xs text-muted-foreground">Toggle different data visualizations</p>
       </div>
       
       <div className="grid grid-cols-2 gap-2">
