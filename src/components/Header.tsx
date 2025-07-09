@@ -1,4 +1,3 @@
-
 import { Activity, Map } from "lucide-react";
 
 export const Header = () => {
@@ -19,7 +18,7 @@ export const Header = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="flex items-center space-x-2 text-muted-foreground">
             <Map className="w-5 h-5" />
             <span className="text-sm font-medium">Interactive County Map</span>

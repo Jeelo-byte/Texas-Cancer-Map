@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { TexasMap } from "@/components/TexasMap";
 import { CountyDetailPanel } from "@/components/CountyDetailPanel";
@@ -34,7 +33,12 @@ export interface CancerSite {
   riskLevel: "low" | "medium" | "high";
 }
 
-export type DataOverlay = "poverty" | "healthcare" | "pollution" | "mortality" | null;
+export type DataOverlay =
+  | "poverty"
+  | "healthcare"
+  | "pollution"
+  | "mortality"
+  | null;
 
 const Index = () => {
   const [selectedCountyId, setSelectedCountyId] = useState<string | null>(null);
@@ -45,9 +49,9 @@ const Index = () => {
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 
@@ -72,7 +76,9 @@ const Index = () => {
       }
       // Map sites to counties
       const counties: County[] = (countiesData || []).map((county: any) => {
-        const countySites = (sitesData || []).filter((site: any) => site.county_id === county.id);
+        const countySites = (sitesData || []).filter(
+          (site: any) => site.county_id === county.id,
+        );
         return {
           id: county.objectid?.toString() ?? county.id, // Use objectid for map matching
           uuid: county.id, // Store Supabase UUID
@@ -113,7 +119,19 @@ const Index = () => {
   };
 
   // Debug log for matching
-  console.log('Selected:', selectedCountyId, 'Available:', realCounties.map(c => c.id));
+  console.log(
+    "Selected:",
+    selectedCountyId,
+    "Available:",
+    realCounties.map((c) => c.id),
+  );
+
+  // Calculate max values for progress bars
+  const maxCancerIncidence = realCounties.length > 0 ? Math.max(...realCounties.map(c => c.cancerIncidence)) : 1;
+  const maxCancerMortality = realCounties.length > 0 ? Math.max(...realCounties.map(c => c.cancerMortality)) : 1;
+  const maxPovertyRate = realCounties.length > 0 ? Math.max(...realCounties.map(c => c.povertyRate)) : 1;
+  const maxHealthcareAccess = realCounties.length > 0 ? Math.max(...realCounties.map(c => c.healthcareAccess)) : 1;
+  const maxPollutionLevel = realCounties.length > 0 ? Math.max(...realCounties.map(c => c.pollutionLevel)) : 1;
 
   return (
     <div className="min-h-screen h-screen flex flex-col bg-slate-50 dark:bg-slate-900">
@@ -127,7 +145,7 @@ const Index = () => {
       >
         {darkMode ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
       </Button>
-      
+
       <div className="relative flex-1 h-full">
         <div
           style={{
@@ -135,28 +153,46 @@ const Index = () => {
           }}
           className="absolute top-4 left-4"
         >
-          <DataOverlayToggle 
+          <DataOverlayToggle
             activeOverlay={activeOverlay}
             onOverlayChange={setActiveOverlay}
           />
         </div>
 
-        <TexasMap
-          activeOverlay={activeOverlay}
-          onCountyClick={handleCountyClick}
-          realCounties={realCounties}
-          darkMode={darkMode}
-        />
-
-        <CountyDetailPanel
-          county={
-            selectedCountyId
-              ? realCounties.find((c) => c.id === selectedCountyId) || null
-              : null
-          }
-          isOpen={isPanelOpen}
-          onClose={handleClosePanel}
-        />
+        {/* Flex row for map and sidebar */}
+        <div className="flex h-full w-full">
+          {/* Map section */}
+          <div className="flex-1 h-full min-w-0">
+            <TexasMap
+              activeOverlay={activeOverlay}
+              onCountyClick={handleCountyClick}
+              realCounties={realCounties}
+              darkMode={darkMode}
+            />
+          </div>
+          {/* Sidebar (desktop only, animates width and opacity) */}
+          <div
+            className={`hidden lg:block fixed top-0 right-0 h-full bg-white dark:bg-slate-900 shadow-2xl border-l border-slate-200 dark:border-slate-700
+            transition-all duration-300 ease-in-out
+            ${isPanelOpen ? "w-96 opacity-100" : "w-0 opacity-0 pointer-events-none"}
+            overflow-y-auto z-50`}
+          >
+            <CountyDetailPanel
+              county={
+                selectedCountyId
+                  ? realCounties.find((c) => c.id === selectedCountyId) || null
+                  : null
+              }
+              isOpen={isPanelOpen}
+              onClose={handleClosePanel}
+              maxCancerIncidence={maxCancerIncidence}
+              maxCancerMortality={maxCancerMortality}
+              maxPovertyRate={maxPovertyRate}
+              maxHealthcareAccess={maxHealthcareAccess}
+              maxPollutionLevel={maxPollutionLevel}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
