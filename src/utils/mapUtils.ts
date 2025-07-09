@@ -1,18 +1,5 @@
 
 import { County, DataOverlay } from "@/pages/Index";
-import { mockCounties } from "@/data/mockData";
-
-export const getCountyData = (countyName: string): County | null => {
-  if (!countyName) {
-    console.warn('County name is undefined or empty');
-    return null;
-  }
-  
-  return mockCounties.find(county => 
-    county.name.toLowerCase().includes(countyName.toLowerCase()) ||
-    countyName.toLowerCase().includes(county.name.toLowerCase().replace(" county", ""))
-  ) || null;
-};
 
 export const getOverlayColor = (county: County | null, overlay: DataOverlay, isDarkMode: boolean): string => {
   if (!overlay || !county) {

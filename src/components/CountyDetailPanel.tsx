@@ -25,12 +25,20 @@ export const CountyDetailPanel = ({ county, isOpen, onClose }: CountyDetailPanel
       />
       
       {/* Panel */}
-      <div className={`
-        fixed lg:absolute top-0 right-0 h-full w-full lg:w-96 
-        bg-background text-foreground border-l border-border shadow-2xl z-40 transform transition-transform duration-300
-        ${isOpen ? "translate-x-0" : "translate-x-full"}
-        overflow-y-auto
-      `}>
+      <div
+        style={{
+          background: "white",
+          opacity: 1,
+          zIndex: 1000,
+        }}
+        className={`
+          fixed lg:absolute top-0 right-0 h-full w-full lg:w-96
+          border border-slate-200/80 dark:border-slate-700/80 shadow-2xl
+          transform transition-transform duration-300
+          ${isOpen ? "translate-x-0" : "translate-x-full"}
+          overflow-y-auto
+        `}
+      >
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">

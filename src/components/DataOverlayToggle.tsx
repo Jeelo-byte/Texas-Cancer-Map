@@ -42,7 +42,9 @@ export const DataOverlayToggle = ({ activeOverlay, onOverlayChange }: DataOverla
   ];
 
   return (
-    <Card className="p-4 bg-background text-foreground backdrop-blur-sm">
+    <Card
+      className="p-4 text-foreground bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200 dark:border-slate-700 shadow-lg"
+    >
       <div className="mb-3">
         <h3 className="font-semibold text-foreground text-sm">Data Overlays</h3>
         <p className="text-xs text-muted-foreground">Toggle different data visualizations</p>

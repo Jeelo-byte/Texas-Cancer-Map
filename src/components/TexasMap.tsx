@@ -30,7 +30,6 @@ function InvalidateMapSizeOnMount() {
 
 export const TexasMap = ({ activeOverlay, onCountyClick, realCounties, darkMode }: TexasMapProps) => {
   const [geoData, setGeoData] = useState<any>(null);
-  const [cancerData, setCancerData] = useState<Record<string, any>>({});
   const [hoveredCountyId, setHoveredCountyId] = useState<string | null>(null);
   const [tooltipPos, setTooltipPos] = useState<{x: number, y: number} | null>(null);
 
