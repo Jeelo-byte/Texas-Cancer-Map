@@ -172,10 +172,18 @@ const Index = () => {
           </div>
           {/* Sidebar (desktop only, animates width and opacity) */}
           <div
-            className={`hidden lg:block fixed top-0 right-0 h-full bg-white dark:bg-slate-900 shadow-2xl border-l border-slate-200 dark:border-slate-700
-            transition-all duration-300 ease-in-out
-            ${isPanelOpen ? "w-96 opacity-100" : "w-0 opacity-0 pointer-events-none"}
-            overflow-y-auto z-50`}
+            style={{
+              background: "#fff !important",
+              backgroundColor: "#fff !important",
+              zIndex: 1000,
+            }}
+            className={`
+              fixed lg:absolute top-0 right-0 h-full w-full lg:w-96
+              border border-slate-200/80 dark:border-slate-700/80 shadow-2xl
+              transform transition-transform duration-300
+              ${isPanelOpen ? "translate-x-0" : "translate-x-full"}
+              overflow-y-auto
+            `}
           >
             <CountyDetailPanel
               county={

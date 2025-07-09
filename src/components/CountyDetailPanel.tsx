@@ -40,14 +40,10 @@ export const CountyDetailPanel = ({
 
       {/* Panel */}
       <div
-        style={{
-          background: "white",
-          opacity: 1,
-          zIndex: 1000,
-        }}
         className={`
           fixed lg:absolute top-0 right-0 h-full w-full lg:w-96
           border border-slate-200/80 dark:border-slate-700/80 shadow-2xl
+          bg-white dark:bg-slate-900
           transform transition-transform duration-300
           ${isOpen ? "translate-x-0" : "translate-x-full"}
           overflow-y-auto
