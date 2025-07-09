@@ -6,9 +6,11 @@ import { DataOverlayToggle } from "@/components/DataOverlayToggle";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Sun, Moon } from "lucide-react";
+import { supabase } from "@/lib/supabaseClient";
 
 export interface County {
-  id: string; // OBJECTID as string
+  id: string; // OBJECTID as string (for map matching)
+  uuid: string; // Supabase UUID
   name: string;
   population: number;
   cancerIncidence: number;
@@ -50,28 +52,54 @@ const Index = () => {
   }, [darkMode]);
 
   useEffect(() => {
-    // Load all county data from data.json
-    fetch('/data.json')
-      .then((res) => res.json())
-      .then((data) => {
-        // Map to County[] using all available stats
-        const counties: County[] = data.map((row: any) => ({
-          id: row.OBJECTID?.toString() ?? row.id?.toString() ?? '',
-          name: row.CNTY_NM || row.name || '',
-          population: row.population || 0,
-          cancerIncidence: row.AgeAdjustedDeathRate || row.cancerIncidence || 0,
-          cancerMortality: row.cancerMortality || 0,
-          povertyRate: row.povertyRate || 0,
-          healthcareAccess: row.healthcareAccess || 0,
-          pollutionLevel: row.pollutionLevel || 0,
-          deathRate: row.deathRate || 0,
-          averageAnnualDeaths: row.AverageAnnualDeaths || 0,
-          recentTrend: row.RecentTrend_PercentPerYear || 0,
-          coordinates: row.coordinates || [0, 0],
-          sites: row.sites || [],
-        }));
-        setRealCounties(counties);
+    // Fetch counties and their environmental sites from Supabase
+    const fetchData = async () => {
+      // Fetch all counties
+      const { data: countiesData, error: countiesError } = await supabase
+        .from("counties")
+        .select("*");
+      if (countiesError) {
+        console.error("Error fetching counties:", countiesError);
+        return;
+      }
+      // Fetch all environmental sites
+      const { data: sitesData, error: sitesError } = await supabase
+        .from("environmental_sites")
+        .select("*");
+      if (sitesError) {
+        console.error("Error fetching environmental sites:", sitesError);
+        return;
+      }
+      // Map sites to counties
+      const counties: County[] = (countiesData || []).map((county: any) => {
+        const countySites = (sitesData || []).filter((site: any) => site.county_id === county.id);
+        return {
+          id: county.objectid?.toString() ?? county.id, // Use objectid for map matching
+          uuid: county.id, // Store Supabase UUID
+          name: county.name,
+          population: county.population ?? 0,
+          cancerIncidence: county.incidence_rate ?? 0,
+          cancerMortality: county.mortality_rate ?? 0,
+          povertyRate: county.poverty_rate ?? 0,
+          healthcareAccess: county.healthcare_access ?? 0,
+          pollutionLevel: county.pollution_level ?? 0,
+          deathRate: county.mortality_rate ?? 0,
+          averageAnnualDeaths: county.avg_annual_deaths ?? 0,
+          recentTrend: county.recent_trend ?? 0,
+          coordinates: [0, 0],
+          sites: countySites.map((site: any) => ({
+            id: site.id,
+            name: site.site_name || site.name || "",
+            type: site.type || "industrial",
+            coordinates: [site.longitude ?? 0, site.latitude ?? 0],
+            description: site.city || "",
+            riskLevel: site.risk_level || "medium",
+          })),
+        };
       });
+      setRealCounties(counties);
+    };
+    fetchData();
   }, []);
 
   const handleCountyClick = (countyId: string) => {
