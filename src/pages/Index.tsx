@@ -4,7 +4,7 @@ import { CountyDetailPanel } from "@/components/CountyDetailPanel";
 import { DataOverlayToggle } from "@/components/DataOverlayToggle";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, DollarSign, Heart, Droplets, Skull, Biohazard } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 import { Carcinogen, Cancer, CarcinogenCancerLink, EnvironmentalSiteCarcinogen } from "@/types/carcinogen";
 
@@ -34,14 +34,65 @@ export interface CancerSite {
   riskLevel: "low" | "medium" | "high";
 }
 
-export type DataOverlay =
-  | "poverty"
-  | "healthcare"
-  | "pollution"
-  | "mortality"
-  | "carcinogen_count"
-  | "cancer_count"
-  | null;
+// Update DataOverlay type to allow dynamic string IDs
+export type DataOverlay = string | null;
+
+const metricOverlayMeta: Record<string, { label: string; icon: React.ElementType; color: string; description: string }> = {
+  population: {
+    label: "Population",
+    icon: DollarSign,
+    color: "text-yellow-600",
+    description: "Population of each county",
+  },
+  incidence_rate: {
+    label: "Incidence Rate",
+    icon: Skull, // Changed from Virus to Skull
+    color: "text-blue-600",
+    description: "Cancer incidence rate per county",
+  },
+  mortality_rate: {
+    label: "Mortality Rate",
+    icon: Skull,
+    color: "text-purple-600",
+    description: "Cancer mortality rate per county",
+  },
+  avg_annual_deaths: {
+    label: "Avg Annual Deaths",
+    icon: Skull,
+    color: "text-gray-600",
+    description: "Average annual deaths per county",
+  },
+  recent_trend: {
+    label: "Recent Trend",
+    icon: Droplets,
+    color: "text-cyan-600",
+    description: "Recent trend in cancer rates",
+  },
+  poverty_rate: {
+    label: "Poverty Rate",
+    icon: DollarSign,
+    color: "text-red-600",
+    description: "Poverty rates across counties",
+  },
+  healthcare_access: {
+    label: "Healthcare Access",
+    icon: Heart,
+    color: "text-green-600",
+    description: "Access to healthcare services",
+  },
+  pollution_level: {
+    label: "Pollution Level",
+    icon: Droplets,
+    color: "text-blue-600",
+    description: "Environmental pollution levels",
+  },
+  overlay_field: {
+    label: "Overlay Field",
+    icon: Biohazard,
+    color: "text-orange-600",
+    description: "Custom overlay field",
+  },
+};
 
 const Index = () => {
   const [selectedCountyId, setSelectedCountyId] = useState<string | null>(null);
@@ -82,7 +133,33 @@ const Index = () => {
         console.error("Error fetching environmental sites:", sitesError);
         return;
       }
-      // Map sites to counties
+      // Fetch all carcinogen/cancer/site links
+      const { data: carcinogensData } = await supabase.from("carcinogens").select("*");
+      const { data: cancersData } = await supabase.from("cancers").select("*");
+      const { data: carcinogenCancerLinksData } = await supabase.from("carcinogen_cancer_link").select("*");
+      const { data: siteCarcinogensData } = await supabase.from("environmental_site_carcinogen").select("*");
+
+      // Build lookup maps
+      const carcinogenMap = Object.fromEntries((carcinogensData || []).map((c: any) => [c.id, c]));
+      const cancerMap = Object.fromEntries((cancersData || []).map((c: any) => [c.id, c]));
+      // For each carcinogen, find its linked cancers
+      const carcinogenToCancers: Record<string, any[]> = {};
+      (carcinogenCancerLinksData || []).forEach((link: any) => {
+        if (!carcinogenToCancers[link.carcinogen_id]) carcinogenToCancers[link.carcinogen_id] = [];
+        if (cancerMap[link.cancer_id]) carcinogenToCancers[link.carcinogen_id].push(cancerMap[link.cancer_id]);
+      });
+      // For each site, find its carcinogens (with linked cancers)
+      const siteToCarcinogens: Record<string, any[]> = {};
+      (siteCarcinogensData || []).forEach((sc: any) => {
+        if (!siteToCarcinogens[sc.site_id]) siteToCarcinogens[sc.site_id] = [];
+        if (carcinogenMap[sc.carcinogen_id]) {
+          const carcinogen = { ...carcinogenMap[sc.carcinogen_id] };
+          carcinogen.linkedCancers = carcinogenToCancers[carcinogen.id] || [];
+          siteToCarcinogens[sc.site_id].push(carcinogen);
+        }
+      });
+
+      // Map sites to counties, now with carcinogens and linked cancers
       const counties: County[] = (countiesData || []).map((county: any) => {
         const countySites = (sitesData || []).filter(
           (site: any) => site.county_id === county.id,
@@ -108,6 +185,7 @@ const Index = () => {
             coordinates: [site.longitude ?? 0, site.latitude ?? 0],
             description: site.city || "",
             riskLevel: site.risk_level || "medium",
+            carcinogens: siteToCarcinogens[site.id] || [],
           })),
         };
       });
@@ -157,8 +235,40 @@ const Index = () => {
   const maxHealthcareAccess = realCounties.length > 0 ? Math.max(...realCounties.map(c => c.healthcareAccess)) : 1;
   const maxPollutionLevel = realCounties.length > 0 ? Math.max(...realCounties.map(c => c.pollutionLevel)) : 1;
 
+  // Build overlays array dynamically
+  const metricKeys = Object.keys(metricOverlayMeta).filter((key) => key !== "overlay_field");
+  const metricOverlays = metricKeys.map((key) => ({
+    id: key,
+    label: metricOverlayMeta[key].label,
+    icon: metricOverlayMeta[key].icon,
+    color: metricOverlayMeta[key].color,
+    description: metricOverlayMeta[key].description,
+  }));
+
+  const carcinogenOverlays = carcinogens.map((carc) => ({
+    id: `carcinogen_${carc.id}`,
+    label: carc.name,
+    icon: Biohazard,
+    color: "text-orange-600",
+    description: `Presence/count of carcinogen: ${carc.name}`,
+  }));
+
+  const cancerOverlays = cancers.map((cancer) => ({
+    id: `cancer_${cancer.id}`,
+    label: cancer.name,
+    icon: Skull, // Changed from Virus to Skull
+    color: "text-pink-600",
+    description: `Presence/count of cancer: ${cancer.name}`,
+  }));
+
+  const overlays = [
+    ...metricOverlays,
+    ...carcinogenOverlays,
+    ...cancerOverlays,
+  ];
+
   return (
-    <div className="min-h-screen h-screen flex flex-col bg-slate-50 dark:bg-slate-900">
+    <div className="h-screen overflow-hidden bg-background flex flex-col">
       <Header />
       <Button
         className="absolute top-4 right-4 z-30 border border-slate-300 dark:border-slate-700 shadow bg-background text-foreground hover:bg-secondary transition"
@@ -180,6 +290,7 @@ const Index = () => {
           <DataOverlayToggle
             activeOverlay={activeOverlay}
             onOverlayChange={setActiveOverlay}
+            overlays={overlays}
           />
         </div>
 
@@ -192,6 +303,8 @@ const Index = () => {
               onCountyClick={handleCountyClick}
               realCounties={realCounties}
               darkMode={darkMode}
+              legendBottomClass="bottom-4"
+              overlays={overlays}
             />
           </div>
           {/* Sidebar (desktop only, animates width and opacity) */}

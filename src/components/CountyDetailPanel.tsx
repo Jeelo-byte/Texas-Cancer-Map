@@ -3,6 +3,8 @@ import { County } from "@/pages/Index";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { useState } from "react";
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 
 interface CountyDetailPanelProps {
   county: County | null;
@@ -36,6 +38,8 @@ export const CountyDetailPanel = ({
   console.log('CountyDetailPanel county:', county);
   if (!county || !isOpen) return null;
 
+  const [siteSearch, setSiteSearch] = useState("");
+
   const formatNumber = (num: number) => num.toLocaleString();
 
   const hasSites = Array.isArray(county.sites) && county.sites.length > 0;
@@ -59,7 +63,7 @@ export const CountyDetailPanel = ({
           overflow-y-auto
         `}
       >
-        <div className="p-6">
+        <div className="p-6 pb-24">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -198,27 +202,58 @@ export const CountyDetailPanel = ({
               </CardTitle>
             </CardHeader>
             <CardContent>
+              {/* Search bar for sites */}
+              {hasSites && (
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    value={siteSearch}
+                    onChange={e => setSiteSearch(e.target.value)}
+                    placeholder="Search sites by name or description..."
+                    className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              )}
               <div className="space-y-3">
                 {!hasSites && (
                   <div className="text-muted-foreground text-sm">No environmental sites available for this county.</div>
                 )}
-                {hasSites && county.sites.map((site) => {
+                {hasSites && county.sites
+                  .filter(site =>
+                    site.name?.toLowerCase().includes(siteSearch.toLowerCase()) ||
+                    site.description?.toLowerCase().includes(siteSearch.toLowerCase())
+                  )
+                  .map((site) => {
                   // Defensive: skip if site is null/undefined
                   if (!site) return null;
                   // Find carcinogen links for this site
                   const siteCarcLinks = Array.isArray(siteCarcinogens) ? siteCarcinogens.filter(link => link.site_id === site.id) : [];
                   // For each carcinogen at this site, find its details and linked cancers
-                  const carcinogenDetails = siteCarcLinks.map(link => {
+                  const carcinogenDetailsRaw = siteCarcLinks.map(link => {
                     const carcinogen = Array.isArray(carcinogens) ? carcinogens.find(c => c.id === link.carcinogen_id) : null;
                     if (!carcinogen) return null;
                     // Find all cancer links for this carcinogen
                     const cancerLinks = Array.isArray(carcinogenCancerLinks) ? carcinogenCancerLinks.filter(cl => cl.carcinogen_id === carcinogen.id) : [];
-                    const linkedCancers = cancerLinks.map(cl => {
+                    const linkedCancersRaw = cancerLinks.map(cl => {
                       const cancer = Array.isArray(cancers) ? cancers.find(ca => ca.id === cl.cancer_id) : null;
                       return cancer ? { ...cancer, linkDescription: cl.description } : null;
                     }).filter(Boolean);
+                    // Deduplicate linked cancers by id
+                    const linkedCancers = Object.values(
+                      linkedCancersRaw.reduce((acc: any, cancer: any) => {
+                        if (cancer && !acc[cancer.id]) acc[cancer.id] = cancer;
+                        return acc;
+                      }, {})
+                    );
                     return { ...carcinogen, siteLinkDescription: link.description, linkedCancers };
                   }).filter(Boolean);
+                  // Deduplicate carcinogens by id
+                  const carcinogenDetails = Object.values(
+                    carcinogenDetailsRaw.reduce((acc: any, carc: any) => {
+                      if (carc && !acc[carc.id]) acc[carc.id] = carc;
+                      return acc;
+                    }, {})
+                  );
                   return (
                     <div
                       key={site.id}
@@ -254,14 +289,23 @@ export const CountyDetailPanel = ({
                       {carcinogenDetails.length > 0 ? (
                         <div className="mt-2">
                           <div className="font-semibold text-sm mb-1">Carcinogens at this site:</div>
+                          <TooltipProvider>
                           <ul className="ml-4 list-disc">
                             {carcinogenDetails.map(carc => (
                               <li key={carc.id} className="mb-1">
-                                <span className="font-medium">{carc.name}</span>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <span className="font-medium underline decoration-dashed cursor-help">
+                                      {carc.name}
+                                    </span>
+                                  </TooltipTrigger>
+                                  {carc.description && (
+                                    <TooltipContent>{carc.description}</TooltipContent>
+                                  )}
+                                </Tooltip>
                                 {carc.type && <span className="ml-2 text-xs text-muted-foreground">[{carc.type}]</span>}
                                 {carc.effects && <span className="ml-2 text-xs text-muted-foreground">Effects: {carc.effects}</span>}
                                 {carc.siteLinkDescription && <span className="ml-2 text-xs text-muted-foreground">({carc.siteLinkDescription})</span>}
-                                {carc.description && <div className="text-xs text-muted-foreground ml-2">{carc.description}</div>}
                                 {/* Linked cancers */}
                                 {carc.linkedCancers && (carc.linkedCancers.length > 0) ? (
                                   <div className="ml-2 mt-1">
@@ -269,9 +313,17 @@ export const CountyDetailPanel = ({
                                     <ul className="ml-4 list-disc">
                                       {carc.linkedCancers.map((cancer: any) => (
                                         <li key={cancer.id} className="text-xs">
-                                          <span className="font-medium">{cancer.name}</span>
+                                          <Tooltip>
+                                            <TooltipTrigger asChild>
+                                              <span className="font-medium underline decoration-dashed cursor-help">
+                                                {cancer.name}
+                                              </span>
+                                            </TooltipTrigger>
+                                            {cancer.description && (
+                                              <TooltipContent>{cancer.description}</TooltipContent>
+                                            )}
+                                          </Tooltip>
                                           {cancer.linkDescription && <span className="ml-1 text-muted-foreground">({cancer.linkDescription})</span>}
-                                          {cancer.description && <span className="ml-1 text-muted-foreground">- {cancer.description}</span>}
                                         </li>
                                       ))}
                                     </ul>
@@ -282,6 +334,7 @@ export const CountyDetailPanel = ({
                               </li>
                             ))}
                           </ul>
+                          </TooltipProvider>
                         </div>
                       ) : (
                         <div className="text-xs text-muted-foreground">No carcinogens linked to this site.</div>

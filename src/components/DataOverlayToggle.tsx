@@ -1,106 +1,117 @@
-import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card } from "@/components/ui/card";
 import { DataOverlay } from "@/pages/Index";
-import { DollarSign, Heart, Droplets, Skull, Biohazard } from "lucide-react";
+
+interface OverlayOption {
+  id: string;
+  label: string;
+  icon: React.ElementType;
+  color: string;
+  description?: string;
+  group?: "metrics" | "carcinogens" | "cancers";
+}
 
 interface DataOverlayToggleProps {
   activeOverlay: DataOverlay;
   onOverlayChange: (overlay: DataOverlay) => void;
+  overlays: OverlayOption[];
 }
 
 export const DataOverlayToggle = ({
   activeOverlay,
   onOverlayChange,
+  overlays,
 }: DataOverlayToggleProps) => {
-  const overlays = [
-    {
-      id: "poverty" as const,
-      label: "Poverty",
-      icon: DollarSign,
-      color: "text-red-600",
-      description: "Poverty rates across counties",
-    },
-    {
-      id: "healthcare" as const,
-      label: "Healthcare",
-      icon: Heart,
-      color: "text-green-600",
-      description: "Access to healthcare services",
-    },
-    {
-      id: "pollution" as const,
-      label: "Pollution",
-      icon: Droplets,
-      color: "text-blue-600",
-      description: "Environmental pollution levels",
-    },
-    {
-      id: "mortality" as const,
-      label: "Mortality",
-      icon: Skull,
-      color: "text-purple-600",
-      description: "Cancer mortality rates",
-    },
-    {
-      id: "carcinogen_count" as const,
-      label: "Carcinogen Count",
-      icon: Biohazard,
-      color: "text-orange-600",
-      description: "Number of carcinogens present at sites in each county",
-    },
-    {
-      id: "cancer_count" as const,
-      label: "Cancer Count",
-      icon: Skull, // Use Skull instead of Virus
-      color: "text-pink-600",
-      description: "Number of cancers linked to carcinogens at sites in each county",
-    },
-  ];
+  // Group overlays by type
+  const metrics = overlays.filter((o) => !o.id.startsWith("carcinogen_") && !o.id.startsWith("cancer_"));
+  const carcinogens = overlays.filter((o) => o.id.startsWith("carcinogen_"));
+  const cancers = overlays.filter((o) => o.id.startsWith("cancer_"));
+
+  // Find the selected overlay option for display
+  const selectedOption = overlays.find((o) => o.id === activeOverlay);
 
   return (
     <Card className="p-4 text-foreground bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200 dark:border-slate-700 shadow-lg">
       <div className="mb-3">
-        <h3 className="font-semibold text-foreground text-sm">Data Overlays</h3>
+        <h3 className="font-semibold text-foreground text-sm">Data Overlay</h3>
         <p className="text-xs text-muted-foreground">
-          Toggle different data visualizations
+          Select a metric or type to overlay
         </p>
       </div>
-
-      <div className="grid grid-cols-2 gap-2">
-        {overlays.map((overlay) => {
-          const Icon = overlay.icon;
-          const isActive = activeOverlay === overlay.id;
-
-          return (
-            <Button
-              key={overlay.id}
-              variant={isActive ? "default" : "outline"}
-              size="sm"
-              onClick={() => onOverlayChange(isActive ? null : overlay.id)}
-              className={`
-                flex flex-col items-center p-3 h-auto
-                ${isActive ? overlay.color + " bg-opacity-10" : ""}
-              `}
-              title={overlay.description}
-            >
-              <Icon
-                className={`w-4 h-4 mb-1 ${isActive ? "" : overlay.color}`}
-              />
-              <span className="text-xs">{overlay.label}</span>
-            </Button>
-          );
-        })}
-      </div>
-
+      <Select value={activeOverlay ?? undefined} onValueChange={onOverlayChange}>
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Select overlay...">
+            {selectedOption ? (
+              <span className="flex items-center gap-2">
+                {selectedOption.icon && (
+                  <selectedOption.icon className={`w-4 h-4 ${selectedOption.color}`} />
+                )}
+                {selectedOption.label}
+              </span>
+            ) : null}
+          </SelectValue>
+        </SelectTrigger>
+        <SelectContent className="z-[2000]">
+          <SelectGroup>
+            <SelectLabel>Metrics</SelectLabel>
+            {metrics.map((overlay) => (
+              <SelectItem key={overlay.id} value={overlay.id}>
+                <span className="flex items-center gap-2">
+                  {overlay.icon && (
+                    <overlay.icon className={`w-4 h-4 ${overlay.color}`} />
+                  )}
+                  {overlay.label}
+                </span>
+              </SelectItem>
+            ))}
+          </SelectGroup>
+          {carcinogens.length > 0 && (
+            <SelectGroup>
+              <SelectLabel>Carcinogens</SelectLabel>
+              {carcinogens.map((overlay) => (
+                <SelectItem key={overlay.id} value={overlay.id}>
+                  <span className="flex items-center gap-2">
+                    {overlay.icon && (
+                      <overlay.icon className={`w-4 h-4 ${overlay.color}`} />
+                    )}
+                    {overlay.label}
+                  </span>
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          )}
+          {cancers.length > 0 && (
+            <SelectGroup>
+              <SelectLabel>Cancers</SelectLabel>
+              {cancers.map((overlay) => (
+                <SelectItem key={overlay.id} value={overlay.id}>
+                  <span className="flex items-center gap-2">
+                    {overlay.icon && (
+                      <overlay.icon className={`w-4 h-4 ${overlay.color}`} />
+                    )}
+                    {overlay.label}
+                  </span>
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          )}
+        </SelectContent>
+      </Select>
       {activeOverlay && (
-        <Button
-          variant="ghost"
-          size="sm"
+        <button
           onClick={() => onOverlayChange(null)}
-          className="w-full mt-2 text-xs"
+          className="w-full mt-2 text-xs text-blue-600 hover:underline"
         >
           Clear Overlay
-        </Button>
+        </button>
       )}
     </Card>
   );
