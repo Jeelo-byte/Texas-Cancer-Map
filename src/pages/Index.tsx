@@ -270,11 +270,11 @@ const Index = () => {
   ];
 
   return (
-    <div className="h-screen overflow-hidden bg-background flex flex-col">
+    <div className="h-screen overflow-hidden bg-background flex flex-col relative">
       <Header />
-      <div className="flex w-full">
+      <div className="absolute right-4 top-[4.5rem] z-30">
         <Button
-          className="ml-auto mr-4 mt-2 border border-slate-300 dark:border-slate-700 shadow bg-background text-foreground hover:bg-secondary transition"
+          className="border border-slate-300 dark:border-slate-700 shadow bg-background text-foreground hover:bg-secondary transition"
           size="icon"
           variant="ghost"
           onClick={() => setDarkMode((d) => !d)}
