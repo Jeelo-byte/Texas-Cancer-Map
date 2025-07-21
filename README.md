@@ -1,73 +1,143 @@
-# Welcome to your Lovable project
+# Texas Cancer Compass
 
-## Project info
+A comprehensive, interactive web application for exploring cancer data, environmental risk factors, and healthcare access across Texas counties.
 
-**URL**: https://lovable.dev/projects/14b5d3ef-b25e-4169-a589-d6056a4c9983
+## Table of Contents
 
-## How can I edit this code?
+- [Features](#features)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Data Sources](#data-sources)
+- [Tech Stack](#tech-stack)
+- [Attribution](#attribution)
+- [License](#license)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/14b5d3ef-b25e-4169-a589-d6056a4c9983) and start prompting.
+- **Interactive Map**: Visualize Texas counties with overlays for cancer incidence, mortality, poverty, healthcare access, pollution, and more.
+- **Environmental Sites**: Toggle and view environmental risk sites (e.g., power plants, landfills, chemical plants) per county.
+- **Detailed County Panels**: Click a county to see detailed statistics, trends, and associated environmental sites.
+- **Data Overlays**: Switch between different data overlays (population, cancer rates, poverty, etc.) for comparative analysis.
+- **Admin Dashboard**: Manage counties, carcinogens, cancers, and environmental sites (requires authentication).
+- **Dark/Light Mode**: Fully responsive UI with dark and light theme support.
+- **Accessible UI**: Built with accessibility and usability in mind.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Demo
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+> _Add a link or screenshot here if you have a live deployment!_
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Node.js (v18+ recommended)
+- npm
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/texas-cancer-compass.git
+   cd texas-cancer-compass
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Setup:**
+   - The app uses [Supabase](https://supabase.com/) for backend data and authentication.
+   - Update `src/lib/supabaseClient.ts` with your own Supabase project URL and anon key if deploying your own instance.
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at [http://localhost:5173](http://localhost:5173).
+
+---
+
+## Project Structure
+
+```
+public/
+  ├── favicon.png                # App icon (see Attribution)
+  ├── Texas_County_Boundaries.geojson  # County boundaries for the map
+  ├── Texas_County_Boundaries.json     # County boundaries (JSON)
+  ├── Cancer Data.csv            # Main cancer statistics data
+  └── robots.txt                 # Search engine rules
+
+src/
+  ├── App.tsx, main.tsx          # App entry points
+  ├── pages/                     # Main pages (Index, AdminDashboard, Login, NotFound)
+  ├── components/                # Main and UI components (map, panels, toggles, etc.)
+  ├── lib/                       # Supabase client and utilities
+  ├── hooks/                     # Custom React hooks
+  └── types/                     # TypeScript types
 ```
 
-**Edit a file directly in GitHub**
+### Main Pages
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `Index.tsx`: Main interactive map and data explorer.
+- `AdminDashboard.tsx`: Admin interface for managing data.
+- `Login.tsx`: Admin login page.
+- `NotFound.tsx`: 404 error page.
 
-**Use GitHub Codespaces**
+### Key Components
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `TexasMap.tsx`: Interactive Leaflet map of Texas counties.
+- `CountyDetailPanel.tsx`: Detailed county info and stats.
+- `DataOverlayToggle.tsx`: Overlay selector for map data.
+- `EnvSitePopup.tsx`: Environmental site info popups.
+- `components/ui/`: Reusable UI primitives (button, card, toggle, etc.)
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Data Sources
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Cancer Data**: `public/Cancer Data.csv`  
+  Contains age-adjusted incidence rates, trends, and statistics per county/region.
+- **County Boundaries**: `public/Texas_County_Boundaries.geojson`  
+  Used for rendering the interactive map.
+- **Environmental Sites**: Managed via Supabase and displayed on the map.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/14b5d3ef-b25e-4169-a589-d6056a4c9983) and click on Share -> Publish.
+## Tech Stack
 
-## Can I connect a custom domain to my Lovable project?
+- **Frontend**: React, TypeScript, Vite
+- **UI**: Tailwind CSS, shadcn/ui, Radix UI, Lucide icons
+- **Map**: React-Leaflet, Leaflet
+- **State/Data**: React Query, Supabase
+- **Auth**: Supabase Auth
+- **Charts**: Recharts
+- **Other**: CSV parsing, modern accessibility best practices
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Attribution
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Favicon**:  
+  <a href="https://www.flaticon.com/free-icons/cancer" title="cancer icons">Cancer icons created by Freepik - Flaticon</a>
+- **Map Data**: Texas county boundaries from public GIS sources.
+- **Cancer Data**: Sourced from public health datasets (see `Cancer Data.csv` for details).
+- **Development Tools**: This project was developed using [Cursor](https://www.cursor.so/) and [Lovable](https://lovable.dev/) for AI-assisted coding and project generation.
+
+---
+
+## License
+
+MIT License.  
+See [LICENSE](LICENSE) for details.
+
+---
+
+_If you use or build on this project, please consider crediting the original authors and data sources!_
