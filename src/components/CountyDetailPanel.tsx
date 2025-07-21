@@ -13,6 +13,10 @@ interface CountyDetailPanelProps {
   maxPovertyRate: number;
   maxHealthcareAccess: number;
   maxPollutionLevel: number;
+  carcinogens: import("@/types/carcinogen").Carcinogen[];
+  cancers: import("@/types/carcinogen").Cancer[];
+  carcinogenCancerLinks: import("@/types/carcinogen").CarcinogenCancerLink[];
+  siteCarcinogens: import("@/types/carcinogen").EnvironmentalSiteCarcinogen[];
 }
 
 export const CountyDetailPanel = ({
@@ -24,11 +28,17 @@ export const CountyDetailPanel = ({
   maxPovertyRate,
   maxHealthcareAccess,
   maxPollutionLevel,
+  carcinogens,
+  cancers,
+  carcinogenCancerLinks,
+  siteCarcinogens,
 }: CountyDetailPanelProps) => {
   console.log('CountyDetailPanel county:', county);
   if (!county || !isOpen) return null;
 
   const formatNumber = (num: number) => num.toLocaleString();
+
+  const hasSites = Array.isArray(county.sites) && county.sites.length > 0;
 
   return (
     <>
@@ -184,44 +194,101 @@ export const CountyDetailPanel = ({
             <CardHeader>
               <CardTitle className="flex items-center text-lg">
                 <AlertTriangle className="w-5 h-5 mr-2 text-orange-600" />
-                Environmental Sites ({county.sites.length})
+                Environmental Sites ({hasSites ? county.sites.length : 0})
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                {county.sites.map((site) => (
-                  <div
-                    key={site.id}
-                    className="border border-border rounded-lg p-3 bg-card text-card-foreground"
-                  >
-                    <div className="flex items-start justify-between mb-2">
-                      <h4 className="font-medium text-foreground">
-                        {site.name}
-                      </h4>
-                      <span
-                        className={`
-                        px-2 py-1 text-xs rounded-full
-                        ${
-                          site.riskLevel === "high"
-                            ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-                            : site.riskLevel === "medium"
-                              ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
-                              : "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                        }
-                      `}
-                      >
-                        {site.riskLevel.toUpperCase()}
-                      </span>
+                {!hasSites && (
+                  <div className="text-muted-foreground text-sm">No environmental sites available for this county.</div>
+                )}
+                {hasSites && county.sites.map((site) => {
+                  // Defensive: skip if site is null/undefined
+                  if (!site) return null;
+                  // Find carcinogen links for this site
+                  const siteCarcLinks = Array.isArray(siteCarcinogens) ? siteCarcinogens.filter(link => link.site_id === site.id) : [];
+                  // For each carcinogen at this site, find its details and linked cancers
+                  const carcinogenDetails = siteCarcLinks.map(link => {
+                    const carcinogen = Array.isArray(carcinogens) ? carcinogens.find(c => c.id === link.carcinogen_id) : null;
+                    if (!carcinogen) return null;
+                    // Find all cancer links for this carcinogen
+                    const cancerLinks = Array.isArray(carcinogenCancerLinks) ? carcinogenCancerLinks.filter(cl => cl.carcinogen_id === carcinogen.id) : [];
+                    const linkedCancers = cancerLinks.map(cl => {
+                      const cancer = Array.isArray(cancers) ? cancers.find(ca => ca.id === cl.cancer_id) : null;
+                      return cancer ? { ...cancer, linkDescription: cl.description } : null;
+                    }).filter(Boolean);
+                    return { ...carcinogen, siteLinkDescription: link.description, linkedCancers };
+                  }).filter(Boolean);
+                  return (
+                    <div
+                      key={site.id}
+                      className="border border-border rounded-lg p-3 bg-card text-card-foreground"
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <h4 className="font-medium text-foreground">
+                          {site.name}
+                        </h4>
+                        <span
+                          className={`
+                            px-2 py-1 text-xs rounded-full
+                            ${
+                              site.riskLevel === "high"
+                                ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
+                                : site.riskLevel === "medium"
+                                  ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
+                                  : "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                            }
+                          `}
+                        >
+                          {site.riskLevel?.toUpperCase?.() || "N/A"}
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        {site.description || "No description"}
+                      </p>
+                      <div className="flex items-center text-xs text-muted-foreground mb-2">
+                        <MapPin className="w-3 h-3 mr-1" />
+                        {site.type?.replace?.("_", " ").toUpperCase?.() || "UNKNOWN"}
+                      </div>
+                      {/* Carcinogens at this site */}
+                      {carcinogenDetails.length > 0 ? (
+                        <div className="mt-2">
+                          <div className="font-semibold text-sm mb-1">Carcinogens at this site:</div>
+                          <ul className="ml-4 list-disc">
+                            {carcinogenDetails.map(carc => (
+                              <li key={carc.id} className="mb-1">
+                                <span className="font-medium">{carc.name}</span>
+                                {carc.type && <span className="ml-2 text-xs text-muted-foreground">[{carc.type}]</span>}
+                                {carc.effects && <span className="ml-2 text-xs text-muted-foreground">Effects: {carc.effects}</span>}
+                                {carc.siteLinkDescription && <span className="ml-2 text-xs text-muted-foreground">({carc.siteLinkDescription})</span>}
+                                {carc.description && <div className="text-xs text-muted-foreground ml-2">{carc.description}</div>}
+                                {/* Linked cancers */}
+                                {carc.linkedCancers && (carc.linkedCancers.length > 0) ? (
+                                  <div className="ml-2 mt-1">
+                                    <span className="text-xs font-semibold">Linked Cancers:</span>
+                                    <ul className="ml-4 list-disc">
+                                      {carc.linkedCancers.map((cancer: any) => (
+                                        <li key={cancer.id} className="text-xs">
+                                          <span className="font-medium">{cancer.name}</span>
+                                          {cancer.linkDescription && <span className="ml-1 text-muted-foreground">({cancer.linkDescription})</span>}
+                                          {cancer.description && <span className="ml-1 text-muted-foreground">- {cancer.description}</span>}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                ) : (
+                                  <div className="ml-2 text-xs text-muted-foreground">No linked cancers for this carcinogen.</div>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : (
+                        <div className="text-xs text-muted-foreground">No carcinogens linked to this site.</div>
+                      )}
                     </div>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {site.description}
-                    </p>
-                    <div className="flex items-center text-xs text-muted-foreground">
-                      <MapPin className="w-3 h-3 mr-1" />
-                      {site.type.replace("_", " ").toUpperCase()}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </CardContent>
           </Card>

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { DataOverlay } from "@/pages/Index";
-import { DollarSign, Heart, Droplets, Skull } from "lucide-react";
+import { DollarSign, Heart, Droplets, Skull, Biohazard } from "lucide-react";
 
 interface DataOverlayToggleProps {
   activeOverlay: DataOverlay;
@@ -40,6 +40,20 @@ export const DataOverlayToggle = ({
       icon: Skull,
       color: "text-purple-600",
       description: "Cancer mortality rates",
+    },
+    {
+      id: "carcinogen_count" as const,
+      label: "Carcinogen Count",
+      icon: Biohazard,
+      color: "text-orange-600",
+      description: "Number of carcinogens present at sites in each county",
+    },
+    {
+      id: "cancer_count" as const,
+      label: "Cancer Count",
+      icon: Skull, // Use Skull instead of Virus
+      color: "text-pink-600",
+      description: "Number of cancers linked to carcinogens at sites in each county",
     },
   ];
 

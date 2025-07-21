@@ -109,6 +109,31 @@ export const TexasMap = ({
     return `rgb(${R},${G},${B})`;
   }
 
+  // Compute carcinogen/cancer counts for overlays
+  const countyCarcinogenCounts: Record<string, number> = {};
+  const countyCancerCounts: Record<string, number> = {};
+  if (activeOverlay === "carcinogen_count" || activeOverlay === "cancer_count") {
+    for (const county of realCounties) {
+      // Gather all carcinogen IDs for all sites in this county
+      const carcinogenIds = new Set<string>();
+      const cancerIds = new Set<string>();
+      for (const site of county.sites) {
+        // Find carcinogen links for this site
+        if (site.carcinogens) {
+          site.carcinogens.forEach((carc: any) => carcinogenIds.add(carc.id));
+          // For each carcinogen, add all linked cancers
+          site.carcinogens.forEach((carc: any) => {
+            if (carc.linkedCancers) {
+              carc.linkedCancers.forEach((cancer: any) => cancerIds.add(cancer.id));
+            }
+          });
+        }
+      }
+      countyCarcinogenCounts[county.id] = carcinogenIds.size;
+      countyCancerCounts[county.id] = cancerIds.size;
+    }
+  }
+
   const onEachFeature = (feature: any, layer: any) => {
     const objectId = feature.properties.OBJECTID?.toString();
     const countyName = feature.properties.CNTY_NM;
@@ -172,6 +197,14 @@ export const TexasMap = ({
       value = county?.cancerMortality ?? null;
       min = overlayStats.mortality.min;
       max = overlayStats.mortality.max;
+    } else if (activeOverlay === "carcinogen_count") {
+      value = countyCarcinogenCounts[county?.id ?? ""] ?? 0;
+      min = Math.min(...Object.values(countyCarcinogenCounts));
+      max = Math.max(...Object.values(countyCarcinogenCounts));
+    } else if (activeOverlay === "cancer_count") {
+      value = countyCancerCounts[county?.id ?? ""] ?? 0;
+      min = Math.min(...Object.values(countyCancerCounts));
+      max = Math.max(...Object.values(countyCancerCounts));
     }
     // If county is missing from data, use dark gray
     if (!county) {

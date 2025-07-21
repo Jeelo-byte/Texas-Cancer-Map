@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Sun, Moon } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
+import { Carcinogen, Cancer, CarcinogenCancerLink, EnvironmentalSiteCarcinogen } from "@/types/carcinogen";
 
 export interface County {
   id: string; // OBJECTID as string (for map matching)
@@ -38,6 +39,8 @@ export type DataOverlay =
   | "healthcare"
   | "pollution"
   | "mortality"
+  | "carcinogen_count"
+  | "cancer_count"
   | null;
 
 const Index = () => {
@@ -46,6 +49,11 @@ const Index = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [realCounties, setRealCounties] = useState<County[]>([]);
   const [darkMode, setDarkMode] = useState(false);
+  // Carcinogen & Cancer state
+  const [carcinogens, setCarcinogens] = useState<Carcinogen[]>([]);
+  const [cancers, setCancers] = useState<Cancer[]>([]);
+  const [carcinogenCancerLinks, setCarcinogenCancerLinks] = useState<CarcinogenCancerLink[]>([]);
+  const [siteCarcinogens, setSiteCarcinogens] = useState<EnvironmentalSiteCarcinogen[]>([]);
 
   useEffect(() => {
     if (darkMode) {
@@ -106,6 +114,22 @@ const Index = () => {
       setRealCounties(counties);
     };
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Fetch carcinogen/cancer data
+    supabase.from("carcinogens").select("*").then(({ data, error }) => {
+      if (!error && data) setCarcinogens(data);
+    });
+    supabase.from("cancers").select("*").then(({ data, error }) => {
+      if (!error && data) setCancers(data);
+    });
+    supabase.from("carcinogen_cancer_link").select("*").then(({ data, error }) => {
+      if (!error && data) setCarcinogenCancerLinks(data);
+    });
+    supabase.from("environmental_site_carcinogen").select("*").then(({ data, error }) => {
+      if (!error && data) setSiteCarcinogens(data);
+    });
   }, []);
 
   const handleCountyClick = (countyId: string) => {
@@ -198,6 +222,10 @@ const Index = () => {
               maxPovertyRate={maxPovertyRate}
               maxHealthcareAccess={maxHealthcareAccess}
               maxPollutionLevel={maxPollutionLevel}
+              carcinogens={carcinogens}
+              cancers={cancers}
+              carcinogenCancerLinks={carcinogenCancerLinks}
+              siteCarcinogens={siteCarcinogens}
             />
           </div>
         </div>
