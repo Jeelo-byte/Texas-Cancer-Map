@@ -272,15 +272,17 @@ const Index = () => {
   return (
     <div className="h-screen overflow-hidden bg-background flex flex-col">
       <Header />
-      <Button
-        className="absolute top-4 right-4 z-30 border border-slate-300 dark:border-slate-700 shadow bg-background text-foreground hover:bg-secondary transition"
-        size="icon"
-        variant="ghost"
-        onClick={() => setDarkMode((d) => !d)}
-        aria-label="Toggle dark mode"
-      >
-        {darkMode ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-      </Button>
+      <div className="flex w-full">
+        <Button
+          className="ml-auto mr-4 mt-2 border border-slate-300 dark:border-slate-700 shadow bg-background text-foreground hover:bg-secondary transition"
+          size="icon"
+          variant="ghost"
+          onClick={() => setDarkMode((d) => !d)}
+          aria-label="Toggle dark mode"
+        >
+          {darkMode ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+        </Button>
+      </div>
 
       <div className="relative flex-1 h-full">
         <div
