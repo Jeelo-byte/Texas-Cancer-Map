@@ -303,9 +303,9 @@ const Index = () => {
                   console.debug('Show Environmental Sites toggled:', v);
                   setShowEnvSites(v);
                 }}
-                className="border border-slate-400 rounded w-5 h-5 flex items-center justify-center transition-colors bg-white hover:bg-slate-100 mr-1"
+                className="border border-slate-400 dark:border-slate-600 rounded w-5 h-5 flex items-center justify-center transition-colors bg-white dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 mr-1 data-[state=on]:bg-blue-500 data-[state=on]:dark:bg-blue-400 data-[state=on]:border-blue-600 data-[state=on]:dark:border-blue-300"
               >
-                {showEnvSites && <Check className="w-4 h-4 text-black" />}
+                {showEnvSites && <Check className="w-4 h-4 text-black dark:text-white" />}
               </Toggle>
               Show Environmental Sites
             </label>
