@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { TexasMap } from "@/components/TexasMap";
 import { CountyDetailPanel } from "@/components/CountyDetailPanel";
 import { DataOverlayToggle } from "@/components/DataOverlayToggle";
+import { Toggle } from "@/components/ui/toggle";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, DollarSign, Heart, Droplets, Skull, Biohazard } from "lucide-react";
+import { Sun, Moon, DollarSign, Heart, Droplets, Skull, Biohazard, Check } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 import { Carcinogen, Cancer, CarcinogenCancerLink, EnvironmentalSiteCarcinogen } from "@/types/carcinogen";
 
@@ -105,6 +106,7 @@ const Index = () => {
   const [cancers, setCancers] = useState<Cancer[]>([]);
   const [carcinogenCancerLinks, setCarcinogenCancerLinks] = useState<CarcinogenCancerLink[]>([]);
   const [siteCarcinogens, setSiteCarcinogens] = useState<EnvironmentalSiteCarcinogen[]>([]);
+  const [showEnvSites, setShowEnvSites] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -282,18 +284,31 @@ const Index = () => {
 
       <div className="relative flex-1 h-full">
         <div
-          style={{
-            zIndex: 2000,
-          }}
-          className="absolute top-4 left-4"
+          style={{ zIndex: 2000 }}
+          className="absolute top-4 left-4 flex flex-col gap-3"
         >
           <DataOverlayToggle
             activeOverlay={activeOverlay}
             onOverlayChange={setActiveOverlay}
             overlays={overlays}
           />
+          <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-1 flex items-center gap-2 border border-slate-200 dark:border-slate-700">
+            <label className="text-xs font-medium flex items-center gap-2 cursor-pointer">
+              <Toggle
+                key={showEnvSites ? 'on' : 'off'}
+                pressed={showEnvSites}
+                onPressedChange={v => {
+                  console.debug('Show Environmental Sites toggled:', v);
+                  setShowEnvSites(v);
+                }}
+                className="border border-slate-400 rounded w-5 h-5 flex items-center justify-center transition-colors bg-white hover:bg-slate-100 mr-1"
+              >
+                {showEnvSites && <Check className="w-4 h-4 text-black" />}
+              </Toggle>
+              Show Environmental Sites
+            </label>
+          </div>
         </div>
-
         {/* Flex row for map and sidebar */}
         <div className="flex h-full w-full">
           {/* Map section */}
@@ -305,6 +320,7 @@ const Index = () => {
               darkMode={darkMode}
               legendBottomClass="bottom-4"
               overlays={overlays}
+              showEnvSites={showEnvSites}
             />
           </div>
           {/* Sidebar (desktop only, animates width and opacity) */}

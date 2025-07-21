@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { MapContainer, GeoJSON, useMap } from "react-leaflet";
+import { MapContainer, GeoJSON, useMap, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { supabase } from "@/lib/supabaseClient";
+import { Toggle } from "@/components/ui/toggle";
+import { EnvSitePopup } from "./EnvSitePopup";
 
 interface TexasMapProps {
   activeOverlay: string | null;
@@ -11,6 +14,7 @@ interface TexasMapProps {
   darkMode?: boolean;
   legendBottomClass?: string;
   overlays?: { id: string; label: string; description?: string }[];
+  showEnvSites?: boolean;
 }
 
 const overlayColors = {
@@ -61,12 +65,14 @@ export const TexasMap = ({
   darkMode,
   legendBottomClass = "bottom-16",
   overlays = [],
+  showEnvSites = false,
 }: TexasMapProps) => {
   const [geoData, setGeoData] = useState<any>(null);
   const [hoveredCountyId, setHoveredCountyId] = useState<string | null>(null);
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(
     null,
   );
+  const [envSites, setEnvSites] = useState<any[]>([]);
 
   useEffect(() => {
     fetch("/Texas_County_Boundaries.geojson")
@@ -85,6 +91,28 @@ export const TexasMap = ({
     console.log("OBJECTIDs in GeoJSON but not in data.json:", missingInData);
     console.log("OBJECTIDs in data.json but not in GeoJSON:", missingInGeo);
   }, [geoData, realCounties]);
+
+  useEffect(() => {
+    async function fetchSites() {
+      const { data, error } = await supabase
+        .from("environmental_sites")
+        .select("id,site_name,latitude,longitude,city,risk_level");
+      if (!error && data) setEnvSites(data);
+      else if (error) console.error(error);
+    }
+    fetchSites();
+  }, []);
+
+  // Debug log for environmental site coordinates
+  useEffect(() => {
+    if (envSites.length) {
+      console.debug("Environmental Sites loaded:", envSites.map(s => ({ id: s.id, lat: s.latitude, lng: s.longitude })));
+      const invalid = envSites.filter(s => !s.latitude || !s.longitude || isNaN(s.latitude) || isNaN(s.longitude));
+      if (invalid.length) {
+        console.warn("Sites with missing/invalid coordinates:", invalid);
+      }
+    }
+  }, [envSites]);
 
   // Find the real data for the hovered county by OBJECTID
   const hoveredCountyData = hoveredCountyId
@@ -350,6 +378,7 @@ export const TexasMap = ({
 
   return (
     <div className="w-full h-full min-h-screen rounded-lg relative bg-background">
+      {/* Toggle for Environmental Sites removed, now in Index.tsx */}
       <MapContainer
         center={[31.0, -99.0]}
         zoom={6}
@@ -376,6 +405,23 @@ export const TexasMap = ({
             interactive={true}
           />
         )}
+        {/* Environmental Site Markers */}
+        {showEnvSites && envSites.map(site => (
+          <Marker
+            key={site.id}
+            position={[site.latitude, site.longitude]}
+            icon={L.icon({
+              iconUrl: "data:image/svg+xml;utf8,<svg width='32' height='32' viewBox='0 0 32 32' fill='black' xmlns='http://www.w3.org/2000/svg'><path d='M16 2C10.477 2 6 6.477 6 12c0 6.075 7.09 15.364 7.393 15.74a1 1 0 0 0 1.214 0C18.91 27.364 26 18.075 26 12c0-5.523-4.477-10-10-10zm0 13.5A3.5 3.5 0 1 1 16 8a3.5 3.5 0 0 1 0 7.5z'/></svg>",
+              iconSize: [32, 32],
+              iconAnchor: [16, 32],
+              popupAnchor: [0, -32],
+            })}
+          >
+            <Popup>
+              <EnvSitePopup site={site} />
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
       {/* Tooltip */}
       {hoveredCountyId && tooltipPos && (
