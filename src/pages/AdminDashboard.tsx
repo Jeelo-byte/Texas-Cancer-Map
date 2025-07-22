@@ -15,6 +15,8 @@ import { Carcinogen, Cancer, CarcinogenCancerLink, EnvironmentalSiteCarcinogen }
 // import { CarcinogenCrud } from "@/components/CarcinogenCrud";
 import { CancerCrud } from "@/components/CancerCrud";
 import { CarcinogenCrud } from "@/components/CarcinogenCrud";
+import { Sun, Moon } from "lucide-react";
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
 
 const TABS = ["Analytics", "Counties", "Carcinogens", "Cancers"];
 
@@ -121,9 +123,10 @@ const AdminDashboard = () => {
     { key: "poverty_rate", label: "Poverty Rate", type: "number", step: "any" },
     { key: "healthcare_access", label: "Healthcare Access", type: "number", step: "any" },
     { key: "pollution_level", label: "Pollution Level", type: "number", step: "any" },
-    { key: "overlay_field", label: "Overlay Field", type: "number", step: "any" },
   ];
   const [editDialogOpen, setEditDialogOpen] = useState(false);
+  // Dialog mode: 'add-county', 'edit-county', 'add-site', 'edit-site'
+  const [dialogMode, setDialogMode] = useState<'add-county' | 'edit-county' | 'add-site' | 'edit-site' | null>(null);
 
   const addCountyMutation = useMutation<void, Error, County>({
     mutationFn: async (county: County) => {
@@ -306,6 +309,67 @@ const AdminDashboard = () => {
     });
   }, []);
 
+  // Dynamic site types
+  const [siteTypes, setSiteTypes] = useState<{ id: string; name: string }[]>([]);
+  const [siteTypesLoading, setSiteTypesLoading] = useState(false);
+  const [showNewTypeInput, setShowNewTypeInput] = useState(false);
+  const [newTypeInput, setNewTypeInput] = useState("");
+  const [addTypeError, setAddTypeError] = useState("");
+
+  // Fetch site types from Supabase when dialog opens for add/edit site
+  useEffect(() => {
+    if ((dialogMode === 'add-site' || dialogMode === 'edit-site') && editDialogOpen) {
+      setSiteTypesLoading(true);
+      supabase.from('site_types').select('*').order('name').then(({ data, error }) => {
+        setSiteTypesLoading(false);
+        if (!error && data) setSiteTypes(data);
+      });
+    }
+  }, [dialogMode, editDialogOpen]);
+
+  // Add new site type
+  const handleAddNewType = async () => {
+    if (!newTypeInput.trim()) {
+      setAddTypeError('Type name required');
+      setTimeout(() => setAddTypeError(''), 2000);
+      return;
+    }
+    setSiteTypesLoading(true);
+    const { data, error } = await supabase.from('site_types').insert([{ name: newTypeInput.trim() }]).select();
+    setSiteTypesLoading(false);
+    if (error) {
+      setAddTypeError(error.message);
+      setTimeout(() => setAddTypeError(''), 2000);
+    } else if (data && data[0]) {
+      setSiteTypes(types => [...types, data[0]]);
+      setShowNewTypeInput(false);
+      setNewTypeInput("");
+      // Select the new type in the form
+      if (dialogMode === 'edit-site') {
+        setEditSiteData(d => ({ ...d, type: data[0].name }));
+      } else {
+        setNewSite(d => ({ ...d, type: data[0].name }));
+      }
+    }
+  };
+
+  // Dark mode state
+  const [darkMode, setDarkMode] = useState(() => {
+    // Persist dark mode in localStorage
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('admin_dark_mode') === 'true';
+    }
+    return false;
+  });
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('admin_dark_mode', darkMode ? 'true' : 'false');
+  }, [darkMode]);
+
   useEffect(() => {
     if (!loading && !user) {
       navigate("/login");
@@ -335,6 +399,20 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col">
       <Header />
+      {/* Dark mode toggle button under header, top right */}
+      <div className="relative">
+        <div className="absolute right-4 top-2 z-30">
+          <Button
+            className="border border-slate-300 dark:border-slate-700 shadow bg-background text-foreground hover:bg-secondary transition"
+            size="icon"
+            variant="ghost"
+            onClick={() => setDarkMode((d) => !d)}
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          </Button>
+        </div>
+      </div>
       <div className="flex-1 flex flex-col items-center py-8 px-2">
         <div className="w-full max-w-6xl">
           {/* Tab bar */}
@@ -354,9 +432,10 @@ const AdminDashboard = () => {
             <div className="flex flex-row gap-6">
               {/* Left column: County list */}
               <div className="w-1/3 bg-white dark:bg-slate-800 rounded-lg shadow p-4 flex flex-col">
+                {/* Counties header */}
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-bold">Counties</h2>
-                  <Button size="sm" onClick={() => setEditCountyId(null)}>+ Add</Button>
+                  <Button size="sm" onClick={() => { setEditCountyId(null); setEditCountyData({ ...emptyCounty }); setDialogMode('add-county'); setEditDialogOpen(true); }}>+ Add</Button>
                 </div>
                 <Input
                   placeholder="Search counties..."
@@ -381,9 +460,7 @@ const AdminDashboard = () => {
                           onClick={() => {
                             setSelectedCountyId(county.id);
                             setSelectedSiteId(null);
-                            setEditCountyId(county.id);
-                            setEditCountyData({ ...emptyCounty, ...county });
-                            setEditDialogOpen(true);
+                            // Do NOT open the dialog or set dialogMode here
                           }}
                         >
                           <td className="px-3 py-2 font-medium">{county.name}</td>
@@ -406,27 +483,44 @@ const AdminDashboard = () => {
                   <>
                     {/* County info card */}
                     <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4 mb-2">
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center justify-between mb-3">
                         <h3 className="text-lg font-bold">{selectedCounty.name}</h3>
-                        <div className="flex gap-2">
-                          <Button size="sm" variant="outline" onClick={() => { setEditCountyId(selectedCounty.id); setEditCountyData({ ...emptyCounty, ...selectedCounty }); setEditDialogOpen(true); }}>Edit County</Button>
-                          <Button size="sm" variant="destructive" onClick={() => deleteCountyMutation.mutate(selectedCounty.id)}>Delete County</Button>
+                        <Button size="sm" variant="outline" onClick={() => { setEditCountyId(selectedCounty.id); setEditCountyData({ ...emptyCounty, ...selectedCounty }); setDialogMode('edit-county'); setEditDialogOpen(true); }}>Edit County</Button>
+                      </div>
+                      <div className="border-b border-slate-200 dark:border-slate-700 mb-3"></div>
+                      <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                        <div className="flex">
+                          <dt className="text-muted-foreground w-32">Population:</dt>
+                          <dd className="font-semibold">{selectedCounty.population || "—"}</dd>
                         </div>
-                      </div>
-                      <div className="flex flex-wrap gap-4">
-                        <div><span className="font-semibold">Population:</span> {selectedCounty.population}</div>
-                        <div><span className="font-semibold">Incidence Rate:</span> {selectedCounty.incidence_rate}</div>
-                        <div><span className="font-semibold">Mortality Rate:</span> {selectedCounty.mortality_rate}</div>
-                        <div><span className="font-semibold">Poverty Rate:</span> {selectedCounty.poverty_rate}</div>
-                        <div><span className="font-semibold">Healthcare Access:</span> {selectedCounty.healthcare_access}</div>
-                        <div><span className="font-semibold">Pollution Level:</span> {selectedCounty.pollution_level}</div>
-                      </div>
+                        <div className="flex">
+                          <dt className="text-muted-foreground w-32">Incidence Rate:</dt>
+                          <dd className="font-semibold">{selectedCounty.incidence_rate || "—"}</dd>
+                        </div>
+                        <div className="flex">
+                          <dt className="text-muted-foreground w-32">Mortality Rate:</dt>
+                          <dd className="font-semibold">{selectedCounty.mortality_rate || "—"}</dd>
+                        </div>
+                        <div className="flex">
+                          <dt className="text-muted-foreground w-32">Poverty Rate:</dt>
+                          <dd className="font-semibold">{selectedCounty.poverty_rate || "—"}</dd>
+                        </div>
+                        <div className="flex">
+                          <dt className="text-muted-foreground w-32">Healthcare Access:</dt>
+                          <dd className="font-semibold">{selectedCounty.healthcare_access || "—"}</dd>
+                        </div>
+                        <div className="flex">
+                          <dt className="text-muted-foreground w-32">Pollution Level:</dt>
+                          <dd className="font-semibold">{selectedCounty.pollution_level || "—"}</dd>
+                        </div>
+                      </dl>
                     </div>
                     {/* Sites list */}
                     <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4">
+                      {/* Sites list header */}
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="text-md font-bold">Sites in {selectedCounty.name}</h4>
-                        <Button size="sm" onClick={() => setEditSiteId(null)}>+ Add Site</Button>
+                        <Button size="sm" onClick={() => { setEditSiteId(null); setNewSite({ ...emptySite }); setEditSiteData({ ...emptySite }); setDialogMode('add-site'); setEditDialogOpen(true); }}>+ Add Site</Button>
                       </div>
                       <table className="w-full text-sm border rounded-lg overflow-hidden mb-2">
                         <thead className="bg-slate-100 dark:bg-slate-700">
@@ -448,7 +542,7 @@ const AdminDashboard = () => {
                               <td className="px-3 py-2">{site.type}</td>
                               <td className="px-3 py-2">{site.risk_level}</td>
                               <td className="px-3 py-2 flex gap-2">
-                                <Button size="sm" variant="outline" onClick={e => { e.stopPropagation(); setEditSiteId(site.id); setEditSiteData(site); }}>Edit</Button>
+                                <Button size="sm" variant="outline" onClick={e => { e.stopPropagation(); setEditSiteId(site.id); setEditSiteData(site); setDialogMode('edit-site'); setEditDialogOpen(true); }}>Edit</Button>
                                 <Button size="sm" variant="destructive" onClick={e => { e.stopPropagation(); deleteSite(site.id); }}>Delete</Button>
                               </td>
                             </tr>
@@ -497,6 +591,149 @@ const AdminDashboard = () => {
             />
           )}
         </div>
+        {/* Dialog for Add/Edit County or Site */}
+        <Dialog open={editDialogOpen} onOpenChange={setEditDialogOpen}>
+          <DialogContent>
+            {dialogMode === 'add-site' || dialogMode === 'edit-site' ? (
+              <>
+                <DialogHeader>
+                  <DialogTitle>{dialogMode === 'edit-site' ? 'Edit Site' : 'Add Site'}</DialogTitle>
+                </DialogHeader>
+                <form
+                  className="flex flex-col gap-3"
+                  onSubmit={dialogMode === 'edit-site' ? (e) => { e.preventDefault(); saveEditSite(editSiteId); } : addSite}
+                >
+                  {siteFields.map(field => (
+                    <div key={field.key} className="flex flex-col gap-1">
+                      <label className="text-sm font-medium">{field.label}</label>
+                      {field.key === 'type' ? (
+                        <>
+                          <Select
+                            value={dialogMode === 'edit-site' ? editSiteData.type : newSite.type}
+                            onValueChange={val => {
+                              if (val === '__add_new__') {
+                                setShowNewTypeInput(true);
+                              } else {
+                                setShowNewTypeInput(false);
+                                if (dialogMode === 'edit-site') {
+                                  setEditSiteData(d => ({ ...d, type: val }));
+                                } else {
+                                  setNewSite(d => ({ ...d, type: val }));
+                                }
+                              }
+                            }}
+                          >
+                            <SelectTrigger className="w-full">
+                              <SelectValue placeholder="Select type" />
+                            </SelectTrigger>
+                            <SelectContent className="bg-white dark:bg-slate-800 border dark:border-slate-700 text-foreground dark:text-white">
+                              {siteTypes.map(opt => (
+                                <SelectItem key={opt.id} value={opt.name}>{opt.name}</SelectItem>
+                              ))}
+                              <SelectItem value="__add_new__">+ Add new type...</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          {showNewTypeInput && (
+                            <div className="flex gap-2 mt-1">
+                              <Input
+                                placeholder="New type name"
+                                value={newTypeInput}
+                                onChange={e => setNewTypeInput(e.target.value)}
+                                autoFocus
+                              />
+                              <Button type="button" size="sm" onClick={handleAddNewType} disabled={siteTypesLoading}>Add</Button>
+                              <Button type="button" size="sm" variant="secondary" onClick={() => { setShowNewTypeInput(false); setNewTypeInput(""); }}>Cancel</Button>
+                            </div>
+                          )}
+                          {addTypeError && <div className="text-red-500 text-xs mt-1">{addTypeError}</div>}
+                        </>
+                      ) : field.key === 'risk_level' ? (
+                        <Select
+                          value={dialogMode === 'edit-site' ? editSiteData.risk_level : newSite.risk_level}
+                          onValueChange={val => {
+                            if (dialogMode === 'edit-site') {
+                              setEditSiteData(d => ({ ...d, risk_level: val }));
+                            } else {
+                              setNewSite(d => ({ ...d, risk_level: val }));
+                            }
+                          }}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select risk" />
+                          </SelectTrigger>
+                          <SelectContent className="bg-white dark:bg-slate-800 border dark:border-slate-700 text-foreground dark:text-white">
+                            {riskLevelOptions.map(opt => (
+                              <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <Input
+                          type={field.type}
+                          step={field.step}
+                          value={dialogMode === 'edit-site' ? editSiteData[field.key] : newSite[field.key]}
+                          onChange={e => dialogMode === 'edit-site'
+                            ? setEditSiteData(d => ({ ...d, [field.key]: e.target.value }))
+                            : setNewSite(d => ({ ...d, [field.key]: e.target.value }))}
+                          required={field.key === 'site_name'}
+                        />
+                      )}
+                    </div>
+                  ))}
+                  {siteError && <div className="text-red-500 text-sm">{siteError}</div>}
+                  {siteSuccess && <div className="text-green-600 text-sm">{siteSuccess}</div>}
+                  <DialogFooter className="mt-2 flex gap-2">
+                    <Button type="submit" disabled={sitesLoading}>{dialogMode === 'edit-site' ? 'Save' : 'Add'}</Button>
+                    <DialogClose asChild>
+                      <Button type="button" variant="secondary" onClick={() => { setEditSiteId(null); setNewSite({ ...emptySite }); setEditSiteData({ ...emptySite }); setSiteError(''); setSiteSuccess(''); setDialogMode(null); }}>Cancel</Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </form>
+              </>
+            ) : (
+              <>
+                <DialogHeader>
+                  <DialogTitle>{dialogMode === 'edit-county' ? 'Edit County' : 'Add County'}</DialogTitle>
+                </DialogHeader>
+                <form
+                  className="flex flex-col gap-3"
+                  onSubmit={e => {
+                    e.preventDefault();
+                    if (dialogMode === 'edit-county') {
+                      updateCountyMutation.mutate({ ...editCountyData, id: editCountyId });
+                    } else {
+                      addCountyMutation.mutate(newCounty);
+                    }
+                  }}
+                >
+                  {countyFields.map(field => (
+                    <div key={field.key} className="flex flex-col gap-1">
+                      <label className="text-sm font-medium">{field.label}</label>
+                      <Input
+                        type={field.type}
+                        step={field.step}
+                        value={dialogMode === 'edit-county' ? editCountyData[field.key] : newCounty[field.key]}
+                        onChange={e => dialogMode === 'edit-county'
+                          ? setEditCountyData(d => ({ ...d, [field.key]: e.target.value }))
+                          : setNewCounty(d => ({ ...d, [field.key]: e.target.value }))}
+                        required={field.key === 'name'}
+                      />
+                    </div>
+                  ))}
+                  {countyError && <div className="text-red-500 text-sm">{countyError}</div>}
+                  {countySuccess && <div className="text-green-600 text-sm">{countySuccess}</div>}
+                  <DialogFooter className="mt-2 flex gap-2">
+                    <Button type="submit" disabled={addCountyMutation.isPending || updateCountyMutation.isPending}>{dialogMode === 'edit-county' ? 'Save' : 'Add'}</Button>
+                    <DialogClose asChild>
+                      <Button type="button" variant="secondary" onClick={() => { setEditCountyId(null); setEditCountyData({ ...emptyCounty }); setNewCounty({ ...emptyCounty }); setCountyError(''); setCountySuccess(''); setDialogMode(null); }}>Cancel</Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </form>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
+        {/* End Dialog */}
       </div>
     </div>
   );
