@@ -29,7 +29,7 @@ A comprehensive, interactive web application for exploring cancer data, environm
 
 ## Demo
 
-> _Add a link or screenshot here if you have a live deployment!_
+https://texas-cancer-compass.lovable.app/ (Map may not work, its a loveable thing)
 
 ---
 
