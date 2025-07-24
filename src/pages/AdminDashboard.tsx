@@ -33,7 +33,6 @@ type County = {
   poverty_rate: string;
   healthcare_access: string;
   pollution_level: string;
-  overlay_field: string;
 };
 
 type Site = {
@@ -93,7 +92,6 @@ const AdminDashboard = () => {
     poverty_rate: "",
     healthcare_access: "",
     pollution_level: "",
-    overlay_field: "",
   };
   const emptySite = {
     site_name: "",
