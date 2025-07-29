@@ -210,23 +210,7 @@ const AdminDashboard = () => {
     { value: "high", label: "High" },
   ];
 
-  // Fetch sites for the selected county when dialog opens
-  useEffect(() => {
-    if (editDialogOpen && editCountyId) {
-      setSitesLoading(true);
-      supabase
-        .from("environmental_sites")
-        .select("*")
-        .eq("county_id", editCountyId)
-        .then(({ data, error }) => {
-          setSitesLoading(false);
-          if (error) setSiteError(error.message);
-          else setSites(data || []);
-        });
-    } else {
-      setSites([]);
-    }
-  }, [editDialogOpen, editCountyId]);
+
 
   // Add site
   const addSite = async (e: React.FormEvent) => {
@@ -236,8 +220,13 @@ const AdminDashboard = () => {
       setTimeout(() => setSiteError(""), 3000);
       return;
     }
+    if (!selectedCountyId) {
+      setSiteError("Please select a county first");
+      setTimeout(() => setSiteError(""), 3000);
+      return;
+    }
     setSitesLoading(true);
-    const { error, data } = await supabase.from("environmental_sites").insert([{ ...newSite, county_id: editCountyId }]).select();
+    const { error, data } = await supabase.from("environmental_sites").insert([{ ...newSite, county_id: selectedCountyId }]).select();
     setSitesLoading(false);
     if (error) {
       setSiteError(error.message);
@@ -351,6 +340,124 @@ const AdminDashboard = () => {
     }
   };
 
+  // Function to automatically assign county IDs based on coordinates
+  const assignCountyIdsToSites = async () => {
+    try {
+      // Fetch all sites without county_id
+      const { data: sitesWithoutCounty, error: sitesError } = await supabase
+        .from("environmental_sites")
+        .select("*")
+        .is("county_id", null);
+      
+      if (sitesError) {
+        console.error("Error fetching sites without county:", sitesError);
+        return;
+      }
+
+      if (!sitesWithoutCounty || sitesWithoutCounty.length === 0) {
+        console.log("No sites found without county assignment");
+        return;
+      }
+
+      console.log(`Found ${sitesWithoutCounty.length} sites without county assignment`);
+
+      // Fetch all counties
+      const { data: countiesData, error: countiesError } = await supabase
+        .from("counties")
+        .select("*");
+      
+      if (countiesError) {
+        console.error("Error fetching counties:", countiesError);
+        return;
+      }
+
+      // Create a mapping of county names to county IDs
+      const countyNameToId = {};
+      countiesData.forEach(county => {
+        countyNameToId[county.name.toLowerCase()] = county.id;
+      });
+
+      // For each site without a county, try to assign based on coordinates
+      let updatedCount = 0;
+      for (const site of sitesWithoutCounty) {
+        if (!site.latitude || !site.longitude) {
+          console.log(`Site ${site.site_name} missing coordinates, skipping`);
+          continue;
+        }
+
+        // Find the closest county based on coordinates
+        let closestCounty = null;
+        let minDistance = Infinity;
+
+        for (const county of countiesData) {
+          // Calculate distance (simplified)
+          const distance = Math.sqrt(
+            Math.pow(site.latitude - (county.latitude || 0), 2) + 
+            Math.pow(site.longitude - (county.longitude || 0), 2)
+          );
+          
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestCounty = county;
+          }
+        }
+
+        if (closestCounty) {
+          // Update the site with the county ID
+          const { error: updateError } = await supabase
+            .from("environmental_sites")
+            .update({ county_id: closestCounty.id })
+            .eq("id", site.id);
+          
+          if (updateError) {
+            console.error(`Error updating site ${site.site_name}:`, updateError);
+          } else {
+            updatedCount++;
+            console.log(`Assigned site ${site.site_name} to county ${closestCounty.name}`);
+          }
+        }
+      }
+
+      console.log(`Successfully assigned ${updatedCount} sites to counties`);
+      
+      // Refresh the sites list if we're currently viewing a county
+      if (selectedCountyId) {
+        const { data: updatedSites, error } = await supabase
+          .from("environmental_sites")
+          .select("*")
+          .eq("county_id", selectedCountyId);
+        
+        if (!error && updatedSites) {
+          setSites(updatedSites);
+        }
+      }
+
+    } catch (error) {
+      console.error("Error in assignCountyIdsToSites:", error);
+    }
+  };
+
+  // Function to manually assign a site to a specific county
+  const assignSiteToCounty = async (siteId: string, countyId: string) => {
+    try {
+      const { error } = await supabase
+        .from("environmental_sites")
+        .update({ county_id: countyId })
+        .eq("id", siteId);
+      
+      if (error) {
+        console.error("Error assigning site to county:", error);
+        return false;
+      } else {
+        console.log("Successfully assigned site to county");
+        return true;
+      }
+    } catch (error) {
+      console.error("Error in assignSiteToCounty:", error);
+      return false;
+    }
+  };
+
   // Dark mode state
   const [darkMode, setDarkMode] = useState(() => {
     // Persist dark mode in localStorage
@@ -382,6 +489,24 @@ const AdminDashboard = () => {
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
   const [countySearch, setCountySearch] = useState("");
 
+  // Fetch sites for the selected county
+  useEffect(() => {
+    if (selectedCountyId) {
+      setSitesLoading(true);
+      supabase
+        .from("environmental_sites")
+        .select("*")
+        .eq("county_id", selectedCountyId)
+        .then(({ data, error }) => {
+          setSitesLoading(false);
+          if (error) setSiteError(error.message);
+          else setSites(data || []);
+        });
+    } else {
+      setSites([]);
+    }
+  }, [selectedCountyId]);
+
   // Filtered counties for search
   const filteredCounties = useMemo(() => {
     if (!counties) return [];
@@ -393,6 +518,8 @@ const AdminDashboard = () => {
   // Selected county and site objects
   const selectedCounty = filteredCounties.find((c: any) => c.id === selectedCountyId) || null;
   const selectedSite = selectedCounty && sites.find((s: any) => s.id === selectedSiteId) || null;
+  
+
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col">
@@ -433,7 +560,10 @@ const AdminDashboard = () => {
                 {/* Counties header */}
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-bold">Counties</h2>
-                  <Button size="sm" onClick={() => { setEditCountyId(null); setEditCountyData({ ...emptyCounty }); setDialogMode('add-county'); setEditDialogOpen(true); }}>+ Add</Button>
+                  <div className="flex gap-2">
+                    <Button size="sm" variant="outline" onClick={assignCountyIdsToSites}>Auto Assign Counties</Button>
+                    <Button size="sm" onClick={() => { setEditCountyId(null); setEditCountyData({ ...emptyCounty }); setDialogMode('add-county'); setEditDialogOpen(true); }}>+ Add</Button>
+                  </div>
                 </div>
                 <Input
                   placeholder="Search counties..."
@@ -547,23 +677,7 @@ const AdminDashboard = () => {
                           ))}
                         </tbody>
                       </table>
-                      {/* Site details panel */}
-                      {selectedSite && (
-                        <div className="bg-slate-50 dark:bg-slate-900 rounded-lg shadow p-4 mt-2">
-                          <div className="flex items-center justify-between mb-2">
-                            <h5 className="text-md font-bold">Site: {selectedSite.site_name}</h5>
-                            <Button size="sm" variant="outline" onClick={() => setEditSiteId(selectedSite.id)}>Edit Site</Button>
-                          </div>
-                          <div className="flex flex-wrap gap-4 mb-2">
-                            <div><span className="font-semibold">Type:</span> {selectedSite.type}</div>
-                            <div><span className="font-semibold">Risk:</span> {selectedSite.risk_level}</div>
-                            <div><span className="font-semibold">City:</span> {selectedSite.city}</div>
-                            <div><span className="font-semibold">Lat:</span> {selectedSite.latitude}</div>
-                            <div><span className="font-semibold">Lng:</span> {selectedSite.longitude}</div>
-                          </div>
-                          {/* Carcinogen linking UI can go here */}
-                        </div>
-                      )}
+
                     </div>
                   </>
                 )}
