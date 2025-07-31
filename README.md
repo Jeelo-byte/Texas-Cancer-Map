@@ -29,8 +29,7 @@ A comprehensive, interactive web application for exploring cancer data, environm
 
 ## Demo
 
-https://texas-cancer-compass.lovable.app/ (Map may not work, its a loveable thing)
-
+https://texascancer.netlify.app/
 ---
 
 ## Getting Started
