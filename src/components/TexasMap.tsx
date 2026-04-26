@@ -18,13 +18,13 @@ interface TexasMapProps {
 }
 
 const overlayColors = {
-  poverty: "#f87171",
-  healthcare: "#34d399",
-  pollution: "#60a5fa",
-  mortality: "#a78bfa",
-  carcinogen: "#fb923c",
-  cancer: "#f472b6",
-  default: "#60a5fa",
+  poverty: ["#fef2f2", "#ef4444", "#7f1d1d"],
+  healthcare: ["#f0fdf4", "#22c55e", "#14532d"],
+  pollution: ["#eff6ff", "#3b82f6", "#1e3a8a"],
+  mortality: ["#faf5ff", "#a855f7", "#581c87"],
+  carcinogen: ["#fff7ed", "#f97316", "#7c2d12"],
+  cancer: ["#fdf2f8", "#ec4899", "#831843"],
+  default: ["#f8fafc", "#64748b", "#0f172a"],
   none: "#d1d5db",
 };
 
@@ -214,29 +214,43 @@ export const TexasMap = ({
     if (value < 0 && min < 0) {
       // Interpolate from red to gray
       const t = (value - min) / (0 - min);
-      return interpolateColor(divergingColors.negative, divergingColors.zero, t);
+      return interpolateColor([divergingColors.negative, divergingColors.zero], t);
     } else if (value > 0 && max > 0) {
       // Interpolate from gray to blue
       const t = value / max;
-      return interpolateColor(divergingColors.zero, divergingColors.positive, t);
+      return interpolateColor([divergingColors.zero, divergingColors.positive], t);
     } else {
       // value is exactly zero
       return divergingColors.zero;
     }
   }
 
-  // Helper to interpolate between two colors
-  function interpolateColor(colorA: string, colorB: string, t: number) {
-    // colorA and colorB are hex, e.g. #f87171
+  // Helper to interpolate across multiple color stops
+  function interpolateColor(stops: string[], t: number) {
+    if (stops.length === 0) return "transparent";
+    if (stops.length === 1) return stops[0];
+    if (t <= 0) return stops[0];
+    if (t >= 1) return stops[stops.length - 1];
+
+    const segmentCount = stops.length - 1;
+    const segment = Math.floor(t * segmentCount);
+    const localT = (t * segmentCount) - segment;
+
+    const colorA = stops[segment];
+    const colorB = stops[segment + 1];
+
+    // Simple hex to rgb interpolation
     const rA = parseInt(colorA.slice(1, 3), 16);
     const gA = parseInt(colorA.slice(3, 5), 16);
     const bA = parseInt(colorA.slice(5, 7), 16);
     const rB = parseInt(colorB.slice(1, 3), 16);
     const gB = parseInt(colorB.slice(3, 5), 16);
     const bB = parseInt(colorB.slice(5, 7), 16);
-    const R = Math.round(rA + (rB - rA) * t);
-    const G = Math.round(gA + (gB - gA) * t);
-    const B = Math.round(bA + (bB - bA) * t);
+
+    const R = Math.round(rA + (rB - rA) * localT);
+    const G = Math.round(gA + (gB - gA) * localT);
+    const B = Math.round(bA + (bB - bA) * localT);
+
     return `rgb(${R},${G},${B})`;
   }
 
@@ -350,23 +364,24 @@ export const TexasMap = ({
         t = 1 - t;
       }
       t = Math.max(0, Math.min(1, t));
-      let colorKey: keyof typeof overlayColors;
-      if (overlayType === 'metric' && overlayColors.hasOwnProperty(overlayKey)) {
-        colorKey = overlayKey as keyof typeof overlayColors;
+      // Apply non-linear transformation for "extreme" effect
+      // t^1.5 makes the high end more dramatic
+      t = Math.pow(t, 1.5);
+
+      let stops: string[];
+      if (overlayType === 'metric' && Array.isArray(overlayColors[overlayKey as keyof typeof overlayColors])) {
+        stops = overlayColors[overlayKey as keyof typeof overlayColors] as string[];
       } else if (
         overlayType === 'carcinogen' ||
         overlayType === 'cancer' ||
         overlayType === 'none'
       ) {
-        colorKey = overlayType;
+        stops = overlayColors[overlayType as keyof typeof overlayColors] as string[];
       } else {
-        colorKey = 'default';
+        stops = overlayColors.default;
       }
-      fillColor = interpolateColor(
-        "#f3f4f6",
-        overlayColors[colorKey] || overlayColors.default,
-        t,
-      );
+      
+      fillColor = interpolateColor(stops, t);
     }
     return {
       fillColor,
@@ -486,7 +501,10 @@ export const TexasMap = ({
                     background:
                       overlayMin < 0 && overlayMax > 0
                         ? `linear-gradient(to right, ${divergingColors.negative} 0%, ${divergingColors.zero} ${(0 - overlayMin) / (overlayMax - overlayMin) * 100}%, ${divergingColors.positive} 100%)`
-                        : `linear-gradient(to right, #f3f4f6, ${overlayColors[overlayType as keyof typeof overlayColors] || overlayColors.default})`,
+                        : `linear-gradient(to right, ${(() => {
+                            const stops = (overlayType === 'metric' ? overlayColors[overlayKey as keyof typeof overlayColors] : overlayColors[overlayType as keyof typeof overlayColors]) || overlayColors.default;
+                            return Array.isArray(stops) ? stops.join(', ') : `${stops}, ${stops}`;
+                          })()})`,
                   }}
                 />
                 <span className="text-xs">High</span>
