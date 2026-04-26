@@ -135,15 +135,17 @@ const Index = () => {
         console.error("Error fetching environmental sites:", sitesError);
         return;
       }
-      // Fetch all carcinogen/cancer/site links
+      // Fetch all carcinogen/cancer/site links and site types
       const { data: carcinogensData } = await supabase.from("carcinogens").select("*");
       const { data: cancersData } = await supabase.from("cancers").select("*");
       const { data: carcinogenCancerLinksData } = await supabase.from("carcinogen_cancer_link").select("*");
       const { data: siteCarcinogensData } = await supabase.from("environmental_site_carcinogen").select("*");
+      const { data: siteTypesData } = await supabase.from("site_types").select("*");
 
       // Build lookup maps
       const carcinogenMap = Object.fromEntries((carcinogensData || []).map((c: any) => [c.id, c]));
       const cancerMap = Object.fromEntries((cancersData || []).map((c: any) => [c.id, c]));
+      const siteTypeMap = Object.fromEntries((siteTypesData || []).map((t: any) => [t.id, t.name]));
       // For each carcinogen, find its linked cancers
       const carcinogenToCancers: Record<string, any[]> = {};
       (carcinogenCancerLinksData || []).forEach((link: any) => {
@@ -183,7 +185,7 @@ const Index = () => {
           sites: countySites.map((site: any) => ({
             id: site.id,
             name: site.site_name || site.name || "",
-            type: site.type || "industrial",
+            type: siteTypeMap[site.type] || site.type || "industrial",
             coordinates: [site.longitude ?? 0, site.latitude ?? 0],
             description: site.city || "",
             riskLevel: site.risk_level || "medium",
@@ -194,6 +196,20 @@ const Index = () => {
       setRealCounties(counties);
     };
     fetchData();
+
+    // Setup Realtime subscriptions
+    const countySubscription = supabase.channel('public:counties')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'counties' }, fetchData)
+      .subscribe();
+      
+    const siteSubscription = supabase.channel('public:environmental_sites')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'environmental_sites' }, fetchData)
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(countySubscription);
+      supabase.removeChannel(siteSubscription);
+    };
   }, []);
 
   useEffect(() => {

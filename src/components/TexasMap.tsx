@@ -380,9 +380,9 @@ export const TexasMap = ({
     <div className="w-full h-full min-h-screen rounded-lg relative bg-background">
       {/* Toggle for Environmental Sites removed, now in Index.tsx */}
       <MapContainer
-        center={[31.0, -99.0]}
+        center={[31.4, -99.0]}
         zoom={6}
-        minZoom={5}
+        minZoom={5.5}
         maxBounds={[
           [25.5, -107.0],
           [36.7, -93.5],
@@ -426,32 +426,35 @@ export const TexasMap = ({
       {/* Tooltip */}
       {hoveredCountyId && tooltipPos && (
         <div
-          className="pointer-events-none fixed z-[10000] bg-background dark:bg-background border border-border dark:border-border rounded shadow px-3 py-2 text-sm text-foreground dark:text-foreground"
+          className="pointer-events-none fixed z-[10000] bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-lg shadow-xl px-4 py-3 text-sm text-slate-800 dark:text-slate-200 transition-opacity duration-200"
           style={{
-            left: tooltipPos.x + 12,
-            top: tooltipPos.y + 12,
-            minWidth: 120,
-            maxWidth: 220,
+            left: tooltipPos.x + 16,
+            top: tooltipPos.y + 16,
+            minWidth: 160,
+            maxWidth: 240,
           }}
         >
-          <div className="font-semibold">
+          <div className="font-bold text-base mb-1 pb-1 border-b border-slate-200 dark:border-slate-700">
             {hoveredCountyData ? hoveredCountyData.name + " County" : "County"}
           </div>
-          <div>
-            Incidence Rate:{" "}
-            {hoveredCountyData ? hoveredCountyData.cancerIncidence : "N/A"}
+          <div className="space-y-1 mt-2">
+            <div className="flex justify-between gap-4">
+              <span className="text-muted-foreground">Incidence Rate:</span>
+              <span className="font-medium">{hoveredCountyData ? hoveredCountyData.cancerIncidence : "N/A"}</span>
+            </div>
+            {hoveredCountyData && (
+              <>
+                <div className="flex justify-between gap-4">
+                  <span className="text-muted-foreground">Avg Deaths:</span>
+                  <span className="font-medium">{hoveredCountyData.averageAnnualDeaths ?? "N/A"}</span>
+                </div>
+                <div className="flex justify-between gap-4">
+                  <span className="text-muted-foreground">Recent Trend:</span>
+                  <span className="font-medium">{hoveredCountyData.recentTrend ?? "N/A"}%/yr</span>
+                </div>
+              </>
+            )}
           </div>
-          {hoveredCountyData && (
-            <>
-              <div>
-                Avg Annual Deaths:{" "}
-                {hoveredCountyData.averageAnnualDeaths ?? "N/A"}
-              </div>
-              <div>
-                Recent Trend: {hoveredCountyData.recentTrend ?? "N/A"}%/yr
-              </div>
-            </>
-          )}
         </div>
       )}
       {/* Legend */}
